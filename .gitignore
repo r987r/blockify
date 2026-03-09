@@ -1,0 +1,23 @@
+# Output directory - not committed
+out/
+
+# Import repos - cloned at runtime
+import/
+
+# Slang binary - downloaded at runtime
+tools/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak

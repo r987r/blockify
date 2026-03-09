@@ -1,0 +1,211 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:06:45.936818+00:00",
+  "source": {
+    "file": "round_robin_arbiter3.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/round_robin_arbiter/round_robin_arbiter3.v",
+    "repo_url": "https://github.com/freecores/round_robin_arbiter",
+    "repo_name": "round_robin_arbiter",
+    "commit_sha": "b207eb19fe19c5b520a23fa105730ce70b8fd126",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "PASS",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "Build succeeded: 0 errors, 0 warnings\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/round_robin_arbiter"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "round_robin_arbiter",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "rst_an",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "req",
+            "direction": "In",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "grant",
+            "direction": "Out",
+            "type": "reg[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "N",
+            "type": "logic signed[31:0]",
+            "default_value": "4",
+            "is_local": false
+          }
+        ],
+        "total_input_bits": 6,
+        "total_output_bits": 4,
+        "num_inputs": 3,
+        "num_outputs": 1,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "rotate_ptr",
+            "type": "reg[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "grant",
+            "type": "reg[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ],
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "mask_req",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "mask_grant",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "grant_comb",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "no_mask_req",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "nomask_grant",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "update_ptr",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "num_registers": 2,
+        "num_wires": 6
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "rst_an"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "rst_an"
+          }
+        ],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 2,
+        "clocks": [
+          "clk"
+        ],
+        "resets": [
+          "rst_an"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [
+          {
+            "kind": "GenerateBlockArray",
+            "name": "genblk1"
+          },
+          {
+            "kind": "GenerateBlockArray",
+            "name": "genblk2"
+          },
+          {
+            "kind": "GenerateBlockArray",
+            "name": "genblk3"
+          }
+        ],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}
