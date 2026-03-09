@@ -3,16 +3,19 @@
 #
 # Usage:
 #   ./run_blockify.sh <repo_url> [--include-dir <dir>] [--define KEY=VAL] [--files <pattern>]
+#   ./run_blockify.sh <repo_url> --vip          # Process as UVM Verification IP
 #
 # Examples:
 #   ./run_blockify.sh https://github.com/freecores/round_robin_arbiter
 #   ./run_blockify.sh https://github.com/freecores/dma_axi --include-dir src/dma_axi32 --files "src/dma_axi32/*.v"
+#   ./run_blockify.sh https://github.com/mbits-mirafra/axi4_avip --vip
 #
 # This script:
 #   1. Ensures slang is installed
 #   2. Clones the repository
 #   3. Finds all Verilog files
 #   4. Generates testbenches and metadata for each file
+#      (or in --vip mode: generates VIP metadata for the whole repo)
 #   5. Reports results
 
 set -euo pipefail
@@ -32,6 +35,7 @@ INCLUDE_DIRS=()
 DEFINES=()
 FILE_PATTERN=""
 SUBDIR=""
+VIP_MODE=0
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -50,6 +54,10 @@ while [[ $# -gt 0 ]]; do
         --subdir)
             SUBDIR="$2"
             shift 2
+            ;;
+        --vip)
+            VIP_MODE=1
+            shift
             ;;
         *)
             if [[ -z "$REPO_URL" ]]; then
@@ -71,6 +79,7 @@ if [[ -z "$REPO_URL" ]]; then
     echo "  --define, -D <KEY=VAL>    Preprocessor define"
     echo "  --files <pattern>         File glob pattern (relative to repo root)"
     echo "  --subdir <dir>            Subdirectory to process (relative to repo root)"
+    echo "  --vip                     Process as UVM Verification IP (uses UVM library)"
     exit 1
 fi
 
@@ -83,6 +92,9 @@ echo "  blockify - RTL Analysis Pipeline"
 echo "============================================"
 echo "Repository: ${REPO_URL}"
 echo "Repo name:  ${REPO_NAME}"
+if [[ $VIP_MODE -eq 1 ]]; then
+    echo "Mode:       VIP (UVM Verification IP)"
+fi
 echo ""
 
 # Step 1: Setup slang
@@ -94,6 +106,64 @@ echo ""
 echo "--- Step 2: Clone repository ---"
 bash "${SCRIPT_DIR}/clone_repo.sh" "${REPO_URL}"
 echo ""
+
+# ============================================
+# VIP mode: generate VIP metadata and exit
+# ============================================
+if [[ $VIP_MODE -eq 1 ]]; then
+    echo "--- Step 3: Setup UVM library ---"
+    bash "${SCRIPT_DIR}/setup_uvm.sh"
+    echo ""
+
+    UVM_SRC="${IMPORT_DIR}/uvm-core/src"
+
+    echo "--- Step 4: Generate VIP metadata ---"
+    VIP_DIR="${REPO_DIR}"
+    if [[ -n "$SUBDIR" ]]; then
+        VIP_DIR="${REPO_DIR}/${SUBDIR}"
+    fi
+
+    RUN_TIMESTAMP="$(date -u +%Y%m%d_%H%M%S)"
+    RUN_DIR="${OUT_DIR}/${REPO_NAME}_${RUN_TIMESTAMP}"
+    mkdir -p "${RUN_DIR}"
+
+    META_RESULT=0
+    python3 "${SCRIPT_DIR}/generate_vip_meta.py" \
+        "${VIP_DIR}" \
+        --slang "${SLANG}" \
+        --uvm-src "${UVM_SRC}" \
+        --output-dir "${META_DIR}" \
+        --repo-url "${REPO_URL}" \
+        --repo-name "${REPO_NAME}" \
+        2>&1 | tee "${RUN_DIR}/vip_meta.log" || META_RESULT=$?
+
+    echo ""
+    echo "============================================"
+    echo "  VIP Results Summary"
+    echo "============================================"
+    echo "Repository: ${REPO_NAME}"
+    echo "Status: $([ $META_RESULT -eq 0 ] && echo 'PASS' || echo 'FAIL')"
+    echo ""
+    echo "Metadata:  ${META_DIR}/${REPO_NAME}_vip.json"
+    echo "Run logs:  ${RUN_DIR}/"
+    echo "============================================"
+
+    {
+        echo "Repository: ${REPO_URL}"
+        echo "Repo name: ${REPO_NAME}"
+        echo "Mode: VIP"
+        echo "Run time: ${RUN_TIMESTAMP}"
+        echo "Slang version: $("${SLANG}" --version 2>&1)"
+        echo ""
+        echo "Status: $([ $META_RESULT -eq 0 ] && echo 'PASS' || echo 'FAIL')"
+    } > "${RUN_DIR}/summary.txt"
+
+    exit $META_RESULT
+fi
+
+# ============================================
+# Standard RTL mode: process individual files
+# ============================================
 
 # Step 3: Find Verilog files
 echo "--- Step 3: Finding Verilog files ---"
