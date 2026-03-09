@@ -1,7 +1,7 @@
 {
   "blockify_version": "0.1.0",
   "metadata_type": "vip",
-  "generated_at": "2026-03-09T10:44:41.356595+00:00",
+  "generated_at": "2026-03-09T10:48:57.397021+00:00",
   "source": {
     "repo_url": "https://github.com/mbits-mirafra/apb_avip",
     "repo_name": "apb_avip",
@@ -40,31 +40,31 @@
       "typedefs": [
         {
           "name": "transfer_size_e",
-          "target": "4174540367456 apb_global_pkg::transfer_size_e"
+          "target": "2599620109920 apb_global_pkg::transfer_size_e"
         },
         {
           "name": "slave_error_e",
-          "target": "4174540368792 apb_global_pkg::slave_error_e"
+          "target": "2599620111256 apb_global_pkg::slave_error_e"
         },
         {
           "name": "endian_e",
-          "target": "4174540369536 apb_global_pkg::endian_e"
+          "target": "2599620112000 apb_global_pkg::endian_e"
         },
         {
           "name": "tx_type_e",
-          "target": "4174540370304 apb_global_pkg::tx_type_e"
+          "target": "2599620112768 apb_global_pkg::tx_type_e"
         },
         {
           "name": "apb_fsm_state_e",
-          "target": "4174540371288 apb_global_pkg::apb_fsm_state_e"
+          "target": "2599620113752 apb_global_pkg::apb_fsm_state_e"
         },
         {
           "name": "protection_type_e",
-          "target": "4174540372800 apb_global_pkg::protection_type_e"
+          "target": "2599620115264 apb_global_pkg::protection_type_e"
         },
         {
           "name": "slave_no_e",
-          "target": "4174540376136 apb_global_pkg::slave_no_e"
+          "target": "2599620118600 apb_global_pkg::slave_no_e"
         },
         {
           "name": "apb_transfer_char_s",
