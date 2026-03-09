@@ -1,0 +1,6 @@
+file: dma_axi64_core0_ch_periph_mux.v
+module: dma_axi64_core0_ch_periph_mux
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

@@ -1,0 +1,6 @@
+file: dma_axi64_reg.v
+module: dma_axi64_reg
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

@@ -1,0 +1,34 @@
+file: dma_axi32_dual_core.v
+module: dma_axi32_dual_core
+status: FAIL
+slang_output:
+
+Build failed: 9 errors, 0 warnings
+import/dma_axi/src/dma_axi32/dma_axi32_dual_core.v:68:12: error: unknown macro or compiler directive '`ID_BITS'
+   output [`ID_BITS-1:0]                  M0_AWID;
+           ^~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_dual_core.v:70:12: error: unknown macro or compiler directive '`LEN_BITS'
+   output [`LEN_BITS-1:0]                 M0_AWLEN;
+           ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_dual_core.v:71:12: error: unknown macro or compiler directive '`SIZE_BITS'
+   output [`SIZE_BITS-1:0]         M0_AWSIZE;
+           ^~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_dual_core.v:74:12: error: unknown macro or compiler directive '`ID_BITS'
+   output [`ID_BITS-1:0]                  M0_WID;
+           ^~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_dual_core.v:80:11: error: unknown macro or compiler directive '`ID_BITS'
+   input [`ID_BITS-1:0]                   M0_BID;
+          ^~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_dual_core.v:84:12: error: unknown macro or compiler directive '`ID_BITS'
+   output [`ID_BITS-1:0]                  M0_ARID;
+           ^~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_dual_core.v:86:12: error: unknown macro or compiler directive '`LEN_BITS'
+   output [`LEN_BITS-1:0]                 M0_ARLEN;
+           ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_dual_core.v:87:12: error: unknown macro or compiler directive '`SIZE_BITS'
+   output [`SIZE_BITS-1:0]         M0_ARSIZE;
+           ^~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_dual_core.v:90:11: error: unknown macro or compiler directive '`ID_BITS'
+   input [`ID_BITS-1:0]                   M0_RID;
+          ^~~~~~~~
+

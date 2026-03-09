@@ -1,0 +1,6 @@
+file: prgen_stall.v
+module: prgen_stall
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

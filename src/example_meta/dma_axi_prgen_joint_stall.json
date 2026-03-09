@@ -1,0 +1,275 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:28.735113+00:00",
+  "source": {
+    "file": "prgen_joint_stall.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/prgen_joint_stall.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "PASS",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "Build succeeded: 0 errors, 0 warnings\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "prgen_joint_stall",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_req_out",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_transfer",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_transfer_size",
+            "direction": "In",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "ch_fifo_rd",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "data_fullness_pre",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "HOLD",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_fifo_rd_valid",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_transfer_size_joint",
+            "direction": "Out",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "rd_transfer_full",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_stall",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "parameters": [
+          {
+            "name": "SIZE_BITS",
+            "type": "logic signed[31:0]",
+            "default_value": "1",
+            "is_local": false
+          }
+        ],
+        "total_input_bits": 10,
+        "total_output_bits": 4,
+        "num_inputs": 8,
+        "num_outputs": 4,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "count_ch_fifo",
+            "type": "reg[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "joint_stall_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "joint_rd_stall_num",
+            "type": "reg[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ],
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "rd_transfer_joint",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_fifo_rd",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "count_ch_fifo_pre",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "joint_stall_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_not_ready_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_not_ready",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_rd_stall",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "num_registers": 3,
+        "num_wires": 7
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 2,
+        "clocks": [
+          "clk"
+        ],
+        "resets": [
+          "reset"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [
+          {
+            "signal": "joint_stall_reg",
+            "type": "reg",
+            "width": 1,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "joint_rd_stall_num",
+            "type": "reg[2:0]",
+            "width": 3,
+            "reason": "name matches FSM pattern"
+          }
+        ],
+        "has_potential_fsm": true
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

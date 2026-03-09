@@ -1,0 +1,68 @@
+file: dma_axi32_core0_channels.v
+module: dma_axi32_core0_channels
+status: FAIL
+slang_output:
+
+Build failed: 20 errors, 0 warnings
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:127:12: error: unknown macro or compiler directive '`TOKEN_BITS'
+   output [`TOKEN_BITS-1:0]  rd_tokens;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:130:12: error: unknown macro or compiler directive '`DELAY_BITS'
+   output [`DELAY_BITS-1:0]  rd_periph_delay; 
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:146:12: error: unknown macro or compiler directive '`TOKEN_BITS'
+   output [`TOKEN_BITS-1:0]  wr_tokens;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:148:12: error: unknown macro or compiler directive '`DELAY_BITS'
+   output [`DELAY_BITS-1:0]  wr_periph_delay;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:219:12: error: unknown macro or compiler directive '`TOKEN_BITS'
+   wire [8*`TOKEN_BITS-1:0]  ch_rd_tokens;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:221:12: error: unknown macro or compiler directive '`DELAY_BITS'
+   wire [8*`DELAY_BITS-1:0]  ch_rd_periph_delay;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:228:12: error: unknown macro or compiler directive '`TOKEN_BITS'
+   wire [8*`TOKEN_BITS-1:0]  ch_wr_tokens;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:230:12: error: unknown macro or compiler directive '`DELAY_BITS'
+   wire [8*`DELAY_BITS-1:0]  ch_wr_periph_delay;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:507:37: error: unknown macro or compiler directive '`TOKEN_BITS'
+            .rd_tokens(ch_rd_tokens[`TOKEN_BITS-1+`TOKEN_BITS*0:`TOKEN_BITS*0]),
+                                    ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:507:51: error: unknown macro or compiler directive '`TOKEN_BITS'
+            .rd_tokens(ch_rd_tokens[`TOKEN_BITS-1+`TOKEN_BITS*0:`TOKEN_BITS*0]),
+                                                  ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:507:65: error: unknown macro or compiler directive '`TOKEN_BITS'
+            .rd_tokens(ch_rd_tokens[`TOKEN_BITS-1+`TOKEN_BITS*0:`TOKEN_BITS*0]),
+                                                                ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:509:49: error: unknown macro or compiler directive '`DELAY_BITS'
+            .rd_periph_delay(ch_rd_periph_delay[`DELAY_BITS-1+`DELAY_BITS*0:`DELAY_BITS*0]),
+                                                ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:509:63: error: unknown macro or compiler directive '`DELAY_BITS'
+            .rd_periph_delay(ch_rd_periph_delay[`DELAY_BITS-1+`DELAY_BITS*0:`DELAY_BITS*0]),
+                                                              ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:509:77: error: unknown macro or compiler directive '`DELAY_BITS'
+            .rd_periph_delay(ch_rd_periph_delay[`DELAY_BITS-1+`DELAY_BITS*0:`DELAY_BITS*0]),
+                                                                            ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:517:37: error: unknown macro or compiler directive '`TOKEN_BITS'
+            .wr_tokens(ch_wr_tokens[`TOKEN_BITS-1+`TOKEN_BITS*0:`TOKEN_BITS*0]),
+                                    ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:517:51: error: unknown macro or compiler directive '`TOKEN_BITS'
+            .wr_tokens(ch_wr_tokens[`TOKEN_BITS-1+`TOKEN_BITS*0:`TOKEN_BITS*0]),
+                                                  ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:517:65: error: unknown macro or compiler directive '`TOKEN_BITS'
+            .wr_tokens(ch_wr_tokens[`TOKEN_BITS-1+`TOKEN_BITS*0:`TOKEN_BITS*0]),
+                                                                ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:519:49: error: unknown macro or compiler directive '`DELAY_BITS'
+            .wr_periph_delay(ch_wr_periph_delay[`DELAY_BITS-1+`DELAY_BITS*0:`DELAY_BITS*0]),
+                                                ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:519:63: error: unknown macro or compiler directive '`DELAY_BITS'
+            .wr_periph_delay(ch_wr_periph_delay[`DELAY_BITS-1+`DELAY_BITS*0:`DELAY_BITS*0]),
+                                                              ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_channels.v:519:77: error: unknown macro or compiler directive '`DELAY_BITS'
+            .wr_periph_delay(ch_wr_periph_delay[`DELAY_BITS-1+`DELAY_BITS*0:`DELAY_BITS*0]),
+                                                                            ^~~~~~~~~~~
+fatal error: too many errors emitted, stopping now [--error-limit=]
+

@@ -1,0 +1,28 @@
+file: dma_axi64_core0_ch_outs.v
+module: dma_axi64_core0_ch_outs
+status: FAIL
+slang_output:
+
+Build failed: 7 errors, 0 warnings
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:46:11: error: unknown macro or compiler directive '`OUT_BITS'
+   input [`OUT_BITS-1:0]    outs_max;
+          ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:47:12: error: unknown macro or compiler directive '`OUT_BITS'
+   output [`OUT_BITS-1:0]   outs;
+           ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:53:9: error: unknown macro or compiler directive '`OUT_BITS'
+   reg [`OUT_BITS-1:0]         outs;
+        ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:54:10: error: unknown macro or compiler directive '`OUT_BITS'
+   wire [`OUT_BITS-1:0]     outs_pre;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:56:9: error: unknown macro or compiler directive '`TIMEOUT_BITS'
+   reg [`TIMEOUT_BITS-1:0]  counter;
+        ^~~~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:83:23: error: unknown macro or compiler directive '`TIMEOUT_BITS'
+       counter <= #1 {`TIMEOUT_BITS{1'b1}};
+                      ^~~~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:85:23: error: unknown macro or compiler directive '`TIMEOUT_BITS'
+       counter <= #1 {`TIMEOUT_BITS{1'b1}};
+                      ^~~~~~~~~~~~~
+

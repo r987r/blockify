@@ -1,0 +1,188 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:26.483046+00:00",
+  "source": {
+    "file": "dma_axi64_core0_ch_outs.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "FAIL",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "\nBuild failed: 7 errors, 0 warnings\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:46:11: error: unknown macro or compiler directive '`OUT_BITS'\n   input [`OUT_BITS-1:0]    outs_max;\n          ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:47:12: error: unknown macro or compiler directive '`OUT_BITS'\n   output [`OUT_BITS-1:0]   outs;\n           ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:53:9: error: unknown macro or compiler directive '`OUT_BITS'\n   reg [`OUT_BITS-1:0]         outs;\n        ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:54:10: error: unknown macro or compiler directive '`OUT_BITS'\n   wire [`OUT_BITS-1:0]     outs_pre;\n         ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:56:9: error: unknown macro or compiler directive '`TIMEOUT_BITS'\n   reg [`TIMEOUT_BITS-1:0]  counter;\n        ^~~~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:83:23: error: unknown macro or compiler directive '`TIMEOUT_BITS'\n       counter <= #1 {`TIMEOUT_BITS{1'b1}};\n                      ^~~~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_outs.v:85:23: error: unknown macro or compiler directive '`TIMEOUT_BITS'\n       counter <= #1 {`TIMEOUT_BITS{1'b1}};\n                      ^~~~~~~~~~~~~\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi64_core0_ch_outs",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "cmd",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "clr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "outs_max",
+            "direction": "In",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "outs",
+            "direction": "Out",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "outs_empty",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "stall",
+            "direction": "Out",
+            "type": "reg",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "parameters": [],
+        "total_input_bits": 5,
+        "total_output_bits": 4,
+        "num_inputs": 5,
+        "num_outputs": 4,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "outs",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "stall",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "counter",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "outs_pre",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "num_registers": 3,
+        "num_wires": 1
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 3,
+        "clocks": [
+          "clk"
+        ],
+        "resets": [
+          "reset"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

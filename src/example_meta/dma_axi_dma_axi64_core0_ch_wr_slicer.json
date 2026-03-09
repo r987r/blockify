@@ -1,0 +1,520 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:27.202527+00:00",
+  "source": {
+    "file": "dma_axi64_core0_ch_wr_slicer.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_wr_slicer.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "PASS",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "Build succeeded: 0 errors, 0 warnings\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi64_core0_ch_wr_slicer",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_update",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_line",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_wr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_wdata",
+            "direction": "In",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "fifo_wsize",
+            "direction": "In",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "wr_align",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_ptr",
+            "direction": "In",
+            "type": "logic[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ]
+          },
+          {
+            "name": "rd_incr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "end_swap",
+            "direction": "In",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "slice_wr",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "slice_wr_fifo",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "slice_wr_ptr",
+            "direction": "Out",
+            "type": "reg[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ]
+          },
+          {
+            "name": "slice_bsel",
+            "direction": "Out",
+            "type": "reg[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "slice_wdata",
+            "direction": "Out",
+            "type": "reg[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "slice_wsize",
+            "direction": "Out",
+            "type": "reg[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          }
+        ],
+        "parameters": [],
+        "total_input_bits": 84,
+        "total_output_bits": 83,
+        "num_inputs": 11,
+        "num_outputs": 6,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "line_remain",
+            "type": "reg[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "append",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "next_size",
+            "type": "reg[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "align_wdata",
+            "type": "reg[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "align_wdata_d",
+            "type": "reg[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "next_wdata",
+            "type": "reg[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "bsel_shift",
+            "type": "reg[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "slice_wdata_pre_d",
+            "type": "reg[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "slice_wr_ptr",
+            "type": "reg[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "slice_bsel",
+            "type": "reg[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "slice_wdata",
+            "type": "reg[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "slice_wsize",
+            "type": "reg[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ],
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "join_wsize",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "append_wsize",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "direct_wsize",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "wr_align_valid",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "bsel_dec",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "next_wr",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "slice_wr_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "slice_wr_ptr_pre",
+            "type": "logic[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ]
+          },
+          {
+            "name": "slice_bsel_pre",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "slice_bsel_swap",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "slice_wdata_pre",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "slice_wdata_swap",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "slice_wsize_pre",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          }
+        ],
+        "num_registers": 12,
+        "num_wires": 13
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": true,
+            "is_sequential": false,
+            "sensitivity": "level-sensitive",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": true,
+            "is_sequential": false,
+            "sensitivity": "level-sensitive",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": true,
+            "is_sequential": false,
+            "sensitivity": "level-sensitive",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 3,
+        "num_sequential_blocks": 6,
+        "clocks": [
+          "clk"
+        ],
+        "resets": [
+          "reset"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

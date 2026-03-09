@@ -1,0 +1,422 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:10.345129+00:00",
+  "source": {
+    "file": "dma_axi32_reg_core0.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi32/dma_axi32_reg_core0.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "PASS",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "Build succeeded: 0 errors, 0 warnings\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi32",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi32"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi32_reg_core0",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_joint",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clkdiv",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_start",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_prio",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "pwdata",
+            "direction": "In",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "clkdiv",
+            "direction": "Out",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "ch_start",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "joint_mode",
+            "direction": "Out",
+            "type": "reg",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_prio_top",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_prio_high",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_prio_top_num",
+            "direction": "Out",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "rd_prio_high_num",
+            "direction": "Out",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_prio_top",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_prio_high",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_prio_top_num",
+            "direction": "Out",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_prio_high_num",
+            "direction": "Out",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "user_def_stat0",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "user_def_stat1",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "ch_int_all_proc",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "proc0_int_stat",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          }
+        ],
+        "parameters": [],
+        "total_input_bits": 46,
+        "total_output_bits": 101,
+        "num_inputs": 8,
+        "num_outputs": 14,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "joint_mode",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "user_def_clkdiv",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_bus_32",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_ch_num",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "user_def_fifo_size",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "user_def_wcmd_depth",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "user_def_rcmd_depth",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "user_def_block",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_wait",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_outs",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_prio",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_tokens",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_timeout",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_wdt",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_joint",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_simul",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_periph",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_lists",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_end",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_addr_bits",
+            "type": "logic[5:0]",
+            "width": 6,
+            "range": [
+              5,
+              0
+            ]
+          },
+          {
+            "name": "user_def_buff_bits",
+            "type": "logic[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ]
+          }
+        ],
+        "num_registers": 1,
+        "num_wires": 20
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 1,
+        "clocks": [
+          "clk",
+          "wr_clkdiv"
+        ],
+        "resets": [
+          "reset"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [
+          {
+            "signal": "joint_mode",
+            "type": "reg",
+            "width": 1,
+            "reason": "name matches FSM pattern"
+          }
+        ],
+        "has_potential_fsm": true
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

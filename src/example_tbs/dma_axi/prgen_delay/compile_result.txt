@@ -1,0 +1,6 @@
+file: prgen_delay.v
+module: prgen_delay
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

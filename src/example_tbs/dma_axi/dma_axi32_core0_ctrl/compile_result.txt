@@ -1,0 +1,25 @@
+file: dma_axi32_core0_ctrl.v
+module: dma_axi32_core0_ctrl
+status: FAIL
+slang_output:
+
+Build failed: 6 errors, 0 warnings
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ctrl.v:57:11: error: unknown macro or compiler directive '`DELAY_BITS'
+   input [`DELAY_BITS-1:0]  periph_delay;
+          ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ctrl.v:60:11: error: unknown macro or compiler directive '`TOKEN_BITS'
+   input [`TOKEN_BITS-1:0]  tokens;
+          ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ctrl.v:74:9: error: unknown macro or compiler directive '`TOKEN_BITS'
+   reg [`TOKEN_BITS-1:0]    tokens_counter;
+        ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ctrl.v:79:9: error: unknown macro or compiler directive '`DELAY_BITS'
+   reg [`DELAY_BITS-1:0]    delay_counter;
+        ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ctrl.v:123:30: error: unknown macro or compiler directive '`TOKEN_BITS'
+       tokens_counter <= #1 {`TOKEN_BITS{1'b0}};
+                             ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ctrl.v:131:29: error: unknown macro or compiler directive '`DELAY_BITS'
+       delay_counter <= #1 {`DELAY_BITS{1'b0}};
+                            ^~~~~~~~~~~
+

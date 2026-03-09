@@ -1,0 +1,6 @@
+file: prgen_fifo.v
+module: prgen_fifo
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

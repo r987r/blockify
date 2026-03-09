@@ -1,0 +1,6 @@
+file: prgen_swap_32.v
+module: prgen_swap32
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

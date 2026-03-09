@@ -1,0 +1,6 @@
+file: prgen_min2.v
+module: prgen_min2
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

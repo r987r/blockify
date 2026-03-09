@@ -1,0 +1,223 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:25.557468+00:00",
+  "source": {
+    "file": "dma_axi64_core0_ch_calc_addr.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_calc_addr.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "FAIL",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "\nBuild failed: 5 errors, 0 warnings\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_calc_addr.v:53:11: error: unknown macro or compiler directive '`FRAME_BITS'\n   input [`FRAME_BITS-1:0]  frame_width;\n          ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_calc_addr.v:54:11: error: unknown macro or compiler directive '`X_BITS'\n   input [`X_BITS-1:0]         x_size;\n          ^~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_calc_addr.v:62:9: error: unknown macro or compiler directive '`FRAME_BITS'\n   reg [`FRAME_BITS-1:0]    frame_width_diff_reg;\n        ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_calc_addr.v:63:10: error: unknown macro or compiler directive '`FRAME_BITS'\n   wire [`FRAME_BITS-1:0]   frame_width_diff;\n         ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_calc_addr.v:67:43: error: unknown macro or compiler directive '`FRAME_BITS'\n   assign             frame_width_diff = {`FRAME_BITS{1'b0}};\n                                          ^~~~~~~~~~~\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi64_core0_ch_calc_addr",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_update_d",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_in_prog",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_addr",
+            "direction": "In",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "go_next_line",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "burst_start",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "incr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "start_addr",
+            "direction": "In",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "frame_width",
+            "direction": "In",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "x_size",
+            "direction": "In",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "burst_size",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "burst_addr",
+            "direction": "Out",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          }
+        ],
+        "parameters": [],
+        "total_input_bits": 81,
+        "total_output_bits": 32,
+        "num_inputs": 12,
+        "num_outputs": 1,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "burst_addr",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "frame_width_diff_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "go_next_line_d",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "frame_width_diff",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "num_registers": 2,
+        "num_wires": 2
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 1,
+        "clocks": [
+          "clk"
+        ],
+        "resets": [
+          "reset",
+          "burst_start",
+          "burst_size"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [
+          {
+            "signal": "burst_addr",
+            "type": "reg[31:0]",
+            "width": 32,
+            "reason": "name matches FSM pattern"
+          }
+        ],
+        "has_potential_fsm": true
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

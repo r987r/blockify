@@ -1,0 +1,140 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:07.009744+00:00",
+  "source": {
+    "file": "dma_axi32_core0_axim_timeout.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_timeout.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "FAIL",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "\nBuild failed: 5 errors, 0 warnings\nimport/dma_axi/src/dma_axi32/dma_axi32_core0_axim_timeout.v:46:11: error: unknown macro or compiler directive '`CMD_BITS'\n   input [`CMD_BITS-1:0]      ID;\n          ^~~~~~~~~\nimport/dma_axi/src/dma_axi32/dma_axi32_core0_axim_timeout.v:53:9: error: unknown macro or compiler directive '`TIMEOUT_BITS'\n   reg [`TIMEOUT_BITS-1:0]    counter;\n        ^~~~~~~~~~~~~\nimport/dma_axi/src/dma_axi32/dma_axi32_core0_axim_timeout.v:56:47: error: endianness of selection must match declared range (type is 'logic[-1:0]')\n   assign               axim_timeout_num = ID[2:0];\n                                              ^~~\nimport/dma_axi/src/dma_axi32/dma_axi32_core0_axim_timeout.v:63:23: error: unknown macro or compiler directive '`TIMEOUT_BITS'\n       counter <= #1 {`TIMEOUT_BITS{1'b1}};\n                      ^~~~~~~~~~~~~\nimport/dma_axi/src/dma_axi32/dma_axi32_core0_axim_timeout.v:65:23: error: unknown macro or compiler directive '`TIMEOUT_BITS'\n       counter <= #1 {`TIMEOUT_BITS{1'b1}};\n                      ^~~~~~~~~~~~~\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi32",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi32"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi32_core0_axim_timeout",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "VALID",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "READY",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ID",
+            "direction": "In",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "axim_timeout_num",
+            "direction": "Out",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "axim_timeout",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "parameters": [],
+        "total_input_bits": 5,
+        "total_output_bits": 4,
+        "num_inputs": 5,
+        "num_outputs": 2,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "counter",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [],
+        "num_registers": 1,
+        "num_wires": 0
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 1,
+        "clocks": [
+          "clk"
+        ],
+        "resets": [
+          "reset"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+file: dma_axi64_core0_ch_calc.v
+module: dma_axi64_core0_ch_calc
+status: FAIL
+slang_output:
+
+Build failed: 2 errors, 0 warnings
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_calc.v:64:11: error: unknown macro or compiler directive '`FRAME_BITS'
+   input [`FRAME_BITS-1:0]  frame_width;
+          ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_calc.v:65:11: error: unknown macro or compiler directive '`X_BITS'
+   input [`X_BITS-1:0]         x_size;
+          ^~~~~~~
+
