@@ -17,7 +17,7 @@ UVM_REPO="https://github.com/accellera-official/uvm-core.git"
 echo "[setup_uvm] Version: ${VERSION}"
 echo "[setup_uvm] Install dir: ${INSTALL_DIR}"
 
-if [ -d "${INSTALL_DIR}/src/uvm_pkg.sv" ] || [ -f "${INSTALL_DIR}/src/uvm_pkg.sv" ]; then
+if [ -f "${INSTALL_DIR}/src/uvm_pkg.sv" ]; then
     echo "[setup_uvm] UVM already installed at ${INSTALL_DIR}"
     exit 0
 fi
