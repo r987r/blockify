@@ -24,7 +24,7 @@ from pathlib import Path
 def run_slang_ast(slang_path, rtl_file, include_dirs=None, defines=None, extra_args=None):
     """Run slang to get AST JSON for a file."""
     import tempfile
-    ast_file = tempfile.mktemp(suffix=".json")
+    fd, ast_file = tempfile.mkstemp(suffix=".json")
 
     cmd = [slang_path, str(rtl_file), "--ast-json", ast_file, "--allow-use-before-declare"]
 
@@ -40,6 +40,7 @@ def run_slang_ast(slang_path, rtl_file, include_dirs=None, defines=None, extra_a
         cmd.extend(extra_args)
 
     result = subprocess.run(cmd, capture_output=True, text=True)
+    os.close(fd)
 
     if os.path.exists(ast_file):
         with open(ast_file) as f:
