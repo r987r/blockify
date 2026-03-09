@@ -1,0 +1,6 @@
+file: dma_axi32_apb_mux.v
+module: dma_axi32_apb_mux
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

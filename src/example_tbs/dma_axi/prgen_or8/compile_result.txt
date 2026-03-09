@@ -1,0 +1,6 @@
+file: prgen_or8.v
+module: prgen_or8
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

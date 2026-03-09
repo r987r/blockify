@@ -1,0 +1,19 @@
+file: dma_axi32_core0_axim_resp.v
+module: dma_axi32_core0_axim_resp
+status: FAIL
+slang_output:
+
+Build failed: 4 errors, 0 warnings
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_resp.v:54:11: error: unknown macro or compiler directive '`CMD_BITS'
+   input [`CMD_BITS-1:0]      AID;
+          ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_resp.v:58:12: error: unknown macro or compiler directive '`CMD_BITS'
+   output [`CMD_BITS-1:0]     ID;
+           ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_resp.v:80:10: error: unknown macro or compiler directive '`CMD_BITS'
+   wire [`CMD_BITS-1:0]       ID;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_resp.v:108:17: error: unknown macro or compiler directive '`CMD_BITS'
+   prgen_fifo #(`CMD_BITS, CMD_DEPTH) 
+                ^~~~~~~~~
+

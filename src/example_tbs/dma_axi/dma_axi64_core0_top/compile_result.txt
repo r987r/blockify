@@ -1,0 +1,31 @@
+file: dma_axi64_core0_top.v
+module: dma_axi64_core0_top
+status: FAIL
+slang_output:
+
+Build failed: 8 errors, 0 warnings
+import/dma_axi/src/dma_axi64/dma_axi64_core0_top.v:80:12: error: unknown macro or compiler directive '`LEN_BITS'
+   output [`LEN_BITS-1:0]   AWLEN;
+           ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_top.v:81:12: error: unknown macro or compiler directive '`SIZE_BITS'
+   output [`SIZE_BITS-1:0]                      AWSIZE;
+           ^~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_top.v:93:12: error: unknown macro or compiler directive '`LEN_BITS'
+   output [`LEN_BITS-1:0]   ARLEN;
+           ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_top.v:94:12: error: unknown macro or compiler directive '`SIZE_BITS'
+   output [`SIZE_BITS-1:0]                      ARSIZE;
+           ^~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_top.v:104:10: error: unknown macro or compiler directive '`LEN_BITS'
+   wire [`LEN_BITS-1:0]     slow_AWLEN;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_top.v:105:10: error: unknown macro or compiler directive '`SIZE_BITS'
+   wire [`SIZE_BITS-1:0]                      slow_AWSIZE;
+         ^~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_top.v:117:10: error: unknown macro or compiler directive '`LEN_BITS'
+   wire [`LEN_BITS-1:0]     slow_ARLEN;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_top.v:118:10: error: unknown macro or compiler directive '`SIZE_BITS'
+   wire [`SIZE_BITS-1:0]                      slow_ARSIZE;
+         ^~~~~~~~~~
+

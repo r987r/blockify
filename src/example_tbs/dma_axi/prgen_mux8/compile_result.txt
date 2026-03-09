@@ -1,0 +1,6 @@
+file: prgen_mux8.v
+module: prgen_mux8
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

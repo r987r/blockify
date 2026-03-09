@@ -1,0 +1,49 @@
+file: dma_axi64_core0_axim_cmd.v
+module: dma_axi64_core0_axim_cmd
+status: FAIL
+slang_output:
+
+Build failed: 14 errors, 0 warnings
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:66:12: error: unknown macro or compiler directive '`CMD_BITS'
+   output [`CMD_BITS-1:0]     AID;
+           ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:69:12: error: unknown macro or compiler directive '`LEN_BITS'
+   output [`LEN_BITS-1:0]     ALEN;
+           ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:81:9: error: unknown macro or compiler directive '`CMD_BITS'
+   reg [`CMD_BITS-1:0]           AID;
+        ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:82:9: error: unknown macro or compiler directive '`CMD_BITS'
+   reg [`CMD_BITS-1:0]           AID_reg;
+        ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:85:9: error: unknown macro or compiler directive '`LEN_BITS'
+   reg [`LEN_BITS-1:0]           ALEN;
+        ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:91:10: error: unknown macro or compiler directive '`CMD_BITS'
+   wire [`CMD_BITS-1:0]       AID_pre;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:94:10: error: unknown macro or compiler directive '`LEN_BITS'
+   wire [`LEN_BITS-1:0]       ALEN_pre;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:199:53: error: unknown macro or compiler directive '`LEN_BITS'
+                  burst_length[8-1:AXI_3] == 'd0 ? {`LEN_BITS{1'b0}} :
+                                                    ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:217:23: error: unknown macro or compiler directive '`CMD_BITS'
+       AID_reg <= #1 {`CMD_BITS{1'b0}};
+                      ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:224:9: error: unknown macro or compiler directive '`ID_END_LINE'
+    AID[`ID_END_LINE] = AID_reg[`ID_END_LINE] & (~next_burst);
+        ^~~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:224:33: error: unknown macro or compiler directive '`ID_END_LINE'
+    AID[`ID_END_LINE] = AID_reg[`ID_END_LINE] & (~next_burst);
+                                ^~~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:225:9: error: unknown macro or compiler directive '`ID_LAST'
+    AID[`ID_LAST]     = AID_reg[`ID_LAST] & (~next_burst);
+        ^~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:225:33: error: unknown macro or compiler directive '`ID_LAST'
+    AID[`ID_LAST]     = AID_reg[`ID_LAST] & (~next_burst);
+                                ^~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_cmd.v:244:22: error: unknown macro or compiler directive '`LEN_BITS'
+       ALEN   <= #1 {`LEN_BITS{1'b0}};
+                     ^~~~~~~~~
+

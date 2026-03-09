@@ -1,0 +1,68 @@
+file: dma_axi32_core0_ch.v
+module: dma_axi32_core0_ch
+status: FAIL
+slang_output:
+
+Build failed: 20 errors, 0 warnings
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:99:12: error: unknown macro or compiler directive '`TOKEN_BITS'
+   output [`TOKEN_BITS-1:0] rd_tokens;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:101:12: error: unknown macro or compiler directive '`DELAY_BITS'
+   output [`DELAY_BITS-1:0] rd_periph_delay;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:111:12: error: unknown macro or compiler directive '`TOKEN_BITS'
+   output [`TOKEN_BITS-1:0] wr_tokens;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:113:12: error: unknown macro or compiler directive '`DELAY_BITS'
+   output [`DELAY_BITS-1:0] wr_periph_delay; 
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:157:13: error: unknown macro or compiler directive '`X_BITS'
+   wire [10-`X_BITS-1:0]         y_size;
+            ^~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:160:10: error: unknown macro or compiler directive '`FRAME_BITS'
+   wire [`FRAME_BITS-1:0]   frame_width;
+         ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:162:10: error: unknown macro or compiler directive '`DELAY_BITS'
+   wire [`DELAY_BITS-1:0]   rd_periph_delay; 
+         ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:163:10: error: unknown macro or compiler directive '`DELAY_BITS'
+   wire [`DELAY_BITS-1:0]   wr_periph_delay;
+         ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:166:10: error: unknown macro or compiler directive '`TOKEN_BITS'
+   wire [`TOKEN_BITS-1:0]   rd_tokens;
+         ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:167:10: error: unknown macro or compiler directive '`TOKEN_BITS'
+   wire [`TOKEN_BITS-1:0]   wr_tokens;
+         ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:170:10: error: unknown macro or compiler directive '`OUT_BITS'
+   wire [`OUT_BITS-1:0]     rd_outs_max;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:171:10: error: unknown macro or compiler directive '`OUT_BITS'
+   wire [`OUT_BITS-1:0]     wr_outs_max;    
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:172:10: error: unknown macro or compiler directive '`WAIT_BITS'
+   wire [`WAIT_BITS-1:0]    rd_wait_limit;
+         ^~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:173:10: error: unknown macro or compiler directive '`WAIT_BITS'
+   wire [`WAIT_BITS-1:0]    wr_wait_limit;
+         ^~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:190:13: error: unknown macro or compiler directive '`X_BITS'
+   wire [10-`X_BITS-1:0]    rd_y_offset;        
+            ^~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:192:13: error: unknown macro or compiler directive '`X_BITS'
+   wire [10-`X_BITS-1:0]    rd_clr_remain;
+            ^~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:201:13: error: unknown macro or compiler directive '`X_BITS'
+   wire [10-`X_BITS-1:0]    wr_y_offset;        
+            ^~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:203:13: error: unknown macro or compiler directive '`X_BITS'
+   wire [10-`X_BITS-1:0]    wr_clr_remain;
+            ^~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:219:10: error: unknown macro or compiler directive '`OUT_BITS'
+   wire [`OUT_BITS-1:0]     rd_outs;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch.v:228:10: error: unknown macro or compiler directive '`OUT_BITS'
+   wire [`OUT_BITS-1:0]     wr_outs;
+         ^~~~~~~~~
+fatal error: too many errors emitted, stopping now [--error-limit=]
+

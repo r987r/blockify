@@ -1,0 +1,64 @@
+file: dma_axi32_core0_axim_wdata.v
+module: dma_axi32_core0_axim_wdata
+status: FAIL
+slang_output:
+
+Build failed: 19 errors, 0 warnings
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:68:11: error: unknown macro or compiler directive '`CMD_BITS'
+   input [`CMD_BITS-1:0]       AWID;
+          ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:70:11: error: unknown macro or compiler directive '`LEN_BITS'
+   input [`LEN_BITS-1:0]      AWLEN;
+          ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:83:10: error: unknown macro or compiler directive '`CMD_BITS'
+   wire [`CMD_BITS-1:0]       WID;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:84:10: error: unknown macro or compiler directive '`CMD_BITS'
+   wire [`CMD_BITS-1:0]       WID_pre;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:87:10: error: unknown macro or compiler directive '`LEN_BITS'
+   wire [`LEN_BITS-1:0]       WLEN_pre;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:89:10: error: unknown macro or compiler directive '`CMD_BITS'
+   wire [`CMD_BITS-1:0]       WID_data;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:92:10: error: unknown macro or compiler directive '`LEN_BITS'
+   wire [`LEN_BITS-1:0]       WLEN_data;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:109:10: error: unknown macro or compiler directive '`CMD_BITS'
+   wire [`CMD_BITS-1:0]       WID_cmd;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:112:10: error: unknown macro or compiler directive '`LEN_BITS'
+   wire [`LEN_BITS-1:0]       WLEN_cmd;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:140:9: error: unknown macro or compiler directive '`LEN_BITS'
+   reg [`LEN_BITS-1:0]           rd_out_count;
+        ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:141:9: error: unknown macro or compiler directive '`LEN_BITS'
+   reg [`LEN_BITS-1:0]           rd_in_count;
+        ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:293:17: error: unknown macro or compiler directive '`CMD_BITS'
+   prgen_fifo #(`CMD_BITS+`LEN_BITS+2+1, 2) 
+                ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:293:27: error: unknown macro or compiler directive '`LEN_BITS'
+   prgen_fifo #(`CMD_BITS+`LEN_BITS+2+1, 2) 
+                          ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:321:28: error: unknown macro or compiler directive '`LEN_BITS'
+       rd_out_count <= #1 {`LEN_BITS{1'b0}};
+                           ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:323:28: error: unknown macro or compiler directive '`LEN_BITS'
+       rd_out_count <= #1 {`LEN_BITS{1'b0}};
+                           ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:338:19: error: unknown macro or compiler directive '`LEN_BITS'
+   prgen_fifo #(4+`LEN_BITS+`CMD_BITS+2, 2) 
+                  ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:338:29: error: unknown macro or compiler directive '`CMD_BITS'
+   prgen_fifo #(4+`LEN_BITS+`CMD_BITS+2, 2) 
+                            ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:361:27: error: unknown macro or compiler directive '`LEN_BITS'
+       rd_in_count <= #1 {`LEN_BITS{1'b0}};
+                          ^~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_axim_wdata.v:363:27: error: unknown macro or compiler directive '`LEN_BITS'
+       rd_in_count <= #1 {`LEN_BITS{1'b0}};
+                          ^~~~~~~~~
+

@@ -1,0 +1,6 @@
+file: prgen_rawstat.v
+module: prgen_rawstat
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

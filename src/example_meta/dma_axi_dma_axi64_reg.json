@@ -1,0 +1,751 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:28.161618+00:00",
+  "source": {
+    "file": "dma_axi64_reg.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/dma_axi64_reg.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "PASS",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "Build succeeded: 0 errors, 0 warnings\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi64_reg",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "pclken",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "psel",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "penable",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "paddr",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "pwrite",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "pwdata",
+            "direction": "In",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "prdata",
+            "direction": "Out",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "pslverr",
+            "direction": "Out",
+            "type": "reg",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "core0_idle",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_int_all_proc0",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "int_all_proc",
+            "direction": "Out",
+            "type": "reg[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "core0_clkdiv",
+            "direction": "Out",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "core0_ch_start",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "joint_mode0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_prio_top0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_prio_high0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_prio_top_num0",
+            "direction": "Out",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "rd_prio_high_num0",
+            "direction": "Out",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_prio_top0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_prio_high0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_prio_top_num0",
+            "direction": "Out",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_prio_high_num0",
+            "direction": "Out",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "periph_rx_req_reg",
+            "direction": "Out",
+            "type": "reg[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "periph_tx_req_reg",
+            "direction": "Out",
+            "type": "reg[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "periph_rx_clr",
+            "direction": "In",
+            "type": "logic[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "periph_tx_clr",
+            "direction": "In",
+            "type": "logic[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "PROC0_STATUS",
+            "type": "logic[7:0]",
+            "default_value": "8'd0",
+            "is_local": false
+          },
+          {
+            "name": "PROC1_STATUS",
+            "type": "logic[7:0]",
+            "default_value": "8'd4",
+            "is_local": false
+          },
+          {
+            "name": "PROC2_STATUS",
+            "type": "logic[7:0]",
+            "default_value": "8'd8",
+            "is_local": false
+          },
+          {
+            "name": "PROC3_STATUS",
+            "type": "logic[7:0]",
+            "default_value": "8'd12",
+            "is_local": false
+          },
+          {
+            "name": "PROC4_STATUS",
+            "type": "logic[7:0]",
+            "default_value": "8'd16",
+            "is_local": false
+          },
+          {
+            "name": "PROC5_STATUS",
+            "type": "logic[7:0]",
+            "default_value": "8'd20",
+            "is_local": false
+          },
+          {
+            "name": "PROC6_STATUS",
+            "type": "logic[7:0]",
+            "default_value": "8'd24",
+            "is_local": false
+          },
+          {
+            "name": "PROC7_STATUS",
+            "type": "logic[7:0]",
+            "default_value": "8'd28",
+            "is_local": false
+          },
+          {
+            "name": "CORE0_JOINT",
+            "type": "logic[7:0]",
+            "default_value": "8'd48",
+            "is_local": false
+          },
+          {
+            "name": "CORE1_JOINT",
+            "type": "logic[7:0]",
+            "default_value": "8'd52",
+            "is_local": false
+          },
+          {
+            "name": "CORE0_PRIO",
+            "type": "logic[7:0]",
+            "default_value": "8'd56",
+            "is_local": false
+          },
+          {
+            "name": "CORE1_PRIO",
+            "type": "logic[7:0]",
+            "default_value": "8'd60",
+            "is_local": false
+          },
+          {
+            "name": "CORE0_CLKDIV",
+            "type": "logic[7:0]",
+            "default_value": "8'd64",
+            "is_local": false
+          },
+          {
+            "name": "CORE1_CLKDIV",
+            "type": "logic[7:0]",
+            "default_value": "8'd68",
+            "is_local": false
+          },
+          {
+            "name": "CORE0_START",
+            "type": "logic[7:0]",
+            "default_value": "8'd72",
+            "is_local": false
+          },
+          {
+            "name": "CORE1_START",
+            "type": "logic[7:0]",
+            "default_value": "8'd76",
+            "is_local": false
+          },
+          {
+            "name": "PERIPH_RX_CTRL",
+            "type": "logic[7:0]",
+            "default_value": "8'd80",
+            "is_local": false
+          },
+          {
+            "name": "PERIPH_TX_CTRL",
+            "type": "logic[7:0]",
+            "default_value": "8'd84",
+            "is_local": false
+          },
+          {
+            "name": "IDLE",
+            "type": "logic[7:0]",
+            "default_value": "8'd208",
+            "is_local": false
+          },
+          {
+            "name": "USER_DEF_STAT",
+            "type": "logic[7:0]",
+            "default_value": "8'd224",
+            "is_local": false
+          },
+          {
+            "name": "USER_DEF0_STAT0",
+            "type": "logic[7:0]",
+            "default_value": "8'd240",
+            "is_local": false
+          },
+          {
+            "name": "USER_DEF0_STAT1",
+            "type": "logic[7:0]",
+            "default_value": "8'd244",
+            "is_local": false
+          },
+          {
+            "name": "USER_DEF1_STAT0",
+            "type": "logic[7:0]",
+            "default_value": "8'd248",
+            "is_local": false
+          },
+          {
+            "name": "USER_DEF1_STAT1",
+            "type": "logic[7:0]",
+            "default_value": "8'd252",
+            "is_local": false
+          }
+        ],
+        "total_input_bits": 117,
+        "total_output_bits": 125,
+        "num_inputs": 12,
+        "num_outputs": 16,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "int_all_proc",
+            "type": "reg[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "periph_rx_req_reg",
+            "type": "reg[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "periph_tx_req_reg",
+            "type": "reg[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "prdata_pre",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "pslverr_pre",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "prdata",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "pslverr",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "user_def_stat",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "user_def0_stat0",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "user_def0_stat1",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "user_def_proj",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_proc_num",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "user_def_dual_core",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_ic",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_ic_dual_port",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_clkgate",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_port0_mux",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "user_def_port1_mux",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_joint0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clkdiv0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_start0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_prio0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "proc0_int_stat0",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "proc0_int_stat",
+            "type": "logic[15:0]",
+            "width": 16,
+            "range": [
+              15,
+              0
+            ]
+          },
+          {
+            "name": "proc0_int",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "int_all_proc_pre",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "wr_periph_rx",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_periph_tx",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "gpaddr",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "gpwrite",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "gpread",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "num_registers": 7,
+        "num_wires": 24
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": true,
+            "is_sequential": false,
+            "sensitivity": "implicit (combinatorial)",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": true,
+            "is_sequential": false,
+            "sensitivity": "level-sensitive",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 2,
+        "num_sequential_blocks": 5,
+        "clocks": [
+          "clk",
+          "pclken"
+        ],
+        "resets": [
+          "reset"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [
+          "dma_axi64_reg_params.v"
+        ],
+        "timescale": null
+      }
+    }
+  ]
+}

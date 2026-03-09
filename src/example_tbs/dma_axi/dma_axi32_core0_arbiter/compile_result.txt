@@ -1,0 +1,6 @@
+file: dma_axi32_core0_arbiter.v
+module: dma_axi32_core0_arbiter
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

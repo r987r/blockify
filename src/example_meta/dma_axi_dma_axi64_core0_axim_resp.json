@@ -1,0 +1,280 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:24.845670+00:00",
+  "source": {
+    "file": "dma_axi64_core0_axim_resp.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_resp.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "FAIL",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "\nBuild failed: 6 errors, 0 warnings\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_axim_resp.v:54:11: error: unknown macro or compiler directive '`CMD_BITS'\n   input [`CMD_BITS-1:0]      AID;\n          ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_axim_resp.v:58:12: error: unknown macro or compiler directive '`CMD_BITS'\n   output [`CMD_BITS-1:0]     ID;\n           ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_axim_resp.v:80:10: error: unknown macro or compiler directive '`CMD_BITS'\n   wire [`CMD_BITS-1:0]       ID;\n         ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_axim_resp.v:88:46: error: endianness of selection must match declared range (type is 'logic[-1:0]')\n   assign               ch_num_resp_pre = ID[2:0] ;\n                                             ^~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_axim_resp.v:93:56: error: cannot refer to element 3 of 'logic[-1:0]' [-Windex-oob]\n   assign               clr_last_pre    = clr_pre & ID[3];\n                                                       ^\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_axim_resp.v:108:17: error: unknown macro or compiler directive '`CMD_BITS'\n   prgen_fifo #(`CMD_BITS, CMD_DEPTH) \n                ^~~~~~~~~\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi64_core0_axim_resp",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "slverr",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "decerr",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "clr",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "clr_last",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_num_resp",
+            "direction": "Out",
+            "type": "reg[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "resp_full",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "AID",
+            "direction": "In",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "AVALID",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "AREADY",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "RESP",
+            "direction": "In",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "ID",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "VALID",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "READY",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "LAST",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "parameters": [
+          {
+            "name": "CMD_DEPTH",
+            "type": "logic signed[31:0]",
+            "default_value": "8",
+            "is_local": false
+          },
+          {
+            "name": "RESP_SLVERR",
+            "type": "logic[1:0]",
+            "default_value": "2'b10",
+            "is_local": false
+          },
+          {
+            "name": "RESP_DECERR",
+            "type": "logic[1:0]",
+            "default_value": "2'b11",
+            "is_local": false
+          }
+        ],
+        "total_input_bits": 10,
+        "total_output_bits": 9,
+        "num_inputs": 9,
+        "num_outputs": 7,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "ch_num_resp",
+            "type": "reg[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ],
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "clr_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_num_resp_pre",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "clr_last_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "slverr_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "decerr_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "resp_push",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "resp_pop",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "resp_empty",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "num_registers": 1,
+        "num_wires": 8
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 1,
+        "clocks": [
+          "clk"
+        ],
+        "resets": [
+          "reset"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,1188 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:27.578515+00:00",
+  "source": {
+    "file": "dma_axi64_core0_channels_mux.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "FAIL",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "\nBuild failed: 12 errors, 0 warnings\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:93:12: error: unknown macro or compiler directive '`TOKEN_BITS'\n   output [`TOKEN_BITS-1:0]   rd_tokens;\n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:95:12: error: unknown macro or compiler directive '`DELAY_BITS'\n   output [`DELAY_BITS-1:0]   rd_periph_delay;    \n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:107:13: error: unknown macro or compiler directive '`TOKEN_BITS'\n   input [8*`TOKEN_BITS-1:0]  ch_rd_tokens;\n            ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:109:13: error: unknown macro or compiler directive '`DELAY_BITS'\n   input [8*`DELAY_BITS-1:0]  ch_rd_periph_delay;\n            ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:158:12: error: unknown macro or compiler directive '`TOKEN_BITS'\n   output [`TOKEN_BITS-1:0]   wr_tokens;\n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:160:12: error: unknown macro or compiler directive '`DELAY_BITS'\n   output [`DELAY_BITS-1:0]   wr_periph_delay;    \n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:171:13: error: unknown macro or compiler directive '`TOKEN_BITS'\n   input [8*`TOKEN_BITS-1:0]  ch_wr_tokens;\n            ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:173:13: error: unknown macro or compiler directive '`DELAY_BITS'\n   input [8*`DELAY_BITS-1:0]  ch_wr_periph_delay;\n            ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:229:17: error: unknown macro or compiler directive '`DELAY_BITS'\n   prgen_mux8 #(`DELAY_BITS) \n                ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:235:17: error: unknown macro or compiler directive '`DELAY_BITS'\n   prgen_mux8 #(`DELAY_BITS) \n                ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:407:17: error: unknown macro or compiler directive '`TOKEN_BITS'\n   prgen_mux8 #(`TOKEN_BITS) \n                ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:413:17: error: unknown macro or compiler directive '`TOKEN_BITS'\n   prgen_mux8 #(`TOKEN_BITS) \n                ^~~~~~~~~~~\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi64_core0_channels_mux",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "ch_fifo_rd_valid",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "fifo_rd_valid",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_fifo_rdata",
+            "direction": "In",
+            "type": "logic[511:0]",
+            "width": 512,
+            "range": [
+              511,
+              0
+            ]
+          },
+          {
+            "name": "fifo_rdata",
+            "direction": "Out",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "ch_periph_rx_clr",
+            "direction": "In",
+            "type": "logic[247:0]",
+            "width": 248,
+            "range": [
+              247,
+              0
+            ]
+          },
+          {
+            "name": "periph_rx_clr",
+            "direction": "Out",
+            "type": "logic[30:0]",
+            "width": 31,
+            "range": [
+              30,
+              0
+            ]
+          },
+          {
+            "name": "ch_periph_tx_clr",
+            "direction": "In",
+            "type": "logic[247:0]",
+            "width": 248,
+            "range": [
+              247,
+              0
+            ]
+          },
+          {
+            "name": "periph_tx_clr",
+            "direction": "Out",
+            "type": "logic[30:0]",
+            "width": 31,
+            "range": [
+              30,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_page_cross",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_page_cross",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "rd_page_cross",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_page_cross",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_aw",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_w",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_ar",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_num_aw",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "timeout_num_w",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "timeout_num_ar",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wdt_timeout",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wdt_ch_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "ch_timeout_aw",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_timeout_w",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_timeout_ar",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wdt_timeout",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "joint_in_prog",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_not_in_prog",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_mux_in_prog",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_joint_in_prog",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_joint_not_in_prog",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_joint_mux_in_prog",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "wr_cmd_pending",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_wr_cmd_pending",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "rd_ch_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "rd_cmd_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "load_req_in_prog",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_line_cmd",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_go_next_line",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_burst_start",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_burst_addr",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "rd_burst_size",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "rd_tokens",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_cmd_port",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_periph_delay",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_valid",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_cmd_split",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_cmd_line",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_stall",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_load_req_in_prog",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_line_cmd",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_go_next_line",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_burst_start",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_burst_addr",
+            "direction": "In",
+            "type": "logic[255:0]",
+            "width": 256,
+            "range": [
+              255,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_burst_size",
+            "direction": "In",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_tokens",
+            "direction": "In",
+            "type": "logic[-8:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_rd_port_num",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_periph_delay",
+            "direction": "In",
+            "type": "logic[-8:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_rd_clr_valid",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_cmd_split",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_cmd_line",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_clr_stall",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "load_wr_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "load_wr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_load_wr",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_fifo_wr_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "rd_transfer_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "rd_clr_line_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "rd_transfer",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_line",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_wr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_rd_transfer",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_clr_line",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_fifo_wr",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "rd_ch_num_resp",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "rd_slverr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_decerr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_load",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_rd_slverr",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_decerr",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_clr",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_clr_load",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "wr_ch_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_cmd_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_last_cmd",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_line_cmd",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_go_next_line",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_burst_start",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_burst_addr",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "wr_burst_size",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "wr_tokens",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_cmd_port",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_periph_delay",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_valid",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_cmd_split",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_stall",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_wr_last_cmd",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_line_cmd",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_go_next_line",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_burst_start",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_burst_addr",
+            "direction": "In",
+            "type": "logic[255:0]",
+            "width": 256,
+            "range": [
+              255,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_burst_size",
+            "direction": "In",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_tokens",
+            "direction": "In",
+            "type": "logic[-8:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_wr_port_num",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_periph_delay",
+            "direction": "In",
+            "type": "logic[-8:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_wr_clr_valid",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_cmd_split",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_clr_stall",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_fifo_rd_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_transfer_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_clr_line_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_transfer",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_line",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_rd",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_fifo_wr_ready",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_transfer",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_clr_line",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_fifo_rd",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "fifo_wr_ready",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_ch_num_resp",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_slverr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_decerr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_last",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_wr_slverr",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_decerr",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_clr_last",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "ch_wr_clr",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          }
+        ],
+        "parameters": [],
+        "total_input_bits": 1866,
+        "total_output_bits": 443,
+        "num_inputs": 72,
+        "num_outputs": 55,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [],
+        "nets": [],
+        "num_registers": 0,
+        "num_wires": 0
+      },
+      "logic_analysis": {
+        "procedural_blocks": [],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 0,
+        "clocks": [],
+        "resets": [
+          "rd_burst_start",
+          "ch_rd_burst_addr",
+          "ch_rd_burst_size",
+          "wr_burst_start",
+          "ch_wr_burst_addr",
+          "ch_wr_burst_size"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

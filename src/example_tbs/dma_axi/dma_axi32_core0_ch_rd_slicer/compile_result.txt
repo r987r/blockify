@@ -1,0 +1,6 @@
+file: dma_axi32_core0_ch_rd_slicer.v
+module: dma_axi32_core0_ch_rd_slicer
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

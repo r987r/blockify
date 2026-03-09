@@ -1,0 +1,16 @@
+file: dma_axi64_core0_axim_rd.v
+module: dma_axi64_core0_axim_rd
+status: FAIL
+slang_output:
+
+Build failed: 3 errors, 0 warnings
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_rd.v:90:12: error: unknown macro or compiler directive '`LEN_BITS'
+   output [`LEN_BITS-1:0]     ARLEN;
+           ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_rd.v:106:10: error: unknown macro or compiler directive '`CMD_BITS'
+   wire [`CMD_BITS-1:0]       ARID;
+         ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_rd.v:108:10: error: unknown macro or compiler directive '`CMD_BITS'
+   wire [`CMD_BITS-1:0]          RID;
+         ^~~~~~~~~
+

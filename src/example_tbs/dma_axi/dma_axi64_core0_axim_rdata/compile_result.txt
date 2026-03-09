@@ -1,0 +1,13 @@
+file: dma_axi64_core0_axim_rdata.v
+module: dma_axi64_core0_axim_rdata
+status: FAIL
+slang_output:
+
+Build failed: 2 errors, 0 warnings
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_rdata.v:63:11: error: unknown macro or compiler directive '`CMD_BITS'
+   input [`CMD_BITS-1:0]      ARID;
+          ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_axim_rdata.v:64:11: error: unknown macro or compiler directive '`CMD_BITS'
+   input [`CMD_BITS-1:0]      RID;
+          ^~~~~~~~~
+

@@ -1,0 +1,22 @@
+file: dma_axi32_core0_ch_calc_addr.v
+module: dma_axi32_core0_ch_calc_addr
+status: FAIL
+slang_output:
+
+Build failed: 5 errors, 0 warnings
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch_calc_addr.v:53:11: error: unknown macro or compiler directive '`FRAME_BITS'
+   input [`FRAME_BITS-1:0]  frame_width;
+          ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch_calc_addr.v:54:11: error: unknown macro or compiler directive '`X_BITS'
+   input [`X_BITS-1:0]         x_size;
+          ^~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch_calc_addr.v:62:9: error: unknown macro or compiler directive '`FRAME_BITS'
+   reg [`FRAME_BITS-1:0]    frame_width_diff_reg;
+        ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch_calc_addr.v:63:10: error: unknown macro or compiler directive '`FRAME_BITS'
+   wire [`FRAME_BITS-1:0]   frame_width_diff;
+         ^~~~~~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch_calc_addr.v:67:43: error: unknown macro or compiler directive '`FRAME_BITS'
+   assign             frame_width_diff = {`FRAME_BITS{1'b0}};
+                                          ^~~~~~~~~~~
+

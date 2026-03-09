@@ -1,0 +1,1526 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:25.327718+00:00",
+  "source": {
+    "file": "dma_axi64_core0_ch.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "FAIL",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "\nBuild failed: 20 errors, 0 warnings\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:99:12: error: unknown macro or compiler directive '`TOKEN_BITS'\n   output [`TOKEN_BITS-1:0] rd_tokens;\n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:101:12: error: unknown macro or compiler directive '`DELAY_BITS'\n   output [`DELAY_BITS-1:0] rd_periph_delay;\n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:111:12: error: unknown macro or compiler directive '`TOKEN_BITS'\n   output [`TOKEN_BITS-1:0] wr_tokens;\n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:113:12: error: unknown macro or compiler directive '`DELAY_BITS'\n   output [`DELAY_BITS-1:0] wr_periph_delay; \n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:157:13: error: unknown macro or compiler directive '`X_BITS'\n   wire [10-`X_BITS-1:0]         y_size;\n            ^~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:160:10: error: unknown macro or compiler directive '`FRAME_BITS'\n   wire [`FRAME_BITS-1:0]   frame_width;\n         ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:162:10: error: unknown macro or compiler directive '`DELAY_BITS'\n   wire [`DELAY_BITS-1:0]   rd_periph_delay; \n         ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:163:10: error: unknown macro or compiler directive '`DELAY_BITS'\n   wire [`DELAY_BITS-1:0]   wr_periph_delay;\n         ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:166:10: error: unknown macro or compiler directive '`TOKEN_BITS'\n   wire [`TOKEN_BITS-1:0]   rd_tokens;\n         ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:167:10: error: unknown macro or compiler directive '`TOKEN_BITS'\n   wire [`TOKEN_BITS-1:0]   wr_tokens;\n         ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:170:10: error: unknown macro or compiler directive '`OUT_BITS'\n   wire [`OUT_BITS-1:0]     rd_outs_max;\n         ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:171:10: error: unknown macro or compiler directive '`OUT_BITS'\n   wire [`OUT_BITS-1:0]     wr_outs_max;    \n         ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:172:10: error: unknown macro or compiler directive '`WAIT_BITS'\n   wire [`WAIT_BITS-1:0]    rd_wait_limit;\n         ^~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:173:10: error: unknown macro or compiler directive '`WAIT_BITS'\n   wire [`WAIT_BITS-1:0]    wr_wait_limit;\n         ^~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:190:13: error: unknown macro or compiler directive '`X_BITS'\n   wire [10-`X_BITS-1:0]    rd_y_offset;        \n            ^~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:192:13: error: unknown macro or compiler directive '`X_BITS'\n   wire [10-`X_BITS-1:0]    rd_clr_remain;\n            ^~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:201:13: error: unknown macro or compiler directive '`X_BITS'\n   wire [10-`X_BITS-1:0]    wr_y_offset;        \n            ^~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:203:13: error: unknown macro or compiler directive '`X_BITS'\n   wire [10-`X_BITS-1:0]    wr_clr_remain;\n            ^~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:219:10: error: unknown macro or compiler directive '`OUT_BITS'\n   wire [`OUT_BITS-1:0]     rd_outs;\n         ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch.v:228:10: error: unknown macro or compiler directive '`OUT_BITS'\n   wire [`OUT_BITS-1:0]     wr_outs;\n         ^~~~~~~~~\nfatal error: too many errors emitted, stopping now [--error-limit=]\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi64_core0_ch",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "scan_en",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "pclk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "clken",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "pclken",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "psel",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "penable",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "paddr",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "pwrite",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "pwdata",
+            "direction": "In",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "prdata",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "pslverr",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "periph_tx_req",
+            "direction": "In",
+            "type": "logic[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "periph_tx_clr",
+            "direction": "Out",
+            "type": "logic[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "periph_rx_req",
+            "direction": "In",
+            "type": "logic[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "periph_rx_clr",
+            "direction": "Out",
+            "type": "logic[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "rd_cmd_split",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_cmd_line",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_line",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_load",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_slverr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_decerr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_cmd_split",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_cmd_pending",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_line",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_last",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_slverr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_decerr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr_cycle",
+            "direction": "In",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "load_wdata",
+            "direction": "In",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "load_req_in_prog",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "int_all_proc",
+            "direction": "Out",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "ch_start",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "idle",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_active",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_rd_active",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_wr_active",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_last_cmd",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_line_cmd",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_line_cmd",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_go_next_line",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_go_next_line",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_ready",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_burst_start",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_burst_addr",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "rd_burst_size",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "rd_tokens",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_port_num",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_periph_delay",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_valid",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_transfer",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_transfer_size",
+            "direction": "In",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "rd_clr_stall",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_ready",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_burst_start",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_burst_addr",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "wr_burst_size",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "wr_tokens",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_port_num",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_periph_delay",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_valid",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_transfer",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_transfer_size",
+            "direction": "In",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "wr_next_size",
+            "direction": "In",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "wr_clr_stall",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_incr",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_aw",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_w",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_ar",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wdt_timeout",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_wr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_wdata",
+            "direction": "In",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "fifo_wsize",
+            "direction": "In",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "fifo_rd",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_rsize",
+            "direction": "In",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "fifo_rd_valid",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_rdata",
+            "direction": "Out",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "fifo_wr_ready",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_mode",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_remote",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_page_cross",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_page_cross",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_in_prog",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_not_in_prog",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_mux_in_prog",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_req",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "parameters": [],
+        "total_input_bits": 291,
+        "total_output_bits": 269,
+        "num_inputs": 51,
+        "num_outputs": 39,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "wr_ch_end_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "joint_cross_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_joint_not_in_prog",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_joint_not_in_prog",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_joint_in_prog",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_joint_in_prog",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "load_addr",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "load_in_prog",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_update",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_start_addr",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "wr_start_addr",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "x_size",
+            "type": "logic[9:0]",
+            "width": 10,
+            "range": [
+              9,
+              0
+            ]
+          },
+          {
+            "name": "y_size",
+            "type": "logic[11:0]",
+            "width": 12,
+            "range": [
+              11,
+              0
+            ]
+          },
+          {
+            "name": "block",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "frame_width",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "width_align",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "rd_periph_block",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_periph_block",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_outs_max",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_outs_max",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_wait_limit",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_wait_limit",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_incr",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_burst_max_size",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "wr_burst_max_size",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "rd_periph_num",
+            "type": "logic[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ]
+          },
+          {
+            "name": "wr_periph_num",
+            "type": "logic[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ]
+          },
+          {
+            "name": "wr_outstanding",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_outstanding",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_retry_wait",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_in_prog",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "end_swap",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "rd_x_offset",
+            "type": "logic[9:0]",
+            "width": 10,
+            "range": [
+              9,
+              0
+            ]
+          },
+          {
+            "name": "rd_y_offset",
+            "type": "logic[11:0]",
+            "width": 12,
+            "range": [
+              11,
+              0
+            ]
+          },
+          {
+            "name": "rd_x_remain",
+            "type": "logic[9:0]",
+            "width": 10,
+            "range": [
+              9,
+              0
+            ]
+          },
+          {
+            "name": "rd_clr_remain",
+            "type": "logic[11:0]",
+            "width": 12,
+            "range": [
+              11,
+              0
+            ]
+          },
+          {
+            "name": "rd_ch_end",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_line_empty",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_empty",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_align",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_x_offset",
+            "type": "logic[9:0]",
+            "width": 10,
+            "range": [
+              9,
+              0
+            ]
+          },
+          {
+            "name": "wr_y_offset",
+            "type": "logic[11:0]",
+            "width": 12,
+            "range": [
+              11,
+              0
+            ]
+          },
+          {
+            "name": "wr_x_remain",
+            "type": "logic[9:0]",
+            "width": 10,
+            "range": [
+              9,
+              0
+            ]
+          },
+          {
+            "name": "wr_clr_remain",
+            "type": "logic[11:0]",
+            "width": 12,
+            "range": [
+              11,
+              0
+            ]
+          },
+          {
+            "name": "wr_ch_end",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_line_empty",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_empty",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_align",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_ch_end_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_gap",
+            "type": "logic[5:0]",
+            "width": 6,
+            "range": [
+              5,
+              0
+            ]
+          },
+          {
+            "name": "wr_fullness",
+            "type": "logic[5:0]",
+            "width": 6,
+            "range": [
+              5,
+              0
+            ]
+          },
+          {
+            "name": "rd_cmd_outs",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_outs",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_outs",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_outs_empty",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "outs_empty",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_stall",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_rresp",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_cmd_outs",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_outs",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_outs",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_outs_empty",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_stall",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_stall_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_wresp",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_burst_last",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_burst_ready",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_joint_ready",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_joint_flush",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_burst_req",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_burst_last",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_burst_ready",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_single",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_joint_ready",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_joint_flush",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_line_req",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_periph_ready",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_periph_ready",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_wait_ready",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_wait_ready",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_overflow",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_underflow",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_block_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_block",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_block_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_block",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_mux",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_cmd_line_d",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "allow_line_cmd",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_cmd",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_bus",
+            "type": "logic[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ]
+          },
+          {
+            "name": "joint_flush",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "page_cross",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_cross",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_outs_d_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_outs_d",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_outs_d_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_outs_d",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_clr_d",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_d",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "access_port0_mux",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "access_port1_mux",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "idle_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "clk_en",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "gclk",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "num_registers": 6,
+        "num_wires": 100
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 5,
+        "clocks": [
+          "clk",
+          "pclk",
+          "clken",
+          "pclken"
+        ],
+        "resets": [
+          "reset",
+          "rd_burst_start",
+          "wr_burst_start"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

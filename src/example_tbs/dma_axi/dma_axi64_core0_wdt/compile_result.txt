@@ -1,0 +1,16 @@
+file: dma_axi64_core0_wdt.v
+module: dma_axi64_core0_wdt
+status: FAIL
+slang_output:
+
+Build failed: 3 errors, 0 warnings
+import/dma_axi/src/dma_axi64/dma_axi64_core0_wdt.v:56:9: error: unknown macro or compiler directive '`WDT_BITS'
+   reg [`WDT_BITS-1:0]           counter;
+        ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_wdt.v:90:23: error: unknown macro or compiler directive '`WDT_BITS'
+       counter <= #1 {`WDT_BITS{1'b1}};
+                      ^~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_wdt.v:92:23: error: unknown macro or compiler directive '`WDT_BITS'
+       counter <= #1 {`WDT_BITS{1'b1}};
+                      ^~~~~~~~~
+

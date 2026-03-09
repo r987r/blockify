@@ -1,0 +1,733 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:24.025565+00:00",
+  "source": {
+    "file": "dma_axi64.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/dma_axi64.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "PASS",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "Build succeeded: 0 errors, 0 warnings\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi64",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "scan_en",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "idle",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "INT",
+            "direction": "Out",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "periph_tx_req",
+            "direction": "In",
+            "type": "logic[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "periph_tx_clr",
+            "direction": "Out",
+            "type": "logic[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "periph_rx_req",
+            "direction": "In",
+            "type": "logic[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "periph_rx_clr",
+            "direction": "Out",
+            "type": "logic[31:1]",
+            "width": 31,
+            "range": [
+              31,
+              1
+            ]
+          },
+          {
+            "name": "pclken",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "psel",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "penable",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "paddr",
+            "direction": "In",
+            "type": "logic[12:0]",
+            "width": 13,
+            "range": [
+              12,
+              0
+            ]
+          },
+          {
+            "name": "pwrite",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "pwdata",
+            "direction": "In",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "prdata",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "pslverr",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "pready",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "AWID0",
+            "direction": "Out",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "AWADDR0",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "AWLEN0",
+            "direction": "Out",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "AWSIZE0",
+            "direction": "Out",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "AWVALID0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "AWREADY0",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "WID0",
+            "direction": "Out",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "WDATA0",
+            "direction": "Out",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "WSTRB0",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "WLAST0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "WVALID0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "WREADY0",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "BID0",
+            "direction": "In",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "BRESP0",
+            "direction": "In",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "BVALID0",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "BREADY0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ARID0",
+            "direction": "Out",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "ARADDR0",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "ARLEN0",
+            "direction": "Out",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "ARSIZE0",
+            "direction": "Out",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "ARVALID0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ARREADY0",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "RID0",
+            "direction": "In",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "RDATA0",
+            "direction": "In",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "RRESP0",
+            "direction": "In",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "RLAST0",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "RVALID0",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "RREADY0",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "parameters": [],
+        "total_input_bits": 190,
+        "total_output_bits": 255,
+        "num_inputs": 22,
+        "num_outputs": 24,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [],
+        "nets": [
+          {
+            "name": "rd_port_num0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_port_num0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_port_num1",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_port_num1",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "slv_rd_port_num0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "slv_wr_port_num0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "slv_rd_port_num1",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "slv_wr_port_num1",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_AWID",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "M0_AWADDR",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "M0_AWLEN",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "M0_AWSIZE",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "M0_AWVALID",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_AWREADY",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_WID",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "M0_WDATA",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "M0_WSTRB",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "M0_WLAST",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_WVALID",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_WREADY",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_BID",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "M0_BRESP",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "M0_BVALID",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_BREADY",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_ARID",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "M0_ARADDR",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "M0_ARLEN",
+            "type": "logic[3:0]",
+            "width": 4,
+            "range": [
+              3,
+              0
+            ]
+          },
+          {
+            "name": "M0_ARSIZE",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "M0_ARVALID",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_ARREADY",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_RID",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "M0_RDATA",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "M0_RRESP",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "M0_RLAST",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_RVALID",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "M0_RREADY",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "num_registers": 0,
+        "num_wires": 36
+      },
+      "logic_analysis": {
+        "procedural_blocks": [],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 0,
+        "clocks": [
+          "clk",
+          "pclken"
+        ],
+        "resets": [
+          "reset"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [
+          "dma_axi64_defines.v"
+        ],
+        "timescale": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:29.075918+00:00",
+  "source": {
+    "file": "prgen_mux8.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/prgen_mux8.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "PASS",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "Build succeeded: 0 errors, 0 warnings\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "prgen_mux8",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "sel",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "ch_x",
+            "direction": "In",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "x",
+            "direction": "Out",
+            "type": "reg[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "WIDTH",
+            "type": "logic signed[31:0]",
+            "default_value": "8",
+            "is_local": false
+          }
+        ],
+        "total_input_bits": 67,
+        "total_output_bits": 8,
+        "num_inputs": 2,
+        "num_outputs": 1,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "x",
+            "type": "reg[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ],
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [],
+        "num_registers": 1,
+        "num_wires": 0
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": true,
+            "is_sequential": false,
+            "sensitivity": "level-sensitive",
+            "clock": null,
+            "reset": null
+          }
+        ],
+        "num_combinatorial_blocks": 1,
+        "num_sequential_blocks": 0,
+        "clocks": [],
+        "resets": []
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:09.991089+00:00",
+  "source": {
+    "file": "dma_axi32_core0_wdt.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi32/dma_axi32_core0_wdt.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "FAIL",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "\nBuild failed: 3 errors, 0 warnings\nimport/dma_axi/src/dma_axi32/dma_axi32_core0_wdt.v:56:9: error: unknown macro or compiler directive '`WDT_BITS'\n   reg [`WDT_BITS-1:0]           counter;\n        ^~~~~~~~~\nimport/dma_axi/src/dma_axi32/dma_axi32_core0_wdt.v:90:23: error: unknown macro or compiler directive '`WDT_BITS'\n       counter <= #1 {`WDT_BITS{1'b1}};\n                      ^~~~~~~~~\nimport/dma_axi/src/dma_axi32/dma_axi32_core0_wdt.v:92:23: error: unknown macro or compiler directive '`WDT_BITS'\n       counter <= #1 {`WDT_BITS{1'b1}};\n                      ^~~~~~~~~\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi32",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi32"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi32_core0_wdt",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_active",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "rd_burst_start",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_ch_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wr_burst_start",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_ch_num",
+            "direction": "In",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "wdt_timeout",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wdt_ch_num",
+            "direction": "Out",
+            "type": "reg[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          }
+        ],
+        "parameters": [],
+        "total_input_bits": 18,
+        "total_output_bits": 4,
+        "num_inputs": 7,
+        "num_outputs": 2,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "counter",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wdt_ch_num",
+            "type": "reg[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ],
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "current_ch_active",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "current_burst_start",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "advance",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "idle",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "num_registers": 2,
+        "num_wires": 4
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 0,
+        "num_sequential_blocks": 2,
+        "clocks": [
+          "clk"
+        ],
+        "resets": [
+          "reset",
+          "rd_burst_start",
+          "wr_burst_start"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [],
+        "has_potential_fsm": false
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [],
+        "timescale": null
+      }
+    }
+  ]
+}

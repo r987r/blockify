@@ -1,0 +1,19 @@
+file: dma_axi64_core0_ch_empty.v
+module: dma_axi64_core0_ch_empty
+status: FAIL
+slang_output:
+
+Build failed: 4 errors, 0 warnings
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_empty.v:99:12: error: unknown macro or compiler directive '`TOKEN_BITS'
+   output [`TOKEN_BITS-1:0] rd_tokens;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_empty.v:101:12: error: unknown macro or compiler directive '`DELAY_BITS'
+   output [`DELAY_BITS-1:0] rd_periph_delay;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_empty.v:111:12: error: unknown macro or compiler directive '`TOKEN_BITS'
+   output [`TOKEN_BITS-1:0] wr_tokens;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_empty.v:113:12: error: unknown macro or compiler directive '`DELAY_BITS'
+   output [`DELAY_BITS-1:0] wr_periph_delay; 
+           ^~~~~~~~~~~
+

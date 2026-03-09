@@ -1,0 +1,22 @@
+file: dma_axi32_core0_ch_offsets.v
+module: dma_axi32_core0_ch_offsets
+status: FAIL
+slang_output:
+
+Build failed: 5 errors, 0 warnings
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch_offsets.v:51:14: error: unknown macro or compiler directive '`X_BITS'
+   input [10-`X_BITS-1:0]         y_size;
+             ^~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch_offsets.v:54:15: error: unknown macro or compiler directive '`X_BITS'
+   output [10-`X_BITS-1:0]         y_offset;        
+              ^~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch_offsets.v:56:15: error: unknown macro or compiler directive '`X_BITS'
+   output [10-`X_BITS-1:0]         clr_remain;
+              ^~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch_offsets.v:104:40: error: unknown macro or compiler directive '`X_BITS'
+   assign             y_offset   = {10-`X_BITS{1'b0}};
+                                       ^~~~~~~
+import/dma_axi/src/dma_axi32/dma_axi32_core0_ch_offsets.v:105:40: error: unknown macro or compiler directive '`X_BITS'
+   assign             clr_remain = {10-`X_BITS{1'b0}};
+                                       ^~~~~~~
+

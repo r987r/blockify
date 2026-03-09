@@ -1,0 +1,6 @@
+file: dma_axi32.v
+module: dma_axi32
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

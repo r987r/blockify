@@ -1,0 +1,6 @@
+file: prgen_swap_64.v
+module: prgen_swap64
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+

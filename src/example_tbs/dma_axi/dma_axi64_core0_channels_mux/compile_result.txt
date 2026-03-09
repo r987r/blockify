@@ -1,0 +1,43 @@
+file: dma_axi64_core0_channels_mux.v
+module: dma_axi64_core0_channels_mux
+status: FAIL
+slang_output:
+
+Build failed: 12 errors, 0 warnings
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:93:12: error: unknown macro or compiler directive '`TOKEN_BITS'
+   output [`TOKEN_BITS-1:0]   rd_tokens;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:95:12: error: unknown macro or compiler directive '`DELAY_BITS'
+   output [`DELAY_BITS-1:0]   rd_periph_delay;    
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:107:13: error: unknown macro or compiler directive '`TOKEN_BITS'
+   input [8*`TOKEN_BITS-1:0]  ch_rd_tokens;
+            ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:109:13: error: unknown macro or compiler directive '`DELAY_BITS'
+   input [8*`DELAY_BITS-1:0]  ch_rd_periph_delay;
+            ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:158:12: error: unknown macro or compiler directive '`TOKEN_BITS'
+   output [`TOKEN_BITS-1:0]   wr_tokens;
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:160:12: error: unknown macro or compiler directive '`DELAY_BITS'
+   output [`DELAY_BITS-1:0]   wr_periph_delay;    
+           ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:171:13: error: unknown macro or compiler directive '`TOKEN_BITS'
+   input [8*`TOKEN_BITS-1:0]  ch_wr_tokens;
+            ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:173:13: error: unknown macro or compiler directive '`DELAY_BITS'
+   input [8*`DELAY_BITS-1:0]  ch_wr_periph_delay;
+            ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:229:17: error: unknown macro or compiler directive '`DELAY_BITS'
+   prgen_mux8 #(`DELAY_BITS) 
+                ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:235:17: error: unknown macro or compiler directive '`DELAY_BITS'
+   prgen_mux8 #(`DELAY_BITS) 
+                ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:407:17: error: unknown macro or compiler directive '`TOKEN_BITS'
+   prgen_mux8 #(`TOKEN_BITS) 
+                ^~~~~~~~~~~
+import/dma_axi/src/dma_axi64/dma_axi64_core0_channels_mux.v:413:17: error: unknown macro or compiler directive '`TOKEN_BITS'
+   prgen_mux8 #(`TOKEN_BITS) 
+                ^~~~~~~~~~~
+

@@ -1,0 +1,2155 @@
+{
+  "blockify_version": "0.1.0",
+  "generated_at": "2026-03-09T03:07:26.852501+00:00",
+  "source": {
+    "file": "dma_axi64_core0_ch_reg.v",
+    "file_path": "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v",
+    "repo_url": "https://github.com/freecores/dma_axi",
+    "repo_name": "dma_axi",
+    "commit_sha": "bdd0b77559c6410b0a48799026453e3a9fd7b0d3",
+    "branch": "master"
+  },
+  "compilation": {
+    "status": "FAIL",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "output": "\nBuild failed: 20 errors, 0 warnings\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:85:14: error: unknown macro or compiler directive '`X_BITS'\n   input [10-`X_BITS-1:0]          rd_y_offset;    \n             ^~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:87:14: error: unknown macro or compiler directive '`X_BITS'\n   input [10-`X_BITS-1:0]          wr_y_offset;    \n             ^~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:97:15: error: unknown macro or compiler directive '`X_BITS'\n   output [10-`X_BITS-1:0]          y_size;\n              ^~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:103:12: error: unknown macro or compiler directive '`FRAME_BITS'\n   output [`FRAME_BITS-1:0]      frame_width;\n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:105:12: error: unknown macro or compiler directive '`DELAY_BITS'\n   output [`DELAY_BITS-1:0]      rd_periph_delay;\n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:107:12: error: unknown macro or compiler directive '`DELAY_BITS'\n   output [`DELAY_BITS-1:0]      wr_periph_delay;\n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:109:12: error: unknown macro or compiler directive '`TOKEN_BITS'\n   output [`TOKEN_BITS-1:0]      rd_tokens;\n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:110:12: error: unknown macro or compiler directive '`TOKEN_BITS'\n   output [`TOKEN_BITS-1:0]      wr_tokens;\n           ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:113:12: error: unknown macro or compiler directive '`OUT_BITS'\n   output [`OUT_BITS-1:0]      rd_outs_max;\n           ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:114:12: error: unknown macro or compiler directive '`OUT_BITS'\n   output [`OUT_BITS-1:0]      wr_outs_max;\n           ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:115:11: error: unknown macro or compiler directive '`OUT_BITS'\n   input [`OUT_BITS-1:0]      rd_outs;\n          ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:116:11: error: unknown macro or compiler directive '`OUT_BITS'\n   input [`OUT_BITS-1:0]      wr_outs;\n          ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:118:12: error: unknown macro or compiler directive '`WAIT_BITS'\n   output [`WAIT_BITS-1:0]      rd_wait_limit;\n           ^~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:119:12: error: unknown macro or compiler directive '`WAIT_BITS'\n   output [`WAIT_BITS-1:0]      wr_wait_limit;\n           ^~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:162:13: error: unknown macro or compiler directive '`X_BITS'\n   wire [10-`X_BITS-1:0]          y_size;\n            ^~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:164:9: error: unknown macro or compiler directive '`FRAME_BITS'\n   reg [`FRAME_BITS-1:0]      frame_width_reg;  \n        ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:178:9: error: unknown macro or compiler directive '`DELAY_BITS'\n   reg [`DELAY_BITS-1:0]      rd_periph_delay_reg;\n        ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:180:9: error: unknown macro or compiler directive '`TOKEN_BITS'\n   reg [`TOKEN_BITS-1:0]      rd_tokens_reg;\n        ^~~~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:181:9: error: unknown macro or compiler directive '`OUT_BITS'\n   reg [`OUT_BITS-1:0]          rd_outs_max_reg;\n        ^~~~~~~~~\nimport/dma_axi/src/dma_axi64/dma_axi64_core0_ch_reg.v:190:9: error: unknown macro or compiler directive '`WAIT_BITS'\n   reg [`WAIT_BITS-1:4]      rd_wait_limit_reg;\n        ^~~~~~~~~~\nfatal error: too many errors emitted, stopping now [--error-limit=]\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64",
+      "/home/runner/work/blockify/blockify/import/dma_axi/src/dma_axi64"
+    ]
+  },
+  "modules": [
+    {
+      "module_name": "dma_axi64_core0_ch_reg",
+      "definition_kind": "Module",
+      "interface": {
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "clken",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "pclken",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "reset",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "psel",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "penable",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "paddr",
+            "direction": "In",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "pwrite",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "pwdata",
+            "direction": "In",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "prdata",
+            "direction": "Out",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "pslverr",
+            "direction": "Out",
+            "type": "reg",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_bus",
+            "direction": "In",
+            "type": "logic[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ]
+          },
+          {
+            "name": "wdt_timeout",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_start",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_addr",
+            "direction": "Out",
+            "type": "logic[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "load_in_prog",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_req_in_prog",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr_cycle",
+            "direction": "In",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          },
+          {
+            "name": "load_wdata",
+            "direction": "In",
+            "type": "logic[63:0]",
+            "width": 64,
+            "range": [
+              63,
+              0
+            ]
+          },
+          {
+            "name": "load_cmd",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_ch_end",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_ch_end",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_clr_last",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_slverr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_decerr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_slverr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_decerr",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "int_all_proc",
+            "direction": "Out",
+            "type": "logic[0:0]",
+            "width": 1,
+            "range": [
+              0,
+              0
+            ]
+          },
+          {
+            "name": "ch_rd_active",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_wr_active",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_in_prog",
+            "direction": "Out",
+            "type": "reg",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_x_offset",
+            "direction": "In",
+            "type": "logic[9:0]",
+            "width": 10,
+            "range": [
+              9,
+              0
+            ]
+          },
+          {
+            "name": "rd_y_offset",
+            "direction": "In",
+            "type": "logic[11:0]",
+            "width": 12,
+            "range": [
+              11,
+              0
+            ]
+          },
+          {
+            "name": "wr_x_offset",
+            "direction": "In",
+            "type": "logic[9:0]",
+            "width": 10,
+            "range": [
+              9,
+              0
+            ]
+          },
+          {
+            "name": "wr_y_offset",
+            "direction": "In",
+            "type": "logic[11:0]",
+            "width": 12,
+            "range": [
+              11,
+              0
+            ]
+          },
+          {
+            "name": "wr_fullness",
+            "direction": "In",
+            "type": "logic[5:0]",
+            "width": 6,
+            "range": [
+              5,
+              0
+            ]
+          },
+          {
+            "name": "rd_gap",
+            "direction": "In",
+            "type": "logic[5:0]",
+            "width": 6,
+            "range": [
+              5,
+              0
+            ]
+          },
+          {
+            "name": "fifo_overflow",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "fifo_underflow",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_update",
+            "direction": "Out",
+            "type": "reg",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_start_addr",
+            "direction": "Out",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "wr_start_addr",
+            "direction": "Out",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ]
+          },
+          {
+            "name": "x_size",
+            "direction": "Out",
+            "type": "logic[9:0]",
+            "width": 10,
+            "range": [
+              9,
+              0
+            ]
+          },
+          {
+            "name": "y_size",
+            "direction": "Out",
+            "type": "logic[11:0]",
+            "width": 12,
+            "range": [
+              11,
+              0
+            ]
+          },
+          {
+            "name": "rd_burst_max_size",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "wr_burst_max_size",
+            "direction": "Out",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "block",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "allow_line_cmd",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "frame_width",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "width_align",
+            "direction": "Out",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "rd_periph_delay",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_periph_block",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_periph_delay",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_periph_block",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_tokens",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_tokens",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_port_num",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_port_num",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_outs_max",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_outs_max",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_outs",
+            "direction": "In",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_outs",
+            "direction": "In",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "outs_empty",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_wait_limit",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_wait_limit",
+            "direction": "Out",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_incr",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_incr",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_periph_num",
+            "direction": "Out",
+            "type": "logic[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ]
+          },
+          {
+            "name": "wr_periph_num",
+            "direction": "Out",
+            "type": "logic[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ]
+          },
+          {
+            "name": "wr_outstanding",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_outstanding",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_retry_wait",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_mode",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_remote",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_cross",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "page_cross",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint",
+            "direction": "Out",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_flush",
+            "direction": "In",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "end_swap",
+            "direction": "Out",
+            "type": "logic[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "DATA_SHIFT",
+            "type": "logic signed[31:0]",
+            "default_value": "0",
+            "is_local": false
+          },
+          {
+            "name": "CMD_LINE0",
+            "type": "logic[7:0]",
+            "default_value": "8'd0",
+            "is_local": false
+          },
+          {
+            "name": "CMD_LINE1",
+            "type": "logic[7:0]",
+            "default_value": "8'd4",
+            "is_local": false
+          },
+          {
+            "name": "CMD_LINE2",
+            "type": "logic[7:0]",
+            "default_value": "8'd8",
+            "is_local": false
+          },
+          {
+            "name": "CMD_LINE3",
+            "type": "logic[7:0]",
+            "default_value": "8'd12",
+            "is_local": false
+          },
+          {
+            "name": "STATIC_LINE0",
+            "type": "logic[7:0]",
+            "default_value": "8'd16",
+            "is_local": false
+          },
+          {
+            "name": "STATIC_LINE1",
+            "type": "logic[7:0]",
+            "default_value": "8'd20",
+            "is_local": false
+          },
+          {
+            "name": "STATIC_LINE2",
+            "type": "logic[7:0]",
+            "default_value": "8'd24",
+            "is_local": false
+          },
+          {
+            "name": "STATIC_LINE3",
+            "type": "logic[7:0]",
+            "default_value": "8'd28",
+            "is_local": false
+          },
+          {
+            "name": "STATIC_LINE4",
+            "type": "logic[7:0]",
+            "default_value": "8'd32",
+            "is_local": false
+          },
+          {
+            "name": "RESTRICT",
+            "type": "logic[7:0]",
+            "default_value": "8'd44",
+            "is_local": false
+          },
+          {
+            "name": "RD_OFFSETS",
+            "type": "logic[7:0]",
+            "default_value": "8'd48",
+            "is_local": false
+          },
+          {
+            "name": "WR_OFFSETS",
+            "type": "logic[7:0]",
+            "default_value": "8'd52",
+            "is_local": false
+          },
+          {
+            "name": "FIFO_FULLNESS",
+            "type": "logic[7:0]",
+            "default_value": "8'd56",
+            "is_local": false
+          },
+          {
+            "name": "CMD_OUTS",
+            "type": "logic[7:0]",
+            "default_value": "8'd60",
+            "is_local": false
+          },
+          {
+            "name": "CH_ENABLE",
+            "type": "logic[7:0]",
+            "default_value": "8'd64",
+            "is_local": false
+          },
+          {
+            "name": "CH_START",
+            "type": "logic[7:0]",
+            "default_value": "8'd68",
+            "is_local": false
+          },
+          {
+            "name": "CH_ACTIVE",
+            "type": "logic[7:0]",
+            "default_value": "8'd72",
+            "is_local": false
+          },
+          {
+            "name": "CH_CMD_COUNTER",
+            "type": "logic[7:0]",
+            "default_value": "8'd80",
+            "is_local": false
+          },
+          {
+            "name": "INT_RAWSTAT",
+            "type": "logic[7:0]",
+            "default_value": "8'd160",
+            "is_local": false
+          },
+          {
+            "name": "INT_CLEAR",
+            "type": "logic[7:0]",
+            "default_value": "8'd164",
+            "is_local": false
+          },
+          {
+            "name": "INT_ENABLE",
+            "type": "logic[7:0]",
+            "default_value": "8'd168",
+            "is_local": false
+          },
+          {
+            "name": "INT_STATUS",
+            "type": "logic[7:0]",
+            "default_value": "8'd172",
+            "is_local": false
+          },
+          {
+            "name": "INT_NUM",
+            "type": "logic signed[31:0]",
+            "default_value": "13",
+            "is_local": false
+          }
+        ],
+        "total_input_bits": 196,
+        "total_output_bits": 209,
+        "num_inputs": 40,
+        "num_outputs": 40,
+        "num_inouts": 0
+      },
+      "internals": {
+        "variables": [
+          {
+            "name": "prdata_pre",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "pslverr_pre",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "prdata",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "pslverr",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "ch_enable",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "ch_in_prog",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_ch_in_prog",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_ch_in_prog",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "load_in_prog_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "load_req_in_prog_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_start_addr",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_start_addr",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "buff_size",
+            "type": "reg[9:0]",
+            "width": 10,
+            "range": [
+              9,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "frame_width_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "block_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "joint_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "simple_mem",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "auto_retry_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "end_swap_reg",
+            "type": "reg[1:0]",
+            "width": 2,
+            "range": [
+              1,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_burst_max_size_reg",
+            "type": "reg[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_periph_delay_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_periph_block_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_tokens_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_outs_max_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_port_num_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "cmd_port_num_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_outstanding_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_incr_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_periph_num_reg",
+            "type": "reg[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_wait_limit_reg",
+            "type": "reg[-1:4]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_burst_max_size_reg",
+            "type": "reg[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_periph_delay_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_periph_block_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_tokens_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_outs_max_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_port_num_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_outstanding_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_incr_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_periph_num_reg",
+            "type": "reg[4:0]",
+            "width": 5,
+            "range": [
+              4,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "wr_wait_limit_reg",
+            "type": "reg[-1:4]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "cmd_set_int_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "cmd_last_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "cmd_next_addr_reg",
+            "type": "reg[31:2]",
+            "width": 30,
+            "range": [
+              31,
+              2
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "cmd_counter_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "int_counter_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "int_proc_num_reg",
+            "type": "reg[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "int_enable",
+            "type": "reg[12:0]",
+            "width": 13,
+            "range": [
+              12,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_cmd_line0",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_cmd_line1",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_cmd_line2",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_cmd_line3",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_static_line0",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_static_line1",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_static_line2",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_static_line3",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_static_line4",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_restrict",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_rd_offsets",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_wr_offsets",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_fifo_fullness",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_cmd_outs",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_ch_enable",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_ch_active",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_cmd_counter",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_int_rawstat",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_int_enable",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "rd_int_status",
+            "type": "reg[31:0]",
+            "width": 32,
+            "range": [
+              31,
+              0
+            ],
+            "lifetime": "Static"
+          },
+          {
+            "name": "ch_retry_wait_reg",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          },
+          {
+            "name": "ch_update",
+            "type": "reg",
+            "width": 1,
+            "range": null,
+            "lifetime": "Static"
+          }
+        ],
+        "nets": [
+          {
+            "name": "gpaddr",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "gpwrite",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "gpread",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "joint_mux",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "auto_retry",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_burst_max_size_rd",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "rd_burst_max_size_pre",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "rd_port_num_cfg",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "cmd_port_num",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_outstanding_cfg",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_burst_max_size_rd",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "wr_burst_max_size_pre",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "wr_outstanding_cfg",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "rd_allow_full_fifo",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_allow_full_fifo",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "allow_full_fifo",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "allow_full_burst",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "allow_joint_burst",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "burst_max_size_update_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "burst_max_size_update",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "cmd_set_int",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "cmd_last",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "cmd_next_addr",
+            "type": "logic[31:2]",
+            "width": 30,
+            "range": [
+              31,
+              2
+            ]
+          },
+          {
+            "name": "cmd_counter",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "int_counter",
+            "type": "logic[-1:0]",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_end",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_end_set",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_end_clear",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_end_int",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "int_proc_num",
+            "type": "logic[2:0]",
+            "width": 3,
+            "range": [
+              2,
+              0
+            ]
+          },
+          {
+            "name": "int_bus",
+            "type": "logic[12:0]",
+            "width": 13,
+            "range": [
+              12,
+              0
+            ]
+          },
+          {
+            "name": "int_rawstat",
+            "type": "logic[12:0]",
+            "width": 13,
+            "range": [
+              12,
+              0
+            ]
+          },
+          {
+            "name": "int_status",
+            "type": "logic[12:0]",
+            "width": 13,
+            "range": [
+              12,
+              0
+            ]
+          },
+          {
+            "name": "int_all_proc_bus",
+            "type": "logic[7:0]",
+            "width": 8,
+            "range": [
+              7,
+              0
+            ]
+          },
+          {
+            "name": "wr_cmd_line0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_cmd_line1",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_cmd_line2",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_cmd_line3",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_static_line0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_static_line1",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_static_line2",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_static_line3",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_static_line4",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_ch_enable",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_ch_start",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_int_rawstat",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_int_clear",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_int_enable",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "wr_frame_width",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr_cycle0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr_cycle1",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr_cycle2",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr_cycle3",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr0",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr1",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr2",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr3",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_wr_last",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "load_req",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_aw",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_w",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_b",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_ar",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "timeout_r",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_retry_wait_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_retry",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_update_pre",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_update_d",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          },
+          {
+            "name": "ch_int",
+            "type": "logic",
+            "width": 1,
+            "range": null
+          }
+        ],
+        "num_registers": 69,
+        "num_wires": 69
+      },
+      "logic_analysis": {
+        "procedural_blocks": [
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": false,
+            "sensitivity": "unknown",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": false,
+            "sensitivity": "unknown",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": false,
+            "sensitivity": "unknown",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": false,
+            "sensitivity": "unknown",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": true,
+            "is_sequential": false,
+            "sensitivity": "level-sensitive",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": true,
+            "is_sequential": false,
+            "sensitivity": "level-sensitive",
+            "clock": null,
+            "reset": null
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          },
+          {
+            "kind": "Always",
+            "is_combinatorial": false,
+            "is_sequential": true,
+            "sensitivity": "edge-triggered",
+            "clock": "clk",
+            "reset": "reset"
+          }
+        ],
+        "num_combinatorial_blocks": 2,
+        "num_sequential_blocks": 18,
+        "clocks": [
+          "clk",
+          "clken",
+          "pclken"
+        ],
+        "resets": [
+          "reset"
+        ]
+      },
+      "hierarchy": {
+        "instances": [],
+        "generate_blocks": [],
+        "num_submodules": 0,
+        "is_leaf": true
+      },
+      "fsm_analysis": {
+        "candidates": [
+          {
+            "signal": "rd_start_addr",
+            "type": "reg[31:0]",
+            "width": 32,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "wr_start_addr",
+            "type": "reg[31:0]",
+            "width": 32,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "rd_burst_max_size_reg",
+            "type": "reg[7:0]",
+            "width": 8,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "rd_tokens_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "wr_burst_max_size_reg",
+            "type": "reg[7:0]",
+            "width": 8,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "wr_tokens_reg",
+            "type": "reg[-1:0]",
+            "width": 1,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "cmd_last_reg",
+            "type": "reg",
+            "width": 1,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "rd_static_line0",
+            "type": "reg[31:0]",
+            "width": 32,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "rd_static_line1",
+            "type": "reg[31:0]",
+            "width": 32,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "rd_static_line2",
+            "type": "reg[31:0]",
+            "width": 32,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "rd_static_line3",
+            "type": "reg[31:0]",
+            "width": 32,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "rd_static_line4",
+            "type": "reg[31:0]",
+            "width": 32,
+            "reason": "name matches FSM pattern"
+          },
+          {
+            "signal": "rd_int_status",
+            "type": "reg[31:0]",
+            "width": 32,
+            "reason": "name matches FSM pattern"
+          }
+        ],
+        "has_potential_fsm": true
+      },
+      "preprocessor": {
+        "defines": [],
+        "ifdefs": [],
+        "includes": [
+          "dma_axi64_ch_reg_params.v"
+        ],
+        "timescale": null
+      }
+    }
+  ]
+}

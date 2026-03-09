@@ -1,0 +1,6 @@
+file: dma_axi32_reg_core0.v
+module: dma_axi32_reg_core0
+status: PASS
+slang_output:
+Build succeeded: 0 errors, 0 warnings
+
