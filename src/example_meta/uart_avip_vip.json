@@ -1,0 +1,2877 @@
+{
+  "blockify_version": "0.1.0",
+  "metadata_type": "vip",
+  "generated_at": "2026-03-09T10:45:24.960407+00:00",
+  "source": {
+    "repo_url": "https://github.com/mbits-mirafra/uart_avip",
+    "repo_name": "uart_avip",
+    "commit_sha": "1da2e90b3fd86f8456608f862edb9a0898d8acba",
+    "branch": "main"
+  },
+  "compilation": {
+    "status": "FAIL",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "lint_output": "\nBuild failed: 20 errors, 2 warnings\nimport/uvm-core/src/uvm_pkg.sv:54:9: error: design element does not have a time scale defined but others in the design do\npackage uvm_pkg;\n        ^~~~~~~\nimport/uart_avip/src/globals/UartGlobalPkg.sv:4:9: error: design element does not have a time scale defined but others in the design do\npackage UartGlobalPkg;\n        ^~~~~~~~~~~~~\nimport/uart_avip/src/hvlTop/uartTxAgent/UartTxPkg.sv:6:9: error: design element does not have a time scale defined but others in the design do\npackage UartTxPkg;\n        ^~~~~~~~~\nimport/uart_avip/src/hvlTop/uartRxAgent/UartRxPkg.sv:5:9: error: design element does not have a time scale defined but others in the design do\npackage UartRxPkg;\n        ^~~~~~~~~\nimport/uart_avip/src/hvlTop/uartTxAgent/uartTxSequences/UartTxSequencePkg.sv:4:9: error: design element does not have a time scale defined but others in the design do\npackage UartTxSequencePkg;\n        ^~~~~~~~~~~~~~~~~\nimport/uart_avip/src/hvlTop/uartRxAgent/uartRxSequences/UartRxSequencePkg.sv:5:9: error: design element does not have a time scale defined but others in the design do\npackage UartRxSequencePkg;\n        ^~~~~~~~~~~~~~~~~\nimport/uart_avip/src/hvlTop/uartEnv/UartEnvPkg.sv:7:9: error: design element does not have a time scale defined but others in the design do\npackage UartEnvPkg;\n        ^~~~~~~~~~\nimport/uart_avip/src/hvlTop/tb/uartVirtualSequences/UartVirtualSequencePkg.sv:7:9: error: design element does not have a time scale defined but others in the design do\npackage UartVirtualSequencePkg;\n        ^~~~~~~~~~~~~~~~~~~~~~\nimport/uart_avip/src/hvlTop/tb/UartBaseTestPkg.sv:6:9: error: design element does not have a time scale defined but others in the design do\npackage UartBaseTestPkg;\n        ^~~~~~~~~~~~~~~\nimport/uart_avip/src/hdlTop/uartInterface/UartInterface.sv:12:11: error: design element does not have a time scale defined but others in the design do\ninterface UartIf (input clk, input reset);\n          ^~~~~~\nimport/uart_avip/src/hdlTop/uartTxAgentBfm/UartTxDriverBfm.sv:11:11: error: design element does not have a time scale defined but others in the design do\ninterface UartTxDriverBfm (input  logic   clk,\n          ^~~~~~~~~~~~~~~\nimport/uart_avip/src/hdlTop/uartTxAgentBfm/UartTxMonitorBfm.sv:6:11: error: design element does not have a time scale defined but others in the design do\ninterface UartTxMonitorBfm (input  logic   clk,\n          ^~~~~~~~~~~~~~~~\nimport/uart_avip/src/hdlTop/uartTxAgentBfm/UartTxAgentBfm.sv:6:8: error: design element does not have a time scale defined but others in the design do\nmodule UartTxAgentBfm(UartIf uartIf);\n       ^~~~~~~~~~~~~~\nimport/uart_avip/src/hdlTop/uartTxAgentBfm/UartTxAssertions.sv:6:11: error: design element does not have a time scale defined but others in the design do\ninterface UartTxAssertions ( input bit uartClk , input logic uartTx);\n          ^~~~~~~~~~~~~~~~\nimport/uart_avip/src/hdlTop/uartRxAgentBfm/UartRxDriverBfm.sv:12:11: error: design element does not have a time scale defined but others in the design do\ninterface UartRxDriverBfm (input  bit clk,\n          ^~~~~~~~~~~~~~~\nimport/uart_avip/src/hdlTop/uartRxAgentBfm/UartRxAssertions.sv:5:11: error: design element does not have a time scale defined but others in the design do\ninterface UartRxAssertions ( input bit uartClk , input logic uartRx);\n          ^~~~~~~~~~~~~~~~\nimport/uart_avip/src/hdlTop/uartRxAgentBfm/UartRxMonitorBfm.sv:6:19: error: design element does not have a time scale defined but others in the design do\n        interface UartRxMonitorBfm (input  logic   clk,\n                  ^~~~~~~~~~~~~~~~\nimport/uart_avip/src/hdlTop/uartRxAgentBfm/UartRxAgentBfm.sv:6:8: error: design element does not have a time scale defined but others in the design do\nmodule UartRxAgentBfm(UartIf uartIf);\n       ^~~~~~~~~~~~~~\nimport/uart_avip/src/hvlTop/UartHvlTop.sv:6:8: error: design element does not have a time scale defined but others in the design do\nmodule HvlTop;\n       ^~~~~~\nin file included from import/uvm-core/src/uvm_pkg.sv:57:\nin file included from import/uvm-core/src/base/uvm_base.svh:77:\nimport/uvm-core/src/base/uvm_config_db_implementation.svh:375:26: warning: unknown character escape sequence '\\.' [-Wunknown-escape-code]\n            separator = \"\\.(\" ;\n                         ^\nin file included from import/uart_avip/src/hvlTop/uartTxAgent/UartTxPkg.sv:11:\nimport/uart_avip/src/hvlTop/uartTxAgent/UartTxTransaction.sv:61:86: error: virtual method argument 'comparer' provides a default value but its superclass method argument does not\nfunction bit UartTxTransaction :: do_compare(uvm_object rhs, uvm_comparer comparer = null);\n                                                                                     ^~~~\nin file included from import/uvm-core/src/uvm_pkg.sv:57:\nin file included from import/uvm-core/src/base/uvm_base.svh:59:\nimport/uvm-core/src/base/uvm_object.svh:1041:52: note: declared here\n                                      uvm_comparer comparer);\n                                                   ^\nin file included from import/uart_avip/src/hvlTop/uartTxAgent/UartTxPkg.sv:15:\nimport/uart_avip/src/hvlTop/uartTxAgent/UartTxDriverProxy.sv:81:563: warning: unknown character escape sequence '\\*' [-Wunknown-escape-code]\n`uvm_info(\"[DRIVER PROXY]\",$sformatf(\"\\n**************************************************************************************************************************************\\n************************************************************\\tTHE TRANSMITTER CONFIG FIELDS\\t****************************************\\n\\tUartDataType = %s \\n\\tThe baudrate of Uart = %s \\n\\tThe parity enable = %s \\n \\tParity Type is %s\\n \\tNo. of stop bits = %s\\n\\tOversampling method = %s\\n\\tframing error injection = %b\\n\\tParity error injection = %b\\n\\tBreaking error injection = %b\\n\\*********************************************************************************************************************************\",uartConfigStruct.uartDataType, uartConfigStruct.uartBaudRate, uartConfigStruct.uartParityEnable, uartConfigStruct.uartParityType, uartConfigStruct.uartStopBit,uartConfigStruct.uartOverSamplingMethod,uartConfigStruct.uartFramingErrorInjection,uartConfigStruct.uartParityErrorInjection,uartConfigStruct.uartBreakingErrorInjection),UVM_LOW);\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\nfatal error: too many errors emitted, stopping now [--error-limit=]\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/uart_avip/src/hvlTop/uartTxAgent/uartTxSequences",
+      "/home/runner/work/blockify/blockify/import/uart_avip/src/hvlTop/uartTxAgent",
+      "/home/runner/work/blockify/blockify/import/uart_avip/src/hvlTop/uartEnv/virtualSequencer",
+      "/home/runner/work/blockify/blockify/import/uart_avip/src/hvlTop/tb/uartVirtualSequences",
+      "/home/runner/work/blockify/blockify/import/uart_avip/src/hvlTop/uartEnv",
+      "/home/runner/work/blockify/blockify/import/uart_avip/src/hvlTop/uartRxAgent",
+      "/home/runner/work/blockify/blockify/import/uart_avip/src/hvlTop/uartRxAgent/uartRxSequences",
+      "/home/runner/work/blockify/blockify/import/uart_avip/src/hvlTop/tb"
+    ]
+  },
+  "vip_info": {
+    "protocol": "uart",
+    "total_files": 68,
+    "hdl_files": 12,
+    "hvl_files": 55,
+    "globals_files": 1
+  },
+  "packages": [
+    {
+      "name": "UartGlobalPkg",
+      "file": "UartGlobalPkg.sv",
+      "path": "src/globals/UartGlobalPkg.sv",
+      "classes": [],
+      "typedefs": [
+        {
+          "name": "hasParityEnum",
+          "target": "3141298464208 UartGlobalPkg::hasParityEnum"
+        },
+        {
+          "name": "parityTypeEnum",
+          "target": "3141298465112 UartGlobalPkg::parityTypeEnum"
+        },
+        {
+          "name": "baudRateEnum",
+          "target": "3141298465856 UartGlobalPkg::baudRateEnum"
+        },
+        {
+          "name": "overSamplingEnum",
+          "target": "3141298467216 UartGlobalPkg::overSamplingEnum"
+        },
+        {
+          "name": "stopBitEnum",
+          "target": "3141298468104 UartGlobalPkg::stopBitEnum"
+        },
+        {
+          "name": "dataTypeEnum",
+          "target": "3141298469152 UartGlobalPkg::dataTypeEnum"
+        },
+        {
+          "name": "UartTxPacketStruct",
+          "target": "struct packed{logic[7:0] transmissionData;logic parity;logic parityError;logic breakingError;logic overrunError;logic framingError;}UartGlobalPkg::s$62"
+        },
+        {
+          "name": "UartRxPacketStruct",
+          "target": "struct packed{logic[7:0] receivingData;logic parity;logic parityError;logic breakingError;logic overrunError;logic framingError;}UartGlobalPkg::s$63"
+        },
+        {
+          "name": "UartConfigStruct",
+          "target": "struct packed{3141272734192 UartGlobalPkg::overSamplingEnum uartOverSamplingMethod;3141272733968 UartGlobalPkg::baudRateEnum uartBaudRate;3141272734640 UartGlobalPkg::dataTypeEnum uartDataType;3141272733744 UartGlobalPkg::parityTypeEnum uartParityType;3141272734416 UartGlobalPkg::stopBitEnum uartStopBit;3141272733520 UartGlobalPkg::hasParityEnum uartParityEnable;bit uartParityErrorInjection;bit uartFramingErrorInjection;bit uartBreakingErrorInjection;bit OverSampledBaudFrequencyClk;}UartGlobalPkg::s$64"
+        },
+        {
+          "name": "UartTransmitterStateEnum",
+          "target": "3141298475024 UartGlobalPkg::UartTransmitterStateEnum"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "DATA_WIDTH",
+          "type": "logic signed[31:0]",
+          "value": "8",
+          "is_local": true
+        },
+        {
+          "name": "NO_OF_PACKETS",
+          "type": "logic signed[31:0]",
+          "value": "20",
+          "is_local": true
+        },
+        {
+          "name": "START_BIT",
+          "type": "logic signed[31:0]",
+          "value": "0",
+          "is_local": true
+        },
+        {
+          "name": "STOP_BIT",
+          "type": "logic signed[31:0]",
+          "value": "1",
+          "is_local": true
+        }
+      ],
+      "structs": [],
+      "enums": [
+        {
+          "name": "hasParityEnum",
+          "base_type": "bit",
+          "values": [
+            {
+              "name": "PARITY_DISABLED",
+              "value": "0"
+            },
+            {
+              "name": "PARITY_ENABLED",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "baudRateEnum",
+          "base_type": "bit[31:0]",
+          "values": [
+            {
+              "name": "BAUD_4800",
+              "value": "32'd 4800"
+            },
+            {
+              "name": "BAUD_9600",
+              "value": "32'd 9600"
+            },
+            {
+              "name": "BAUD_19200",
+              "value": "32'd 19200"
+            }
+          ]
+        },
+        {
+          "name": "overSamplingEnum",
+          "base_type": "bit[4:0]",
+          "values": [
+            {
+              "name": "OVERSAMPLING_16",
+              "value": "5'd 16"
+            },
+            {
+              "name": "OVERSAMPLING_13",
+              "value": "5'd 13"
+            }
+          ]
+        },
+        {
+          "name": "stopBitEnum",
+          "base_type": "bit[1:0]",
+          "values": [
+            {
+              "name": "ONE_BIT",
+              "value": "1"
+            },
+            {
+              "name": "TWO_BIT",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "dataTypeEnum",
+          "base_type": "bit[3:0]",
+          "values": [
+            {
+              "name": "FIVE_BIT",
+              "value": "5"
+            },
+            {
+              "name": "SIX_BIT",
+              "value": "6"
+            },
+            {
+              "name": "SEVEN_BIT",
+              "value": "7"
+            },
+            {
+              "name": "EIGHT_BIT",
+              "value": "8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UartTxPkg",
+      "file": "UartTxPkg.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxPkg.sv",
+      "classes": [
+        {
+          "name": "UartTxAgentConfig",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [
+            {
+              "name": "is_active",
+              "type": "uvm_active_passive_enum"
+            },
+            {
+              "name": "hasCoverage",
+              "type": "bit"
+            },
+            {
+              "name": "packetsNeeded",
+              "type": "int"
+            },
+            {
+              "name": "patternToTransmit",
+              "type": "logic[7:0]"
+            },
+            {
+              "name": "uartBaudRate",
+              "type": "UartGlobalPkg::baudRateEnum"
+            },
+            {
+              "name": "patternNeeded",
+              "type": "bit"
+            },
+            {
+              "name": "OverSampledBaudFrequencyClk",
+              "type": "bit"
+            },
+            {
+              "name": "hasParity",
+              "type": "UartGlobalPkg::hasParityEnum"
+            },
+            {
+              "name": "uartOverSamplingMethod",
+              "type": "UartGlobalPkg::overSamplingEnum"
+            },
+            {
+              "name": "uartDataType",
+              "type": "UartGlobalPkg::dataTypeEnum"
+            },
+            {
+              "name": "uartParityType",
+              "type": "UartGlobalPkg::parityTypeEnum"
+            },
+            {
+              "name": "uartStopBit",
+              "type": "UartGlobalPkg::stopBitEnum"
+            },
+            {
+              "name": "parityErrorInjection",
+              "type": "bit"
+            },
+            {
+              "name": "framingErrorInjection",
+              "type": "bit"
+            },
+            {
+              "name": "breakingErrorInjection",
+              "type": "bit"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartTxPkg"
+        },
+        {
+          "name": "UartTxTransaction",
+          "base_class": "uvm_sequence_item",
+          "uvm_component_type": "sequence_item",
+          "properties": [
+            {
+              "name": "transmissionData",
+              "type": "logic[7:0]"
+            },
+            {
+              "name": "parity",
+              "type": "logic"
+            },
+            {
+              "name": "parityError",
+              "type": "logic"
+            },
+            {
+              "name": "breakingError",
+              "type": "logic"
+            },
+            {
+              "name": "overrunError",
+              "type": "logic"
+            },
+            {
+              "name": "framingError",
+              "type": "logic"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartTxPkg"
+        },
+        {
+          "name": "UartTxSeqItemConverter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartTxPkg"
+        },
+        {
+          "name": "UartTxConfigConverter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartTxPkg"
+        },
+        {
+          "name": "UartTxSequencer",
+          "base_class": "uvm_sequencer",
+          "uvm_component_type": "sequencer",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartTxPkg"
+        },
+        {
+          "name": "UartTxDriverProxy",
+          "base_class": "uvm_driver",
+          "uvm_component_type": "driver",
+          "properties": [
+            {
+              "name": "uartTxDriverBfm",
+              "type": "UartTxDriverBfm"
+            },
+            {
+              "name": "uartTxPacketStruct",
+              "type": "UartGlobalPkg::UartTxPacketStruct"
+            },
+            {
+              "name": "uartTxAgentConfig",
+              "type": "UartTxAgentConfig"
+            },
+            {
+              "name": "uartTxTransaction",
+              "type": "UartTxTransaction"
+            },
+            {
+              "name": "driverSynchronizer",
+              "type": "event"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartTxPkg"
+        },
+        {
+          "name": "UartTxMonitorProxy",
+          "base_class": "uvm_monitor",
+          "uvm_component_type": "monitor",
+          "properties": [
+            {
+              "name": "uartTxMonitorBfm",
+              "type": "UartTxMonitorBfm"
+            },
+            {
+              "name": "uartTxPacketStruct",
+              "type": "UartGlobalPkg::UartTxPacketStruct"
+            },
+            {
+              "name": "uartTxTransaction",
+              "type": "UartTxTransaction"
+            },
+            {
+              "name": "uartTxAgentConfig",
+              "type": "UartTxAgentConfig"
+            },
+            {
+              "name": "monitorSynchronizer",
+              "type": "event"
+            },
+            {
+              "name": "uartTxMonitorAnalysisPort",
+              "type": "uvm_analysis_port"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "uartTxMonitorAnalysisPort",
+              "port_type": "uvm_analysis_port"
+            }
+          ],
+          "virtual_interfaces": [],
+          "package": "UartTxPkg"
+        },
+        {
+          "name": "UartTxCoverage",
+          "base_class": "uvm_subscriber",
+          "uvm_component_type": "subscriber",
+          "properties": [
+            {
+              "name": "uartTxAgentConfig",
+              "type": "UartTxAgentConfig"
+            },
+            {
+              "name": "data",
+              "type": "bit[7:0]"
+            },
+            {
+              "name": "UartTxCovergroup",
+              "type": "<unnamed covergroup>"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartTxPkg"
+        },
+        {
+          "name": "UartTxAgent",
+          "base_class": "uvm_component",
+          "uvm_component_type": "component",
+          "properties": [
+            {
+              "name": "uartTxAgentConfig",
+              "type": "UartTxAgentConfig"
+            },
+            {
+              "name": "uartTxDriverProxy",
+              "type": "UartTxDriverProxy"
+            },
+            {
+              "name": "uartTxMonitorProxy",
+              "type": "UartTxMonitorProxy"
+            },
+            {
+              "name": "uartTxCoverage",
+              "type": "UartTxCoverage"
+            },
+            {
+              "name": "uartTxSequencer",
+              "type": "UartTxSequencer"
+            },
+            {
+              "name": "synchronizer",
+              "type": "event"
+            },
+            {
+              "name": "uartTxAgentAnalysisPort",
+              "type": "uvm_analysis_port"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "uartTxAgentAnalysisPort",
+              "port_type": "uvm_analysis_port"
+            }
+          ],
+          "virtual_interfaces": [],
+          "package": "UartTxPkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "UartRxPkg",
+      "file": "UartRxPkg.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxPkg.sv",
+      "classes": [
+        {
+          "name": "UartRxAgentConfig",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [
+            {
+              "name": "is_active",
+              "type": "uvm_active_passive_enum"
+            },
+            {
+              "name": "hasCoverage",
+              "type": "bit"
+            },
+            {
+              "name": "hasParity",
+              "type": "UartGlobalPkg::hasParityEnum"
+            },
+            {
+              "name": "uartOverSamplingMethod",
+              "type": "UartGlobalPkg::overSamplingEnum"
+            },
+            {
+              "name": "uartBaudRate",
+              "type": "UartGlobalPkg::baudRateEnum"
+            },
+            {
+              "name": "uartDataType",
+              "type": "UartGlobalPkg::dataTypeEnum"
+            },
+            {
+              "name": "uartParityType",
+              "type": "UartGlobalPkg::parityTypeEnum"
+            },
+            {
+              "name": "uartStopBit",
+              "type": "UartGlobalPkg::stopBitEnum"
+            },
+            {
+              "name": "packetsNeeded",
+              "type": "int"
+            },
+            {
+              "name": "patternNeeded",
+              "type": "bit"
+            },
+            {
+              "name": "patternToTransmit",
+              "type": "logic[7:0]"
+            },
+            {
+              "name": "parityErrorInjection",
+              "type": "bit"
+            },
+            {
+              "name": "OverSampledBaudFrequencyClk",
+              "type": "bit"
+            },
+            {
+              "name": "framingErrorInjection",
+              "type": "bit"
+            },
+            {
+              "name": "breakingErrorInjection",
+              "type": "bit"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartRxPkg"
+        },
+        {
+          "name": "UartRxTransaction",
+          "base_class": "uvm_sequence_item",
+          "uvm_component_type": "sequence_item",
+          "properties": [
+            {
+              "name": "receivingData",
+              "type": "logic[7:0]"
+            },
+            {
+              "name": "parity",
+              "type": "logic"
+            },
+            {
+              "name": "parityError",
+              "type": "logic"
+            },
+            {
+              "name": "breakingError",
+              "type": "logic"
+            },
+            {
+              "name": "overrunError",
+              "type": "logic"
+            },
+            {
+              "name": "framingError",
+              "type": "logic"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartRxPkg"
+        },
+        {
+          "name": "UartRxSeqItemConverter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartRxPkg"
+        },
+        {
+          "name": "UartRxConfigConverter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartRxPkg"
+        },
+        {
+          "name": "UartRxSequencer",
+          "base_class": "uvm_sequencer",
+          "uvm_component_type": "sequencer",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartRxPkg"
+        },
+        {
+          "name": "UartRxDriverProxy",
+          "base_class": "uvm_driver",
+          "uvm_component_type": "driver",
+          "properties": [
+            {
+              "name": "uartRxDriverBfm",
+              "type": "UartRxDriverBfm"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartRxPkg"
+        },
+        {
+          "name": "UartRxMonitorProxy",
+          "base_class": "uvm_monitor",
+          "uvm_component_type": "monitor",
+          "properties": [
+            {
+              "name": "uartRxMonitorBfm",
+              "type": "UartRxMonitorBfm"
+            },
+            {
+              "name": "uartRxTransaction",
+              "type": "UartRxTransaction"
+            },
+            {
+              "name": "uartRxPacketStruct",
+              "type": "UartGlobalPkg::UartRxPacketStruct"
+            },
+            {
+              "name": "uartRxAgentConfig",
+              "type": "UartRxAgentConfig"
+            },
+            {
+              "name": "uartRxMonitorAnalysisPort",
+              "type": "uvm_analysis_port"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "uartRxMonitorAnalysisPort",
+              "port_type": "uvm_analysis_port"
+            }
+          ],
+          "virtual_interfaces": [],
+          "package": "UartRxPkg"
+        },
+        {
+          "name": "UartRxCoverage",
+          "base_class": "uvm_subscriber",
+          "uvm_component_type": "subscriber",
+          "properties": [
+            {
+              "name": "uartRxAgentConfig",
+              "type": "UartRxAgentConfig"
+            },
+            {
+              "name": "data",
+              "type": "bit[7:0]"
+            },
+            {
+              "name": "UartRxCovergroup",
+              "type": "<unnamed covergroup>"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartRxPkg"
+        },
+        {
+          "name": "UartRxAgent",
+          "base_class": "uvm_component",
+          "uvm_component_type": "component",
+          "properties": [
+            {
+              "name": "uartRxAgentConfig",
+              "type": "UartRxAgentConfig"
+            },
+            {
+              "name": "uartRxDriverProxy",
+              "type": "UartRxDriverProxy"
+            },
+            {
+              "name": "uartRxMonitorProxy",
+              "type": "UartRxMonitorProxy"
+            },
+            {
+              "name": "uartRxCoverage",
+              "type": "UartRxCoverage"
+            },
+            {
+              "name": "uartRxSequencer",
+              "type": "UartRxSequencer"
+            },
+            {
+              "name": "uartRxAgentAnalysisPort",
+              "type": "uvm_analysis_port"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "uartRxAgentAnalysisPort",
+              "port_type": "uvm_analysis_port"
+            }
+          ],
+          "virtual_interfaces": [],
+          "package": "UartRxPkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "UartTxSequencePkg",
+      "file": "UartTxSequencePkg.sv",
+      "path": "src/hvlTop/uartTxAgent/uartTxSequences/UartTxSequencePkg.sv",
+      "classes": [
+        {
+          "name": "UartTxBaseSequence",
+          "base_class": "uvm_sequence",
+          "uvm_component_type": "sequence",
+          "properties": [
+            {
+              "name": "uartTxAgentConfig_",
+              "type": "UartTxAgentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartTxSequencePkg"
+        },
+        {
+          "name": "UartTxBaseSequenceWithPattern",
+          "base_class": "UartTxBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "packetsNeeded",
+              "type": "int"
+            },
+            {
+              "name": "patternToTransmit",
+              "type": "logic[7:0]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartTxSequencePkg"
+        },
+        {
+          "name": "UartTxTransmitterSequence",
+          "base_class": "UartTxBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartTxSequencePkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "UartRxSequencePkg",
+      "file": "UartRxSequencePkg.sv",
+      "path": "src/hvlTop/uartRxAgent/uartRxSequences/UartRxSequencePkg.sv",
+      "classes": [
+        {
+          "name": "UartRxBaseSequence",
+          "base_class": "uvm_sequence",
+          "uvm_component_type": "sequence",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartRxSequencePkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "UartEnvPkg",
+      "file": "UartEnvPkg.sv",
+      "path": "src/hvlTop/uartEnv/UartEnvPkg.sv",
+      "classes": [
+        {
+          "name": "UartEnvConfig",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [
+            {
+              "name": "hasVirtualSequencer",
+              "type": "bit"
+            },
+            {
+              "name": "hasScoreboard",
+              "type": "bit"
+            },
+            {
+              "name": "uartTxAgentConfig",
+              "type": "UartTxAgentConfig"
+            },
+            {
+              "name": "uartRxAgentConfig",
+              "type": "UartRxAgentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartEnvPkg"
+        },
+        {
+          "name": "UartVirtualSequencer",
+          "base_class": "uvm_sequencer",
+          "uvm_component_type": "sequencer",
+          "properties": [
+            {
+              "name": "uartTxSequencer",
+              "type": "UartTxSequencer"
+            },
+            {
+              "name": "uartRxSequencer",
+              "type": "UartRxSequencer"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartEnvPkg"
+        },
+        {
+          "name": "UartScoreboard",
+          "base_class": "uvm_scoreboard",
+          "uvm_component_type": "scoreboard",
+          "properties": [
+            {
+              "name": "uartNoOfPacketsStruct",
+              "type": "UartEnvPkg::UartNoOfPacketsStruct$[$]"
+            },
+            {
+              "name": "tempStruct",
+              "type": "UartEnvPkg::UartNoOfPacketsStruct"
+            },
+            {
+              "name": "packetCount",
+              "type": "int"
+            },
+            {
+              "name": "uartTxTransaction",
+              "type": "UartTxTransaction"
+            },
+            {
+              "name": "uartRxTransaction",
+              "type": "UartRxTransaction"
+            },
+            {
+              "name": "uartScoreboardTxAnalysisExport",
+              "type": "uvm_analysis_export"
+            },
+            {
+              "name": "uartScoreboardRxAnalysisExport",
+              "type": "uvm_analysis_export"
+            },
+            {
+              "name": "uartScoreboardTxAnalysisFifo",
+              "type": "uvm_tlm_analysis_fifo"
+            },
+            {
+              "name": "uartScoreboardRxAnalysisFifo",
+              "type": "uvm_tlm_analysis_fifo"
+            },
+            {
+              "name": "uartTxAgentConfig",
+              "type": "UartTxAgentConfig"
+            },
+            {
+              "name": "uartRxAgentConfig",
+              "type": "UartRxAgentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "uartScoreboardTxAnalysisExport",
+              "port_type": "uvm_analysis_export"
+            },
+            {
+              "name": "uartScoreboardRxAnalysisExport",
+              "port_type": "uvm_analysis_export"
+            },
+            {
+              "name": "uartScoreboardTxAnalysisFifo",
+              "port_type": "uvm_tlm_analysis_fifo"
+            },
+            {
+              "name": "uartScoreboardRxAnalysisFifo",
+              "port_type": "uvm_tlm_analysis_fifo"
+            }
+          ],
+          "virtual_interfaces": [],
+          "package": "UartEnvPkg"
+        },
+        {
+          "name": "UartEnv",
+          "base_class": "uvm_env",
+          "uvm_component_type": "env",
+          "properties": [
+            {
+              "name": "uartVirtualSequencer",
+              "type": "UartVirtualSequencer"
+            },
+            {
+              "name": "uartTxAgent",
+              "type": "UartTxAgent"
+            },
+            {
+              "name": "uartRxAgent",
+              "type": "UartRxAgent"
+            },
+            {
+              "name": "uartEnvConfig",
+              "type": "UartEnvConfig"
+            },
+            {
+              "name": "uartScoreboard",
+              "type": "UartScoreboard"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartEnvPkg"
+        }
+      ],
+      "typedefs": [
+        {
+          "name": "UartNoOfPacketsStruct",
+          "target": "struct{int packetNum;bit[7:0] transmissionData;bit[7:0] receivingData;bit[7:0] errorBitNo;bit match;bit parity;bit parityError;bit breakingError;bit framingError;}UartEnvPkg::s$125"
+        }
+      ],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "UartVirtualSequencePkg",
+      "file": "UartVirtualSequencePkg.sv",
+      "path": "src/hvlTop/tb/uartVirtualSequences/UartVirtualSequencePkg.sv",
+      "classes": [
+        {
+          "name": "UartVirtualBaseSequence",
+          "base_class": "uvm_sequence",
+          "uvm_component_type": "sequence",
+          "properties": [
+            {
+              "name": "p_sequencer",
+              "type": "UartVirtualSequencer"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name",
+            "m_set_p_sequencer"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartVirtualSequencePkg"
+        },
+        {
+          "name": "UartVirtualTransmissionSequence",
+          "base_class": "UartVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "p_sequencer",
+              "type": "UartVirtualSequencer"
+            },
+            {
+              "name": "uartTxTransmitterSequence",
+              "type": "UartTxTransmitterSequence"
+            },
+            {
+              "name": "uartRxBaseSequence",
+              "type": "UartRxBaseSequence"
+            },
+            {
+              "name": "uartTxAgentConfig",
+              "type": "UartTxAgentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name",
+            "m_set_p_sequencer"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartVirtualSequencePkg"
+        },
+        {
+          "name": "UartVirtualTransmissionSequenceWithPattern",
+          "base_class": "UartVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "p_sequencer",
+              "type": "UartVirtualSequencer"
+            },
+            {
+              "name": "uartTxBaseSequenceWithPattern",
+              "type": "UartTxBaseSequenceWithPattern"
+            },
+            {
+              "name": "uartRxBaseSequence",
+              "type": "UartRxBaseSequence"
+            },
+            {
+              "name": "uartTxAgentConfig",
+              "type": "UartTxAgentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name",
+            "m_set_p_sequencer"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartVirtualSequencePkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "UartBaseTestPkg",
+      "file": "UartBaseTestPkg.sv",
+      "path": "src/hvlTop/tb/UartBaseTestPkg.sv",
+      "classes": [
+        {
+          "name": "UartBaseTest",
+          "base_class": "uvm_test",
+          "uvm_component_type": "test",
+          "properties": [
+            {
+              "name": "uartVirtualTransmissionSequence",
+              "type": "UartVirtualTransmissionSequence"
+            },
+            {
+              "name": "uartVirtualTransmissionSequenceWithPattern",
+              "type": "UartVirtualTransmissionSequenceWithPattern"
+            },
+            {
+              "name": "uartEnvConfig",
+              "type": "UartEnvConfig"
+            },
+            {
+              "name": "uartEnv",
+              "type": "UartEnv"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate4800Test",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate9600Test",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate19200Test",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate9600WithBreakingErrorTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate4800WithParityErrorTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate19200WithFramingErrorTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate4800WithParityTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate9600WithParityTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate19200WithParityTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate9600WithParityErrorTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate19200WithParityErrorTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate4800WithBreakingErrorTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate19200WithBreakingErrorTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate4800WithFramingErrorTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        },
+        {
+          "name": "UartBaudRate9600WithFramingErrorTest",
+          "base_class": "UartBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "UartBaseTestPkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "HdlTop",
+      "kind": "instance",
+      "ports": [],
+      "sub_instances": [
+        {
+          "instance_name": "uartIf",
+          "module_name": "UartIf",
+          "ports": [
+            {
+              "name": "clk",
+              "direction": "In",
+              "type": "logic",
+              "width": 1,
+              "range": null
+            },
+            {
+              "name": "reset",
+              "direction": "In",
+              "type": "logic",
+              "width": 1,
+              "range": null
+            }
+          ]
+        },
+        {
+          "instance_name": "uartTxAgentBfm",
+          "module_name": "UartTxAgentBfm",
+          "ports": []
+        },
+        {
+          "instance_name": "uartRxAgentBfm",
+          "module_name": "UartRxAgentBfm",
+          "ports": []
+        }
+      ],
+      "interface_ports": [],
+      "parameters": []
+    },
+    {
+      "name": "HvlTop",
+      "kind": "instance",
+      "ports": [],
+      "sub_instances": [],
+      "interface_ports": [],
+      "parameters": []
+    },
+    {
+      "name": "UartTxDriverBfm",
+      "kind": "interface",
+      "signals": [
+        {
+          "name": "baudClk",
+          "type": "bit",
+          "range": ""
+        }
+      ],
+      "clocking_blocks": [],
+      "tasks": [
+        "GenerateBaudClk",
+        "BaudClkGenerator",
+        "WaitForReset",
+        "DriveToBfm",
+        "evenParityCompute",
+        "oddParityCompute",
+        "SampleData"
+      ],
+      "modports": [],
+      "role": "driver_bfm",
+      "layer": "hdl"
+    },
+    {
+      "name": "UartTxMonitorBfm",
+      "kind": "interface",
+      "signals": [
+        {
+          "name": "baudClk",
+          "type": "bit",
+          "range": ""
+        },
+        {
+          "name": "parity",
+          "type": "bit",
+          "range": ""
+        },
+        {
+          "name": "parity",
+          "type": "bit",
+          "range": ""
+        }
+      ],
+      "clocking_blocks": [],
+      "tasks": [
+        "GenerateBaudClk",
+        "BaudClkGenerator",
+        "WaitForReset",
+        "StartMonitoring",
+        "Deserializer",
+        "stopBitCheck",
+        "parityCheck"
+      ],
+      "modports": [],
+      "role": "monitor_bfm",
+      "layer": "hdl"
+    },
+    {
+      "name": "UartInterface",
+      "kind": "interface",
+      "signals": [
+        {
+          "name": "tx",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "rx",
+          "type": "logic",
+          "range": ""
+        }
+      ],
+      "clocking_blocks": [],
+      "tasks": [],
+      "modports": [],
+      "role": "interface",
+      "layer": "hdl"
+    },
+    {
+      "name": "UartRxDriverBfm",
+      "kind": "interface",
+      "signals": [
+        {
+          "name": "baudClk",
+          "type": "bit",
+          "range": ""
+        },
+        {
+          "name": "oversamplingClk",
+          "type": "bit",
+          "range": ""
+        }
+      ],
+      "clocking_blocks": [],
+      "tasks": [
+        "GenerateBaudClk",
+        "BaudClkGenerator",
+        "WaitForReset",
+        "DriveToBfm",
+        "evenParityCompute",
+        "oddParityCompute",
+        "SampleData"
+      ],
+      "modports": [],
+      "role": "driver_bfm",
+      "layer": "hdl"
+    },
+    {
+      "name": "UartRxMonitorBfm",
+      "kind": "interface",
+      "signals": [
+        {
+          "name": "baudClk",
+          "type": "bit",
+          "range": ""
+        },
+        {
+          "name": "parity",
+          "type": "bit",
+          "range": ""
+        },
+        {
+          "name": "parity",
+          "type": "bit",
+          "range": ""
+        }
+      ],
+      "clocking_blocks": [],
+      "tasks": [
+        "GenerateBaudClk",
+        "BaudClkGenerator",
+        "WaitForReset",
+        "StartMonitoring",
+        "Deserializer",
+        "stopBitCheck",
+        "parityCheck"
+      ],
+      "modports": [],
+      "role": "monitor_bfm",
+      "layer": "hdl"
+    }
+  ],
+  "architecture": {
+    "layers": {
+      "hdl": {
+        "description": "Hardware-level layer with BFMs and interfaces that directly interact with RTL signals",
+        "interfaces": [
+          "UartInterface"
+        ],
+        "driver_bfms": [
+          "UartTxDriverBfm",
+          "UartRxDriverBfm"
+        ],
+        "monitor_bfms": [
+          "UartTxMonitorBfm",
+          "UartRxMonitorBfm"
+        ]
+      },
+      "hvl": {
+        "description": "High-level verification layer with UVM components using TLM and virtual interfaces",
+        "agents": [],
+        "drivers": [
+          "UartTxDriverProxy",
+          "UartRxDriverProxy"
+        ],
+        "monitors": [
+          "UartTxMonitorProxy",
+          "UartRxMonitorProxy"
+        ],
+        "sequencers": [
+          "UartTxSequencer",
+          "UartRxSequencer",
+          "UartVirtualSequencer"
+        ],
+        "sequences": [
+          "UartTxBaseSequence",
+          "UartRxBaseSequence",
+          "UartVirtualBaseSequence"
+        ],
+        "sequence_items": [
+          "UartTxTransaction",
+          "UartRxTransaction"
+        ],
+        "envs": [
+          "UartEnv"
+        ],
+        "tests": [
+          "UartBaseTest"
+        ],
+        "subscribers": [
+          "UartTxCoverage",
+          "UartRxCoverage"
+        ],
+        "other_components": [
+          "UartTxAgentConfig",
+          "UartTxSeqItemConverter",
+          "UartTxConfigConverter",
+          "UartTxAgent",
+          "UartRxAgentConfig",
+          "UartRxSeqItemConverter",
+          "UartRxConfigConverter",
+          "UartRxAgent",
+          "UartTxBaseSequenceWithPattern",
+          "UartTxTransmitterSequence",
+          "UartEnvConfig",
+          "UartVirtualTransmissionSequence",
+          "UartVirtualTransmissionSequenceWithPattern",
+          "UartBaudRate4800Test",
+          "UartBaudRate9600Test",
+          "UartBaudRate19200Test",
+          "UartBaudRate9600WithBreakingErrorTest",
+          "UartBaudRate4800WithParityErrorTest",
+          "UartBaudRate19200WithFramingErrorTest",
+          "UartBaudRate4800WithParityTest",
+          "UartBaudRate9600WithParityTest",
+          "UartBaudRate19200WithParityTest",
+          "UartBaudRate9600WithParityErrorTest",
+          "UartBaudRate19200WithParityErrorTest",
+          "UartBaudRate4800WithBreakingErrorTest",
+          "UartBaudRate19200WithBreakingErrorTest",
+          "UartBaudRate4800WithFramingErrorTest",
+          "UartBaudRate9600WithFramingErrorTest"
+        ]
+      },
+      "globals": {
+        "description": "Global package definitions with parameters, types, enums, and structs",
+        "packages": [
+          "UartGlobalPkg",
+          "UartTxPkg",
+          "UartRxPkg",
+          "UartTxSequencePkg",
+          "UartRxSequencePkg",
+          "UartEnvPkg",
+          "UartVirtualSequencePkg",
+          "UartBaseTestPkg"
+        ]
+      }
+    },
+    "component_roles": [
+      "agent",
+      "agent_bfm",
+      "agent_config",
+      "assertions",
+      "cfg_converter",
+      "coverage",
+      "driver_bfm",
+      "driver_proxy",
+      "env",
+      "env_config",
+      "hdl_top",
+      "hvl_top",
+      "interface",
+      "monitor_bfm",
+      "monitor_proxy",
+      "package",
+      "scoreboard",
+      "seq_item_converter",
+      "sequence",
+      "sequencer",
+      "test",
+      "transaction"
+    ],
+    "tlm_connections": [
+      {
+        "owner_class": "UartTxMonitorProxy",
+        "port_type": "uvm_analysis_port",
+        "port_name": "uartTxMonitorAnalysisPort"
+      },
+      {
+        "owner_class": "UartTxAgent",
+        "port_type": "uvm_analysis_port",
+        "port_name": "uartTxAgentAnalysisPort"
+      },
+      {
+        "owner_class": "UartRxMonitorProxy",
+        "port_type": "uvm_analysis_port",
+        "port_name": "uartRxMonitorAnalysisPort"
+      },
+      {
+        "owner_class": "UartRxAgent",
+        "port_type": "uvm_analysis_port",
+        "port_name": "uartRxAgentAnalysisPort"
+      },
+      {
+        "owner_class": "UartScoreboard",
+        "port_type": "uvm_analysis_export",
+        "port_name": "uartScoreboardTxAnalysisExport"
+      },
+      {
+        "owner_class": "UartScoreboard",
+        "port_type": "uvm_analysis_export",
+        "port_name": "uartScoreboardRxAnalysisExport"
+      },
+      {
+        "owner_class": "UartScoreboard",
+        "port_type": "uvm_tlm_analysis_fifo",
+        "port_name": "uartScoreboardTxAnalysisFifo"
+      },
+      {
+        "owner_class": "UartScoreboard",
+        "port_type": "uvm_tlm_analysis_fifo",
+        "port_name": "uartScoreboardRxAnalysisFifo"
+      }
+    ],
+    "virtual_interface_usage": [],
+    "total_interfaces": 7,
+    "total_classes": 45,
+    "total_packages": 8
+  },
+  "file_manifest": [
+    {
+      "file": "UartHdlTop.sv",
+      "path": "src/hdlTop/UartHdlTop.sv",
+      "role": "hdl_top",
+      "layer": "hdl",
+      "imports": [
+        "uvm_pkg::*",
+        "UartGlobalPkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": []
+    },
+    {
+      "file": "UartTxAgentBfm.sv",
+      "path": "src/hdlTop/uartTxAgentBfm/UartTxAgentBfm.sv",
+      "role": "agent_bfm",
+      "layer": "hdl",
+      "imports": [
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": []
+    },
+    {
+      "file": "UartTxAssertions.sv",
+      "path": "src/hdlTop/uartTxAgentBfm/UartTxAssertions.sv",
+      "role": "assertions",
+      "layer": "hdl",
+      "imports": [],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "UARTTXASSERTIONS_INCLUDED_",
+          "value": "import UartGlobalPkg :: *;"
+        }
+      ]
+    },
+    {
+      "file": "UartTxDriverBfm.sv",
+      "path": "src/hdlTop/uartTxAgentBfm/UartTxDriverBfm.sv",
+      "role": "driver_bfm",
+      "layer": "hdl",
+      "imports": [
+        "UartGlobalPkg::*",
+        "uvm_pkg::*",
+        "UartTxPkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": []
+    },
+    {
+      "file": "UartTxMonitorBfm.sv",
+      "path": "src/hdlTop/uartTxAgentBfm/UartTxMonitorBfm.sv",
+      "role": "monitor_bfm",
+      "layer": "hdl",
+      "imports": [
+        "UartGlobalPkg::*",
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": []
+    },
+    {
+      "file": "UartInterface.sv",
+      "path": "src/hdlTop/uartInterface/UartInterface.sv",
+      "role": "interface",
+      "layer": "hdl",
+      "imports": [
+        "UartGlobalPkg::*"
+      ],
+      "includes": [],
+      "defines": []
+    },
+    {
+      "file": "UartRxAgentBfm.sv",
+      "path": "src/hdlTop/uartRxAgentBfm/UartRxAgentBfm.sv",
+      "role": "agent_bfm",
+      "layer": "hdl",
+      "imports": [
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": []
+    },
+    {
+      "file": "UartRxAssertions.sv",
+      "path": "src/hdlTop/uartRxAgentBfm/UartRxAssertions.sv",
+      "role": "assertions",
+      "layer": "hdl",
+      "imports": [],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "UARTRXASSERTIONS_INCLUDED_",
+          "value": "import UartGlobalPkg :: *;"
+        }
+      ]
+    },
+    {
+      "file": "UartRxDriverBfm.sv",
+      "path": "src/hdlTop/uartRxAgentBfm/UartRxDriverBfm.sv",
+      "role": "driver_bfm",
+      "layer": "hdl",
+      "imports": [
+        "UartGlobalPkg::*",
+        "uvm_pkg::*",
+        "UartRxPkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": []
+    },
+    {
+      "file": "UartRxMonitorBfm.sv",
+      "path": "src/hdlTop/uartRxAgentBfm/UartRxMonitorBfm.sv",
+      "role": "monitor_bfm",
+      "layer": "hdl",
+      "imports": [
+        "UartGlobalPkg::*",
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": []
+    },
+    {
+      "file": "UartHvlTop.sv",
+      "path": "src/hvlTop/UartHvlTop.sv",
+      "role": "hvl_top",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "HVLTOP_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartRxAgent.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxAgent.sv",
+      "role": "agent",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXAGENT_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartRxAgentConfig.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxAgentConfig.sv",
+      "role": "agent_config",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXAGENTCONFIG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartRxConfigConverter.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxConfigConverter.sv",
+      "role": "cfg_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXCONFIGCONVERTER_INCLUDED_",
+          "value": "class UartRxConfigConverter extends uvm_object;"
+        }
+      ]
+    },
+    {
+      "file": "UartRxCoverParameter.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxCoverParameter.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXCOVERPARAMETER_INCLUDED_",
+          "value": "package UartRxCoverParameter;"
+        }
+      ]
+    },
+    {
+      "file": "UartRxCoverage.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxCoverage.sv",
+      "role": "coverage",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXCOVERAGE_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartRxDriverProxy.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxDriverProxy.sv",
+      "role": "driver_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXDRIVERPROXY_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartRxMonitorProxy.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxMonitorProxy.sv",
+      "role": "monitor_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXMONITORPROXY_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartRxPkg.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxPkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [
+        "uvm_macros.svh",
+        "UartRxAgentConfig.sv",
+        "UartRxTransaction.sv",
+        "UartRxSeqItemConverter.sv",
+        "UartRxConfigConverter.sv",
+        "UartRxSequencer.sv",
+        "UartRxDriverProxy.sv",
+        "UartRxMonitorProxy.sv",
+        "UartRxCoverage.sv",
+        "UartRxAgent.sv"
+      ],
+      "defines": [
+        {
+          "name": "UARTRxPKG_INCLUDED_",
+          "value": "// includes all all files"
+        }
+      ]
+    },
+    {
+      "file": "UartRxSeqItemConverter.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxSeqItemConverter.sv",
+      "role": "seq_item_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXSEQITEMCONVERTER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartRxSequencer.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxSequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXSEQUENCER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartRxTransaction.sv",
+      "path": "src/hvlTop/uartRxAgent/UartRxTransaction.sv",
+      "role": "transaction",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXTRANSACTION_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartRxBaseSequence.sv",
+      "path": "src/hvlTop/uartRxAgent/uartRxSequences/UartRxBaseSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTRXBASESEQUENCE_INCLUDED_",
+          "value": "class UartRxBaseSequence extends uvm_sequence#(UartRxTransaction);"
+        }
+      ]
+    },
+    {
+      "file": "UartRxSequencePkg.sv",
+      "path": "src/hvlTop/uartRxAgent/uartRxSequences/UartRxSequencePkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "UARTRxSEQUENCEPKG_INCLUDED_",
+          "value": "package UartRxSequencePkg;"
+        }
+      ]
+    },
+    {
+      "file": "UartEnv.sv",
+      "path": "src/hvlTop/uartEnv/UartEnv.sv",
+      "role": "env",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTENV_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartEnvConfig.sv",
+      "path": "src/hvlTop/uartEnv/UartEnvConfig.sv",
+      "role": "env_config",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTENVCONFIG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartEnvPkg.sv",
+      "path": "src/hvlTop/uartEnv/UartEnvPkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [
+        "uvm_macros.svh",
+        "UartEnvConfig.sv",
+        "UartVirtualSequencer.sv",
+        "UartScoreboard.sv",
+        "UartEnv.sv"
+      ],
+      "defines": [
+        {
+          "name": "UARTENVPKG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartScoreboard.sv",
+      "path": "src/hvlTop/uartEnv/UartScoreboard.sv",
+      "role": "scoreboard",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTSCOREBOARD_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartVirtualSequencer.sv",
+      "path": "src/hvlTop/uartEnv/virtualSequencer/UartVirtualSequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTVIRTUALSEQUENCER_INLCUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaseTest.sv",
+      "path": "src/hvlTop/tb/UartBaseTest.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBASETEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaseTestPkg.sv",
+      "path": "src/hvlTop/tb/UartBaseTestPkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "UartVirtualSequencePkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "UartBaseTest.sv",
+        "UartBaudRate4800Test.sv",
+        "UartBaudRate9600Test.sv",
+        "UartBaudRate19200Test.sv",
+        "UartBaudRate9600WithBreakingErrorTest.sv",
+        "UartBaudRate4800WithParityErrorTest.sv",
+        "UartBaudRate19200WithFramingErrorTest.sv",
+        "UartBaudRate4800WithParityTest.sv",
+        "UartBaudRate9600WithParityTest.sv",
+        "UartBaudRate19200WithParityTest.sv",
+        "UartBaudRate9600WithParityErrorTest.sv",
+        "UartBaudRate19200WithParityErrorTest.sv",
+        "UartBaudRate4800WithBreakingErrorTest.sv",
+        "UartBaudRate19200WithBreakingErrorTest.sv",
+        "UartBaudRate4800WithFramingErrorTest.sv",
+        "UartBaudRate9600WithFramingErrorTest.sv"
+      ],
+      "defines": [
+        {
+          "name": "UARTBASETESTPKG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate19200Test.sv",
+      "path": "src/hvlTop/tb/UartBaudRate19200Test.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE19200TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate19200WithBreakingErrorTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate19200WithBreakingErrorTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE19200WITHBREAKINGERRORTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate19200WithFramingErrorTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate19200WithFramingErrorTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE19200WITHFRAMINGERRORTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate19200WithParityErrorTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate19200WithParityErrorTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE19200WITHPARITYERRORTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate19200WithParityTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate19200WithParityTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE19200WITHPARITYTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate4800Test.sv",
+      "path": "src/hvlTop/tb/UartBaudRate4800Test.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE4800TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate4800WithBreakingErrorTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate4800WithBreakingErrorTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE4800WITHBREAKINGERRORTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate4800WithFramingErrorTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate4800WithFramingErrorTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE4800WITHFRAMINGERRORTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate4800WithParityErrorTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate4800WithParityErrorTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE4800WITHPARITYERRORTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate4800WithParityTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate4800WithParityTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE4800WITHPARITYTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate9600Test.sv",
+      "path": "src/hvlTop/tb/UartBaudRate9600Test.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE9600TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate9600WithBreakingErrorTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate9600WithBreakingErrorTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE9600WITHBREAKINGERRORTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate9600WithFramingErrorTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate9600WithFramingErrorTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE9600WITHFRAMINGERRORTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate9600WithParityErrorTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate9600WithParityErrorTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE9600WITHPARITYERRORTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartBaudRate9600WithParityTest.sv",
+      "path": "src/hvlTop/tb/UartBaudRate9600WithParityTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTBAUDRATE9600WITHPARITYTEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartRxAssertionTB.sv",
+      "path": "src/hvlTop/tb/uartLocalAssertionTest/UartRxAssertionTB.sv",
+      "role": "other",
+      "layer": "hdl",
+      "imports": [],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "UARTRXASSERTIONTB_INCLUDED_",
+          "value": "`include \"uvm_macros.svh\""
+        }
+      ]
+    },
+    {
+      "file": "UartTxAssertionTB.sv",
+      "path": "src/hvlTop/tb/uartLocalAssertionTest/UartTxAssertionTB.sv",
+      "role": "other",
+      "layer": "hdl",
+      "imports": [],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "UARTTXASSERTIONTB_INCLUDED_",
+          "value": "`include \"uvm_macros.svh\""
+        }
+      ]
+    },
+    {
+      "file": "UartVirtualBaseSequence.sv",
+      "path": "src/hvlTop/tb/uartVirtualSequences/UartVirtualBaseSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTVIRTUALBASESEQUENCE_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartVirtualSequencePkg.sv",
+      "path": "src/hvlTop/tb/uartVirtualSequences/UartVirtualSequencePkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "UartEnvPkg::*",
+        "UartTxPkg::*",
+        "UartRxPkg::*",
+        "UartTxSequencePkg::*",
+        "UartRxSequencePkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "UartVirtualBaseSequence.sv",
+        "UartVirtualTransmissionSequence.sv",
+        "UartVirtualTransmissionSequenceWithPattern.sv"
+      ],
+      "defines": [
+        {
+          "name": "UARTVIRTUALSEQUENCEPKG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartVirtualTransmissionSequence.sv",
+      "path": "src/hvlTop/tb/uartVirtualSequences/UartVirtualTransmissionSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTVIRTUALTRANSMISSIONSEQUENCE_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartVirtualTransmissionSequenceWithPattern.sv",
+      "path": "src/hvlTop/tb/uartVirtualSequences/UartVirtualTransmissionSequenceWithPattern.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTVIRTUALTRANSMISSIONSEQUENCEWITHPATTERN_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartTxAgent.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxAgent.sv",
+      "role": "agent",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXAGENT_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartTxAgentConfig.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxAgentConfig.sv",
+      "role": "agent_config",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXAGENTCONFIG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartTxConfigConverter.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxConfigConverter.sv",
+      "role": "cfg_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXCONFIGCONVERTER_INCLUDED_",
+          "value": "class UartTxConfigConverter extends uvm_object;"
+        }
+      ]
+    },
+    {
+      "file": "UartTxCoverParameter.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxCoverParameter.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXCOVERPARAMETER_INCLUDED_",
+          "value": "package UartTxCoverParameter;"
+        }
+      ]
+    },
+    {
+      "file": "UartTxCoverage.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxCoverage.sv",
+      "role": "coverage",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXCOVERAGE_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartTxDriverProxy.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxDriverProxy.sv",
+      "role": "driver_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTxDRIVERPROXY_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartTxMonitorProxy.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxMonitorProxy.sv",
+      "role": "monitor_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXMONITORPROXY_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartTxPkg.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxPkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [
+        "uvm_macros.svh",
+        "UartTxAgentConfig.sv",
+        "UartTxTransaction.sv",
+        "UartTxSeqItemConverter.sv",
+        "UartTxConfigConverter.sv",
+        "UartTxSequencer.sv",
+        "UartTxDriverProxy.sv",
+        "UartTxMonitorProxy.sv",
+        "UartTxCoverage.sv",
+        "UartTxAgent.sv"
+      ],
+      "defines": [
+        {
+          "name": "UARTTXPKG_INCLUDED_",
+          "value": "// includes all the files required"
+        }
+      ]
+    },
+    {
+      "file": "UartTxSeqItemConverter.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxSeqItemConverter.sv",
+      "role": "seq_item_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXSEQITEMCONVERTER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartTxSequencer.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxSequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXSEQUENCER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartTxTransaction.sv",
+      "path": "src/hvlTop/uartTxAgent/UartTxTransaction.sv",
+      "role": "transaction",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXTRANSACTION_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "UartTxBaseSequence.sv",
+      "path": "src/hvlTop/uartTxAgent/uartTxSequences/UartTxBaseSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXBASESEQUENCE_INCLUDED_",
+          "value": "class UartTxBaseSequence extends uvm_sequence#(UartTxTransaction);"
+        }
+      ]
+    },
+    {
+      "file": "UartTxBaseSequenceWithPattern.sv",
+      "path": "src/hvlTop/uartTxAgent/uartTxSequences/UartTxBaseSequenceWithPattern.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXBASESEQUENCEWITHPATTERN_INCLUDED_",
+          "value": "class UartTxBaseSequenceWithPattern extends UartTxBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "UartTxSequencePkg.sv",
+      "path": "src/hvlTop/uartTxAgent/uartTxSequences/UartTxSequencePkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "UartTxTransmitterSequence.sv"
+      ],
+      "defines": [
+        {
+          "name": "UARTTXSEQUENCEPKG_INCLUDED_",
+          "value": "package UartTxSequencePkg;"
+        }
+      ]
+    },
+    {
+      "file": "UartTxTransmitterSequence.sv",
+      "path": "src/hvlTop/uartTxAgent/uartTxSequences/UartTxTransmitterSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTTXTRANSMITTERSEQUENCE_INCLUDED_",
+          "value": "class UartTxTransmitterSequence extends UartTxBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "UartGlobalPkg.sv",
+      "path": "src/globals/UartGlobalPkg.sv",
+      "role": "package",
+      "layer": "globals",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "UARTGLOBALPKG_INCLUDED_",
+          "value": "package UartGlobalPkg;"
+        }
+      ]
+    }
+  ]
+}

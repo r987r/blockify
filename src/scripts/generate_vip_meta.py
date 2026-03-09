@@ -33,6 +33,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 
 ROLE_PATTERNS = [
+    # snake_case patterns
     (r"_if\.sv$",                   "interface"),
     (r"_driver_bfm\.sv$",          "driver_bfm"),
     (r"_monitor_bfm\.sv$",         "monitor_bfm"),
@@ -62,10 +63,51 @@ ROLE_PATTERNS = [
     (r"_seq\.sv$",                 "sequence"),
     (r"_sequence\.sv$",            "sequence"),
     (r"_seqs\.sv$",                "sequence"),
+    # CamelCase patterns (e.g. mbits-mirafra uart_avip, ahb_avip)
+    (r"Interface\.sv$",            "interface"),
+    (r"DriverBfm\.sv$",            "driver_bfm"),
+    (r"MonitorBfm\.sv$",           "monitor_bfm"),
+    (r"AgentBfm\.sv$",             "agent_bfm"),
+    (r"DriverProxy\.sv$",          "driver_proxy"),
+    (r"MonitorProxy\.sv$",         "monitor_proxy"),
+    (r"AgentConfig\.sv$",          "agent_config"),
+    (r"EnvConfig\.sv$",            "env_config"),
+    (r"Agent\.sv$",                "agent"),
+    (r"Coverage\.sv$",             "coverage"),
+    (r"Scoreboard\.sv$",           "scoreboard"),
+    (r"Sequencer\.sv$",            "sequencer"),
+    (r"SeqItemConverter\.sv$",     "seq_item_converter"),
+    (r"CfgConverter\.sv$",         "cfg_converter"),
+    (r"Memory\.sv$",               "slave_memory"),
+    (r"Tx\.sv$",                   "transaction"),
+    (r"Env\.sv$",                  "env"),
+    (r"Pkg\.sv$",                  "package"),
+    (r"GlobalPkg\.sv$",            "globals_package"),
+    (r"GlobalsPkg\.sv$",           "globals_package"),
+    (r"VirtualSequencer.*\.sv$",   "virtual_sequencer"),
+    (r"HdlTop\.sv$",              "hdl_top"),
+    (r"HvlTop\.sv$",              "hvl_top"),
+    (r"BaseTest\.sv$",            "test"),
+    (r"Assertions?\.sv$",         "assertions"),
+    (r"Transaction\.sv$",         "transaction"),
+    (r"Environment\.sv$",         "env"),
+    (r"EnvironmentConfig\.sv$",   "env_config"),
+    (r"EnvironmentPackage\.sv$",  "package"),
+    (r"CoverProperty\.sv$",      "coverage"),
+    (r"ConfigConverter\.sv$",     "cfg_converter"),
+    (r"SequenceItemConverter\.sv$", "seq_item_converter"),
+    (r"SequencePackage\.sv$",    "package"),
+    (r"BaseSequence\.sv$",       "sequence"),
+    (r"Sequence\.sv$",           "sequence"),
+    (r"Package\.sv$",            "package"),
+    (r"TestPackage\.sv$",        "package"),
+    (r"VirtualSequencer\.sv$",   "virtual_sequencer"),
+    (r"VirtualSequence\.sv$",    "sequence"),
 ]
 
-HDL_DIR_KEYWORDS = ["hdl_top", "hdl", "bfm", "rtl"]
-HVL_DIR_KEYWORDS = ["hvl_top", "hvl", "env", "test", "agent", "master", "slave"]
+HDL_DIR_KEYWORDS = ["hdl_top", "hdl", "bfm", "rtl", "hdltop", "agentbfm"]
+HVL_DIR_KEYWORDS = ["hvl_top", "hvl", "env", "test", "agent", "master", "slave",
+                     "hvltop", "uartenv", "ahbenv", "apbenv"]
 
 
 def classify_file_role(filepath):

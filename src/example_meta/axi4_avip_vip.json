@@ -1,7 +1,7 @@
 {
   "blockify_version": "0.1.0",
   "metadata_type": "vip",
-  "generated_at": "2026-03-09T10:41:15.795204+00:00",
+  "generated_at": "2026-03-09T10:44:38.146836+00:00",
   "source": {
     "repo_url": "https://github.com/mbits-mirafra/axi4_avip",
     "repo_name": "axi4_avip",
@@ -44,95 +44,95 @@
       "typedefs": [
         {
           "name": "awburst_e",
-          "target": "2497755432544 axi4_globals_pkg::awburst_e"
+          "target": "4542763677280 axi4_globals_pkg::awburst_e"
         },
         {
           "name": "arburst_e",
-          "target": "2497755434024 axi4_globals_pkg::arburst_e"
+          "target": "4542763678760 axi4_globals_pkg::arburst_e"
         },
         {
           "name": "awsize_e",
-          "target": "2497755435632 axi4_globals_pkg::awsize_e"
+          "target": "4542763680368 axi4_globals_pkg::awsize_e"
         },
         {
           "name": "arsize_e",
-          "target": "2497755438296 axi4_globals_pkg::arsize_e"
+          "target": "4542763683032 axi4_globals_pkg::arsize_e"
         },
         {
           "name": "awlock_e",
-          "target": "2497755440896 axi4_globals_pkg::awlock_e"
+          "target": "4542763689728 axi4_globals_pkg::awlock_e"
         },
         {
           "name": "arlock_e",
-          "target": "2497755441640 axi4_globals_pkg::arlock_e"
+          "target": "4542763690472 axi4_globals_pkg::arlock_e"
         },
         {
           "name": "awcache_e",
-          "target": "2497755442528 axi4_globals_pkg::awcache_e"
+          "target": "4542763691360 axi4_globals_pkg::awcache_e"
         },
         {
           "name": "arcache_e",
-          "target": "2497755447904 axi4_globals_pkg::arcache_e"
+          "target": "4542763692640 axi4_globals_pkg::arcache_e"
         },
         {
           "name": "endian_e",
-          "target": "2497755448952 axi4_globals_pkg::endian_e"
+          "target": "4542763693688 axi4_globals_pkg::endian_e"
         },
         {
           "name": "awprot_e",
-          "target": "2497755449840 axi4_globals_pkg::awprot_e"
+          "target": "4542763694576 axi4_globals_pkg::awprot_e"
         },
         {
           "name": "arprot_e",
-          "target": "2497755452584 axi4_globals_pkg::arprot_e"
+          "target": "4542763697320 axi4_globals_pkg::arprot_e"
         },
         {
           "name": "awid_e",
-          "target": "2497755455248 axi4_globals_pkg::awid_e"
+          "target": "4542763699984 axi4_globals_pkg::awid_e"
         },
         {
           "name": "bid_e",
-          "target": "2497755460408 axi4_globals_pkg::bid_e"
+          "target": "4542763709240 axi4_globals_pkg::bid_e"
         },
         {
           "name": "arid_e",
-          "target": "2497755469560 axi4_globals_pkg::arid_e"
+          "target": "4542763714296 axi4_globals_pkg::arid_e"
         },
         {
           "name": "rid_e",
-          "target": "2497755474696 axi4_globals_pkg::rid_e"
+          "target": "4542763719432 axi4_globals_pkg::rid_e"
         },
         {
           "name": "bresp_e",
-          "target": "2497755479752 axi4_globals_pkg::bresp_e"
+          "target": "4542763724488 axi4_globals_pkg::bresp_e"
         },
         {
           "name": "rresp_e",
-          "target": "2497755546792 axi4_globals_pkg::rresp_e"
+          "target": "4542763730088 axi4_globals_pkg::rresp_e"
         },
         {
           "name": "tx_type_e",
-          "target": "2497755548128 axi4_globals_pkg::tx_type_e"
+          "target": "4542763731424 axi4_globals_pkg::tx_type_e"
         },
         {
           "name": "transfer_type_e",
-          "target": "2497755549176 axi4_globals_pkg::transfer_type_e"
+          "target": "4542763732472 axi4_globals_pkg::transfer_type_e"
         },
         {
           "name": "read_data_type_mode_e",
-          "target": "2497755554840 axi4_globals_pkg::read_data_type_mode_e"
+          "target": "4542763734040 axi4_globals_pkg::read_data_type_mode_e"
         },
         {
           "name": "write_read_data_mode_e",
-          "target": "2497755556320 axi4_globals_pkg::write_read_data_mode_e"
+          "target": "4542763735520 axi4_globals_pkg::write_read_data_mode_e"
         },
         {
           "name": "response_mode_e",
-          "target": "2497755557504 axi4_globals_pkg::response_mode_e"
+          "target": "4542763736704 axi4_globals_pkg::response_mode_e"
         },
         {
           "name": "qos_mode_e",
-          "target": "2497755559008 axi4_globals_pkg::qos_mode_e"
+          "target": "4542763738208 axi4_globals_pkg::qos_mode_e"
         },
         {
           "name": "axi4_write_transfer_char_s",
@@ -144,7 +144,7 @@
         },
         {
           "name": "axi4_transfer_cfg_s",
-          "target": "struct{bit[31:0] min_address;bit[31:0] max_address;int wait_count_write_address_channel;int wait_count_write_data_channel;int wait_count_write_response_channel;int wait_count_read_address_channel;int wait_count_read_data_channel;int outstanding_write_tx;int outstanding_read_tx;2497732289200 axi4_globals_pkg::response_mode_e slave_response_mode;2497732289424 axi4_globals_pkg::qos_mode_e qos_mode_type;}axi4_globals_pkg::s$92"
+          "target": "struct{bit[31:0] min_address;bit[31:0] max_address;int wait_count_write_address_channel;int wait_count_write_data_channel;int wait_count_write_response_channel;int wait_count_read_address_channel;int wait_count_read_data_channel;int outstanding_write_tx;int outstanding_read_tx;4542742995632 axi4_globals_pkg::response_mode_e slave_response_mode;4542742995856 axi4_globals_pkg::qos_mode_e qos_mode_type;}axi4_globals_pkg::s$92"
         }
       ],
       "parameters": [
