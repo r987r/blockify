@@ -1,0 +1,3632 @@
+{
+  "blockify_version": "0.1.0",
+  "metadata_type": "vip",
+  "generated_at": "2026-03-09T10:45:23.099341+00:00",
+  "source": {
+    "repo_url": "https://github.com/mbits-mirafra/ahb_avip",
+    "repo_name": "ahb_avip",
+    "commit_sha": "b4f5bce0ffbeb39cd4b5f7628c8d5c8e3686d31b",
+    "branch": "main"
+  },
+  "compilation": {
+    "status": "PASS",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "lint_output": "\nBuild succeeded: 0 errors, 1 warning\nin file included from import/uvm-core/src/uvm_pkg.sv:57:\nin file included from import/uvm-core/src/base/uvm_base.svh:77:\nimport/uvm-core/src/base/uvm_config_db_implementation.svh:375:26: warning: unknown character escape sequence '\\.' [-Wunknown-escape-code]\n            separator = \"\\.(\" ;\n                         ^\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/globals",
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/hvlTop/masterAgent/masterSequences",
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/hvlTop/masterAgent",
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/hvlTop/slaveAgent",
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/hvlTop/slaveAgent/slaveSequences",
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/hvlTop/environment/virtualSequencer",
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/hvlTop/tb/virtualSequences",
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/hvlTop/environment",
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/hvlTop/tb/test",
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/hvlTop",
+      "/home/runner/work/blockify/blockify/import/ahb_avip/src/hdlTop"
+    ]
+  },
+  "vip_info": {
+    "protocol": "ahb",
+    "total_files": 76,
+    "hdl_files": 12,
+    "hvl_files": 63,
+    "globals_files": 1
+  },
+  "packages": [
+    {
+      "name": "AhbGlobalPackage",
+      "file": "AhbGlobalPackage.sv",
+      "path": "src/globals/AhbGlobalPackage.sv",
+      "classes": [],
+      "typedefs": [
+        {
+          "name": "ahbBurstEnum",
+          "target": "4472101004992 AhbGlobalPackage::ahbBurstEnum"
+        },
+        {
+          "name": "ahbTransferEnum",
+          "target": "4472101008520 AhbGlobalPackage::ahbTransferEnum"
+        },
+        {
+          "name": "ahbRespEnum",
+          "target": "4472101010176 AhbGlobalPackage::ahbRespEnum"
+        },
+        {
+          "name": "ahbHsizeEnum",
+          "target": "4472101011224 AhbGlobalPackage::ahbHsizeEnum"
+        },
+        {
+          "name": "ahbProtectionEnum",
+          "target": "4472101014936 AhbGlobalPackage::ahbProtectionEnum"
+        },
+        {
+          "name": "ahbOperationEnum",
+          "target": "4472101022440 AhbGlobalPackage::ahbOperationEnum"
+        },
+        {
+          "name": "ahbTransferCharStruct",
+          "target": "struct{logic[31:0] haddr;logic[0:0] hselx;4472077421776 AhbGlobalPackage::ahbBurstEnum hburst;logic hmastlock;4472077422832 AhbGlobalPackage::ahbProtectionEnum hprot;4472077422608 AhbGlobalPackage::ahbHsizeEnum hsize;logic hnonsec;logic hexcl;logic[0:0] hmaster;4472077422000 AhbGlobalPackage::ahbTransferEnum htrans;logic[16:0][31:0] hwdata;logic[16:0][3:0] hwstrb;4472077423056 AhbGlobalPackage::ahbOperationEnum hwrite;logic[16:0][31:0] hrdata;logic hreadyout;4472077422224 AhbGlobalPackage::ahbRespEnum hresp;logic hexokay;logic hready;int noOfWaitStates;bit[16:0] busyControl;}AhbGlobalPackage::s$38"
+        },
+        {
+          "name": "ahbTransferConfigStruct",
+          "target": "struct{logic[31:0] haddr;bit[31:0] minimumAddress;bit[31:0] maximumAddress;int noOfWaitStates;}AhbGlobalPackage::s$39"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "NO_OF_MASTERS",
+          "type": "int",
+          "value": "1",
+          "is_local": true
+        },
+        {
+          "name": "NO_OF_SLAVES",
+          "type": "int",
+          "value": "1",
+          "is_local": true
+        },
+        {
+          "name": "MASTER_AGENT_ACTIVE",
+          "type": "bit",
+          "value": "1'b1",
+          "is_local": true
+        },
+        {
+          "name": "SLAVE_AGENT_ACTIVE",
+          "type": "bit",
+          "value": "1'b1",
+          "is_local": true
+        },
+        {
+          "name": "ADDR_WIDTH",
+          "type": "int",
+          "value": "32",
+          "is_local": true
+        },
+        {
+          "name": "DATA_WIDTH",
+          "type": "int",
+          "value": "32",
+          "is_local": true
+        },
+        {
+          "name": "HMASTER_WIDTH",
+          "type": "int",
+          "value": "1",
+          "is_local": true
+        },
+        {
+          "name": "HPROT_WIDTH",
+          "type": "int",
+          "value": "4",
+          "is_local": true
+        },
+        {
+          "name": "SLAVE_MEMORY_SIZE",
+          "type": "int",
+          "value": "12",
+          "is_local": true
+        },
+        {
+          "name": "SLAVE_MEMORY_GAP",
+          "type": "int",
+          "value": "5",
+          "is_local": true
+        },
+        {
+          "name": "MEMORY_WIDTH",
+          "type": "int",
+          "value": "8",
+          "is_local": true
+        },
+        {
+          "name": "LENGTH",
+          "type": "int",
+          "value": "4",
+          "is_local": true
+        }
+      ],
+      "structs": [
+        {
+          "name": "ahbTransferCharStruct",
+          "fields": [
+            {
+              "name": "haddr",
+              "type": "1:0]"
+            },
+            {
+              "name": "hselx",
+              "type": "1:0]"
+            },
+            {
+              "name": "hburst",
+              "type": "ahbBurstEnum"
+            },
+            {
+              "name": "hmastlock",
+              "type": "logic"
+            },
+            {
+              "name": "hprot",
+              "type": "ahbProtectionEnum"
+            },
+            {
+              "name": "hsize",
+              "type": "ahbHsizeEnum"
+            },
+            {
+              "name": "hnonsec",
+              "type": "logic"
+            },
+            {
+              "name": "hexcl",
+              "type": "logic"
+            },
+            {
+              "name": "hmaster",
+              "type": "1:0]"
+            },
+            {
+              "name": "htrans",
+              "type": "ahbTransferEnum"
+            },
+            {
+              "name": "hwdata",
+              "type": "1:0]"
+            },
+            {
+              "name": "hwstrb",
+              "type": "1:0]"
+            },
+            {
+              "name": "hwrite",
+              "type": "ahbOperationEnum"
+            },
+            {
+              "name": "hrdata",
+              "type": "1:0]"
+            },
+            {
+              "name": "hreadyout",
+              "type": "logic"
+            },
+            {
+              "name": "hresp",
+              "type": "ahbRespEnum"
+            },
+            {
+              "name": "hexokay",
+              "type": "logic"
+            },
+            {
+              "name": "hready",
+              "type": "logic"
+            },
+            {
+              "name": "noOfWaitStates",
+              "type": "int"
+            },
+            {
+              "name": "busyControl",
+              "type": "bit [2**LENGTH:0]"
+            }
+          ]
+        },
+        {
+          "name": "ahbTransferConfigStruct",
+          "fields": [
+            {
+              "name": "haddr",
+              "type": "1:0]"
+            },
+            {
+              "name": "noOfWaitStates",
+              "type": "int"
+            }
+          ]
+        }
+      ],
+      "enums": [
+        {
+          "name": "ahbBurstEnum",
+          "base_type": "logic [2:0]",
+          "values": [
+            {
+              "name": "SINGLE",
+              "value": "3'b000"
+            },
+            {
+              "name": "INCR",
+              "value": "3'b001"
+            },
+            {
+              "name": "WRAP4",
+              "value": "3'b010"
+            },
+            {
+              "name": "INCR4",
+              "value": "3'b011"
+            },
+            {
+              "name": "WRAP8",
+              "value": "3'b100"
+            },
+            {
+              "name": "INCR8",
+              "value": "3'b101"
+            },
+            {
+              "name": "WRAP16",
+              "value": "3'b110"
+            },
+            {
+              "name": "INCR16",
+              "value": "3'b111"
+            }
+          ]
+        },
+        {
+          "name": "ahbTransferEnum",
+          "base_type": "logic [1:0]",
+          "values": [
+            {
+              "name": "IDLE",
+              "value": "2'b00"
+            },
+            {
+              "name": "BUSY",
+              "value": "2'b01"
+            },
+            {
+              "name": "NONSEQ",
+              "value": "2'b10"
+            },
+            {
+              "name": "SEQ",
+              "value": "2'b11"
+            }
+          ]
+        },
+        {
+          "name": "ahbRespEnum",
+          "base_type": "logic",
+          "values": [
+            {
+              "name": "OKAY",
+              "value": "1'b0"
+            },
+            {
+              "name": "ERROR",
+              "value": "1'b1"
+            }
+          ]
+        },
+        {
+          "name": "ahbHsizeEnum",
+          "base_type": "logic [2:0]",
+          "values": [
+            {
+              "name": "BYTE",
+              "value": "3'b000"
+            },
+            {
+              "name": "HALFWORD",
+              "value": "3'b001"
+            },
+            {
+              "name": "WORD",
+              "value": "3'b010"
+            },
+            {
+              "name": "DOUBLEWORD",
+              "value": "3'b011"
+            },
+            {
+              "name": "LINE4",
+              "value": "3'b100"
+            },
+            {
+              "name": "LINE8",
+              "value": "3'b101"
+            },
+            {
+              "name": "LINE16",
+              "value": "3'b110"
+            },
+            {
+              "name": "LINE32",
+              "value": "3'b111"
+            }
+          ]
+        },
+        {
+          "name": "ahbOperationEnum",
+          "base_type": "bit[1:0]",
+          "values": [
+            {
+              "name": "WRITE",
+              "value": "2'b01"
+            },
+            {
+              "name": "READ",
+              "value": "2'b00"
+            },
+            {
+              "name": "WRITE_READ",
+              "value": "2'b10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AhbMasterPackage",
+      "file": "AhbMasterPackage.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterPackage.sv",
+      "classes": [
+        {
+          "name": "AhbMasterAgentConfig",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [
+            {
+              "name": "is_active",
+              "type": "uvm_active_passive_enum"
+            },
+            {
+              "name": "hasCoverage",
+              "type": "bit"
+            },
+            {
+              "name": "haddr",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "masterMemory",
+              "type": "bit[7:0]$[17:0]"
+            },
+            {
+              "name": "masterMinimumAddressRangeArray",
+              "type": "bit[31:0]$[int]"
+            },
+            {
+              "name": "masterMaximumAddressRangeArray",
+              "type": "bit[31:0]$[int]"
+            },
+            {
+              "name": "noOfWaitStates",
+              "type": "int"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbMasterPackage"
+        },
+        {
+          "name": "AhbMasterTransaction",
+          "base_class": "uvm_sequence_item",
+          "uvm_component_type": "sequence_item",
+          "properties": [
+            {
+              "name": "haddr",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "hselx",
+              "type": "bit[0:0]"
+            },
+            {
+              "name": "hburst",
+              "type": "AhbGlobalPackage::ahbBurstEnum"
+            },
+            {
+              "name": "hmastlock",
+              "type": "bit"
+            },
+            {
+              "name": "hprot",
+              "type": "AhbGlobalPackage::ahbProtectionEnum"
+            },
+            {
+              "name": "hsize",
+              "type": "AhbGlobalPackage::ahbHsizeEnum"
+            },
+            {
+              "name": "hnonsec",
+              "type": "bit"
+            },
+            {
+              "name": "hexcl",
+              "type": "bit"
+            },
+            {
+              "name": "hmaster",
+              "type": "bit[0:0]"
+            },
+            {
+              "name": "htrans",
+              "type": "AhbGlobalPackage::ahbTransferEnum"
+            },
+            {
+              "name": "hwdata",
+              "type": "bit[31:0]$[$:16]"
+            },
+            {
+              "name": "hwstrb",
+              "type": "bit[3:0]$[$:16]"
+            },
+            {
+              "name": "hwrite",
+              "type": "AhbGlobalPackage::ahbOperationEnum"
+            },
+            {
+              "name": "hrdata",
+              "type": "bit[31:0]$[$:16]"
+            },
+            {
+              "name": "hreadyout",
+              "type": "bit"
+            },
+            {
+              "name": "hresp",
+              "type": "AhbGlobalPackage::ahbRespEnum"
+            },
+            {
+              "name": "hexokay",
+              "type": "bit"
+            },
+            {
+              "name": "hready",
+              "type": "bit"
+            },
+            {
+              "name": "noOfWaitStatesDetected",
+              "type": "int"
+            },
+            {
+              "name": "busyControl",
+              "type": "bit$[]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbMasterPackage"
+        },
+        {
+          "name": "AhbMasterSequenceItemConverter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbMasterPackage"
+        },
+        {
+          "name": "AhbMasterConfigConverter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbMasterPackage"
+        },
+        {
+          "name": "AhbMasterSequencer",
+          "base_class": "uvm_sequencer",
+          "uvm_component_type": "sequencer",
+          "properties": [
+            {
+              "name": "ahbMasterAgentConfig",
+              "type": "AhbMasterAgentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbMasterPackage"
+        },
+        {
+          "name": "AhbMasterDriverProxy",
+          "base_class": "uvm_driver",
+          "uvm_component_type": "driver",
+          "properties": [
+            {
+              "name": "ahbMasterTransaction",
+              "type": "AhbMasterTransaction"
+            },
+            {
+              "name": "ahbMasterDriverBFM",
+              "type": "AhbMasterDriverBFM"
+            },
+            {
+              "name": "ahbMasterAgentConfig",
+              "type": "AhbMasterAgentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbMasterPackage"
+        },
+        {
+          "name": "AhbMasterMonitorProxy",
+          "base_class": "uvm_monitor",
+          "uvm_component_type": "monitor",
+          "properties": [
+            {
+              "name": "ahbMasterMonitorBFM",
+              "type": "AhbMasterMonitorBFM"
+            },
+            {
+              "name": "ahbMasterAgentConfig",
+              "type": "AhbMasterAgentConfig"
+            },
+            {
+              "name": "ahbMasterAnalysisPort",
+              "type": "uvm_analysis_port"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "ahbMasterAnalysisPort",
+              "port_type": "uvm_analysis_port"
+            }
+          ],
+          "virtual_interfaces": [],
+          "package": "AhbMasterPackage"
+        },
+        {
+          "name": "AhbMasterCoverage",
+          "base_class": "uvm_subscriber",
+          "uvm_component_type": "subscriber",
+          "properties": [
+            {
+              "name": "ahbMasterAgentConfig",
+              "type": "AhbMasterAgentConfig"
+            },
+            {
+              "name": "ahbMasterCovergroup",
+              "type": "<unnamed covergroup>"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbMasterPackage"
+        },
+        {
+          "name": "AhbMasterAgent",
+          "base_class": "uvm_agent",
+          "uvm_component_type": "agent",
+          "properties": [
+            {
+              "name": "ahbMasterAgentConfig",
+              "type": "AhbMasterAgentConfig"
+            },
+            {
+              "name": "ahbMasterSequencer",
+              "type": "AhbMasterSequencer"
+            },
+            {
+              "name": "ahbMasterDriverProxy",
+              "type": "AhbMasterDriverProxy"
+            },
+            {
+              "name": "ahbMasterMonitorProxy",
+              "type": "AhbMasterMonitorProxy"
+            },
+            {
+              "name": "ahbMasterCoverage",
+              "type": "AhbMasterCoverage"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbMasterPackage"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "AhbSlavePackage",
+      "file": "AhbSlavePackage.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlavePackage.sv",
+      "classes": [
+        {
+          "name": "AhbSlaveAgentConfig",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [
+            {
+              "name": "is_active",
+              "type": "uvm_active_passive_enum"
+            },
+            {
+              "name": "hasCoverage",
+              "type": "bit"
+            },
+            {
+              "name": "maximumAddress",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "minimumAddress",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "slaveMemory",
+              "type": "bit[7:0]$[longint]"
+            },
+            {
+              "name": "haddr",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "noOfWaitStates",
+              "type": "int"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbSlavePackage"
+        },
+        {
+          "name": "AhbSlaveTransaction",
+          "base_class": "uvm_sequence_item",
+          "uvm_component_type": "sequence_item",
+          "properties": [
+            {
+              "name": "haddr",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "hselx",
+              "type": "bit[0:0]"
+            },
+            {
+              "name": "hburst",
+              "type": "AhbGlobalPackage::ahbBurstEnum"
+            },
+            {
+              "name": "hmastlock",
+              "type": "bit"
+            },
+            {
+              "name": "hprot",
+              "type": "AhbGlobalPackage::ahbProtectionEnum"
+            },
+            {
+              "name": "hsize",
+              "type": "AhbGlobalPackage::ahbHsizeEnum"
+            },
+            {
+              "name": "hnonsec",
+              "type": "bit"
+            },
+            {
+              "name": "hexcl",
+              "type": "bit"
+            },
+            {
+              "name": "hmaster",
+              "type": "bit[0:0]"
+            },
+            {
+              "name": "htrans",
+              "type": "AhbGlobalPackage::ahbTransferEnum"
+            },
+            {
+              "name": "hwdata",
+              "type": "bit[31:0]$[$:16]"
+            },
+            {
+              "name": "hwstrb",
+              "type": "bit[3:0]$[$:16]"
+            },
+            {
+              "name": "hwrite",
+              "type": "AhbGlobalPackage::ahbOperationEnum"
+            },
+            {
+              "name": "hrdata",
+              "type": "bit[31:0]$[$:16]"
+            },
+            {
+              "name": "hreadyout",
+              "type": "bit"
+            },
+            {
+              "name": "hresp",
+              "type": "AhbGlobalPackage::ahbRespEnum"
+            },
+            {
+              "name": "hexokay",
+              "type": "bit"
+            },
+            {
+              "name": "hready",
+              "type": "bit"
+            },
+            {
+              "name": "choosePacketData",
+              "type": "bit"
+            },
+            {
+              "name": "noOfWaitStates",
+              "type": "int"
+            },
+            {
+              "name": "busyControl",
+              "type": "bit$[]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbSlavePackage"
+        },
+        {
+          "name": "AhbSlaveSequenceItemConverter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbSlavePackage"
+        },
+        {
+          "name": "AhbSlaveConfigConverter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbSlavePackage"
+        },
+        {
+          "name": "AhbSlaveSequencer",
+          "base_class": "uvm_sequencer",
+          "uvm_component_type": "sequencer",
+          "properties": [
+            {
+              "name": "ahbSlaveAgentConfig",
+              "type": "AhbSlaveAgentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbSlavePackage"
+        },
+        {
+          "name": "AhbSlaveDriverProxy",
+          "base_class": "uvm_driver",
+          "uvm_component_type": "driver",
+          "properties": [
+            {
+              "name": "ahbSlaveTransaction",
+              "type": "AhbSlaveTransaction"
+            },
+            {
+              "name": "ahbSlaveDriverBFM",
+              "type": "AhbSlaveDriverBFM"
+            },
+            {
+              "name": "ahbSlaveAgentConfig",
+              "type": "AhbSlaveAgentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbSlavePackage"
+        },
+        {
+          "name": "AhbSlaveMonitorProxy",
+          "base_class": "uvm_monitor",
+          "uvm_component_type": "monitor",
+          "properties": [
+            {
+              "name": "ahbSlaveMonitorBFM",
+              "type": "AhbSlaveMonitorBFM"
+            },
+            {
+              "name": "ahbSlaveAgentConfig",
+              "type": "AhbSlaveAgentConfig"
+            },
+            {
+              "name": "ahbSlaveAnalysisPort",
+              "type": "uvm_analysis_port"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "ahbSlaveAnalysisPort",
+              "port_type": "uvm_analysis_port"
+            }
+          ],
+          "virtual_interfaces": [],
+          "package": "AhbSlavePackage"
+        },
+        {
+          "name": "AhbSlaveCoverage",
+          "base_class": "uvm_subscriber",
+          "uvm_component_type": "subscriber",
+          "properties": [
+            {
+              "name": "ahbSlaveAgentConfig",
+              "type": "AhbSlaveAgentConfig"
+            },
+            {
+              "name": "ahbSlaveCovergroup",
+              "type": "<unnamed covergroup>"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbSlavePackage"
+        },
+        {
+          "name": "AhbSlaveAgent",
+          "base_class": "uvm_agent",
+          "uvm_component_type": "agent",
+          "properties": [
+            {
+              "name": "ahbSlaveAgentConfig",
+              "type": "AhbSlaveAgentConfig"
+            },
+            {
+              "name": "ahbSlaveSequencer",
+              "type": "AhbSlaveSequencer"
+            },
+            {
+              "name": "ahbSlaveDriverProxy",
+              "type": "AhbSlaveDriverProxy"
+            },
+            {
+              "name": "ahbSlaveMonitorProxy",
+              "type": "AhbSlaveMonitorProxy"
+            },
+            {
+              "name": "ahbSlaveCoverage",
+              "type": "AhbSlaveCoverage"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbSlavePackage"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "AhbMasterSequencePackage",
+      "file": "AhbMasterSequencePackage.sv",
+      "path": "src/hvlTop/masterAgent/masterSequences/AhbMasterSequencePackage.sv",
+      "classes": [
+        {
+          "name": "AhbMasterBaseSequence",
+          "base_class": "uvm_sequence",
+          "uvm_component_type": "sequence",
+          "properties": [
+            {
+              "name": "p_sequencer",
+              "type": "AhbMasterSequencer"
+            },
+            {
+              "name": "ahbMasterSequencer",
+              "type": "AhbMasterSequencer"
+            },
+            {
+              "name": "ahbMasterTransaction",
+              "type": "AhbMasterTransaction"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name",
+            "m_set_p_sequencer"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbMasterSequencePackage"
+        },
+        {
+          "name": "AhbMasterSequence",
+          "base_class": "AhbMasterBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "req",
+              "type": "AhbMasterTransaction"
+            },
+            {
+              "name": "haddrSeq",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "hselxSeq",
+              "type": "bit[0:0]"
+            },
+            {
+              "name": "hburstSeq",
+              "type": "AhbGlobalPackage::ahbBurstEnum"
+            },
+            {
+              "name": "hmastlockSeq",
+              "type": "bit"
+            },
+            {
+              "name": "hprotSeq",
+              "type": "AhbGlobalPackage::ahbProtectionEnum"
+            },
+            {
+              "name": "hsizeSeq",
+              "type": "AhbGlobalPackage::ahbHsizeEnum"
+            },
+            {
+              "name": "hnonsecSeq",
+              "type": "bit"
+            },
+            {
+              "name": "hexclSeq",
+              "type": "bit"
+            },
+            {
+              "name": "hmasterSeq",
+              "type": "bit[0:0]"
+            },
+            {
+              "name": "htransSeq",
+              "type": "AhbGlobalPackage::ahbTransferEnum"
+            },
+            {
+              "name": "hwdataSeq",
+              "type": "bit[31:0]$[$:16]"
+            },
+            {
+              "name": "hwstrbSeq",
+              "type": "bit[3:0]$[$:16]"
+            },
+            {
+              "name": "hwriteSeq",
+              "type": "AhbGlobalPackage::ahbOperationEnum"
+            },
+            {
+              "name": "hexokaySeq",
+              "type": "bit"
+            },
+            {
+              "name": "busyControlSeq",
+              "type": "bit$[]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbMasterSequencePackage"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "AhbSlaveSequencePackage",
+      "file": "AhbSlaveSequencePackage.sv",
+      "path": "src/hvlTop/slaveAgent/slaveSequences/AhbSlaveSequencePackage.sv",
+      "classes": [
+        {
+          "name": "AhbSlaveBaseSequence",
+          "base_class": "uvm_sequence",
+          "uvm_component_type": "sequence",
+          "properties": [
+            {
+              "name": "p_sequencer",
+              "type": "AhbSlaveSequencer"
+            },
+            {
+              "name": "ahbSlaveSequencer",
+              "type": "AhbSlaveSequencer"
+            },
+            {
+              "name": "ahbSlaveTransaction",
+              "type": "AhbSlaveTransaction"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name",
+            "m_set_p_sequencer"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbSlaveSequencePackage"
+        },
+        {
+          "name": "AhbSlaveSequence",
+          "base_class": "AhbSlaveBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "hrdataSeq",
+              "type": "bit[31:0]$[$:16]"
+            },
+            {
+              "name": "hreadyoutSeq",
+              "type": "bit"
+            },
+            {
+              "name": "hexokaySeq",
+              "type": "bit"
+            },
+            {
+              "name": "choosePacketDataSeq",
+              "type": "bit"
+            },
+            {
+              "name": "noOfWaitStatesSeq",
+              "type": "int"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbSlaveSequencePackage"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "AhbEnvironmentPackage",
+      "file": "AhbEnvironmentPackage.sv",
+      "path": "src/hvlTop/environment/AhbEnvironmentPackage.sv",
+      "classes": [
+        {
+          "name": "AhbEnvironmentConfig",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [
+            {
+              "name": "hasScoreboard",
+              "type": "bit"
+            },
+            {
+              "name": "hasVirtualSequencer",
+              "type": "bit"
+            },
+            {
+              "name": "noOfMasters",
+              "type": "int"
+            },
+            {
+              "name": "noOfSlaves",
+              "type": "int"
+            },
+            {
+              "name": "operationMode",
+              "type": "AhbGlobalPackage::ahbOperationEnum"
+            },
+            {
+              "name": "ahbMasterAgentConfig",
+              "type": "AhbMasterAgentConfig$[]"
+            },
+            {
+              "name": "ahbSlaveAgentConfig",
+              "type": "AhbSlaveAgentConfig$[]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbEnvironmentPackage"
+        },
+        {
+          "name": "AhbVirtualSequencer",
+          "base_class": "uvm_sequencer",
+          "uvm_component_type": "sequencer",
+          "properties": [
+            {
+              "name": "ahbMasterSequencer",
+              "type": "AhbMasterSequencer"
+            },
+            {
+              "name": "ahbSlaveSequencer",
+              "type": "AhbSlaveSequencer"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbEnvironmentPackage"
+        },
+        {
+          "name": "AhbScoreboard",
+          "base_class": "uvm_scoreboard",
+          "uvm_component_type": "scoreboard",
+          "properties": [
+            {
+              "name": "ahbMasterTransaction",
+              "type": "AhbMasterTransaction"
+            },
+            {
+              "name": "ahbSlaveTransaction",
+              "type": "AhbSlaveTransaction"
+            },
+            {
+              "name": "ahbEnvironmentConfig",
+              "type": "AhbEnvironmentConfig"
+            },
+            {
+              "name": "ahbMasterAnalysisFifo",
+              "type": "uvm_tlm_analysis_fifo$[]"
+            },
+            {
+              "name": "ahbSlaveAnalysisFifo",
+              "type": "uvm_tlm_analysis_fifo$[]"
+            },
+            {
+              "name": "ahbMasterTransactionCount",
+              "type": "int"
+            },
+            {
+              "name": "ahbSlaveTransactionCount",
+              "type": "int"
+            },
+            {
+              "name": "VerifiedMasterHwdataCount",
+              "type": "int"
+            },
+            {
+              "name": "FailedMasterHwdataCount",
+              "type": "int"
+            },
+            {
+              "name": "VerifiedMasterHaddrCount",
+              "type": "int"
+            },
+            {
+              "name": "FailedMasterHaddrCount",
+              "type": "int"
+            },
+            {
+              "name": "VerifiedMasterHwriteCount",
+              "type": "int"
+            },
+            {
+              "name": "FailedMasterHwriteCount",
+              "type": "int"
+            },
+            {
+              "name": "VerifiedSlaveHrdataCount",
+              "type": "int"
+            },
+            {
+              "name": "FailedSlaveHrdataCount",
+              "type": "int"
+            },
+            {
+              "name": "VerifiedMasterHprotCount",
+              "type": "int"
+            },
+            {
+              "name": "FailedMasterHprotCount",
+              "type": "int"
+            },
+            {
+              "name": "indexMaster",
+              "type": "int"
+            },
+            {
+              "name": "indexSlave",
+              "type": "int"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "ahbMasterAnalysisFifo",
+              "port_type": "uvm_tlm_analysis_fifo$[]"
+            },
+            {
+              "name": "ahbSlaveAnalysisFifo",
+              "port_type": "uvm_tlm_analysis_fifo$[]"
+            }
+          ],
+          "virtual_interfaces": [],
+          "package": "AhbEnvironmentPackage"
+        },
+        {
+          "name": "AhbEnvironment",
+          "base_class": "uvm_env",
+          "uvm_component_type": "env",
+          "properties": [
+            {
+              "name": "ahbMasterAgent",
+              "type": "AhbMasterAgent$[]"
+            },
+            {
+              "name": "ahbSlaveAgent",
+              "type": "AhbSlaveAgent$[]"
+            },
+            {
+              "name": "ahbScoreboard",
+              "type": "AhbScoreboard"
+            },
+            {
+              "name": "ahbVirtualSequencer",
+              "type": "AhbVirtualSequencer"
+            },
+            {
+              "name": "ahbEnvironmentConfig",
+              "type": "AhbEnvironmentConfig"
+            },
+            {
+              "name": "ahbMasterAgentConfig",
+              "type": "AhbMasterAgentConfig$[]"
+            },
+            {
+              "name": "ahbSlaveAgentConfig",
+              "type": "AhbSlaveAgentConfig$[]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbEnvironmentPackage"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "AhbVirtualSequencePackage",
+      "file": "AhbVirtualSequencePackage.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualSequencePackage.sv",
+      "classes": [
+        {
+          "name": "AhbVirtualBaseSequence",
+          "base_class": "uvm_sequence",
+          "uvm_component_type": "sequence",
+          "properties": [
+            {
+              "name": "p_sequencer",
+              "type": "AhbVirtualSequencer"
+            },
+            {
+              "name": "ahbEnvironmentConfig",
+              "type": "AhbEnvironmentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name",
+            "m_set_p_sequencer"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualWriteSequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualReadSequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualSingleWriteSequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualSingleReadSequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualWriteWithBusySequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualReadWithBusySequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualSingleWriteWithWaitStateSequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualSingleReadWithWaitStateSequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualWriteWithWaitStateSequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualReadWithWaitStateSequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        },
+        {
+          "name": "AhbVirtualWriteFollowedByReadSequence",
+          "base_class": "AhbVirtualBaseSequence",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbMasterWriteSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbMasterReadSequence",
+              "type": "AhbMasterSequence"
+            },
+            {
+              "name": "ahbSlaveWriteSequence",
+              "type": "AhbSlaveSequence"
+            },
+            {
+              "name": "ahbSlaveReadSequence",
+              "type": "AhbSlaveSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbVirtualSequencePackage"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "AhbTestPackage",
+      "file": "AhbTestPackage.sv",
+      "path": "src/hvlTop/tb/test/AhbTestPackage.sv",
+      "classes": [
+        {
+          "name": "AhbBaseTest",
+          "base_class": "uvm_test",
+          "uvm_component_type": "test",
+          "properties": [
+            {
+              "name": "ahbEnvironment",
+              "type": "AhbEnvironment"
+            },
+            {
+              "name": "ahbEnvironmentConfig",
+              "type": "AhbEnvironmentConfig"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbWriteTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualWriteSequence",
+              "type": "AhbVirtualWriteSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbReadTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualReadSequence",
+              "type": "AhbVirtualReadSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbSingleWriteTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualSingleWriteSequence",
+              "type": "AhbVirtualSingleWriteSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbSingleReadTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualSingleReadSequence",
+              "type": "AhbVirtualSingleReadSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbWriteWithBusyTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualWriteWithBusySequence",
+              "type": "AhbVirtualWriteWithBusySequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbReadWithBusyTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualReadWithBusySequence",
+              "type": "AhbVirtualReadWithBusySequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbSingleWriteWithWaitStateTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualSingleWriteWithWaitStateSequence",
+              "type": "AhbVirtualSingleWriteWithWaitStateSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbSingleReadWithWaitStateTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualSingleReadWithWaitStateSequence",
+              "type": "AhbVirtualSingleReadWithWaitStateSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbWriteWithWaitStateTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualWriteWithWaitStateSequence",
+              "type": "AhbVirtualWriteWithWaitStateSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbReadWithWaitStateTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualReadWithWaitStateSequence",
+              "type": "AhbVirtualReadWithWaitStateSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        },
+        {
+          "name": "AhbWriteFollowedByReadTest",
+          "base_class": "AhbBaseTest",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "ahbVirtualWriteFollowedByReadSequence",
+              "type": "AhbVirtualWriteFollowedByReadSequence"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "AhbTestPackage"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "HdlTop",
+      "kind": "instance",
+      "ports": [],
+      "sub_instances": [
+        {
+          "instance_name": "ahbInterface",
+          "module_name": "AhbInterface",
+          "ports": [
+            {
+              "name": "hclk",
+              "direction": "In",
+              "type": "logic",
+              "width": 1,
+              "range": null
+            },
+            {
+              "name": "hresetn",
+              "direction": "In",
+              "type": "logic",
+              "width": 1,
+              "range": null
+            }
+          ]
+        },
+        {
+          "instance_name": "ahbMasterAgentBFM",
+          "module_name": "AhbMasterAgentBFM",
+          "ports": []
+        },
+        {
+          "instance_name": "ahbSlaveAgentBFM",
+          "module_name": "AhbSlaveAgentBFM",
+          "ports": []
+        }
+      ],
+      "interface_ports": [],
+      "parameters": []
+    },
+    {
+      "name": "HvlTop",
+      "kind": "instance",
+      "ports": [],
+      "sub_instances": [],
+      "interface_ports": [],
+      "parameters": []
+    },
+    {
+      "name": "AhbInterface",
+      "kind": "interface",
+      "signals": [
+        {
+          "name": "haddr",
+          "type": "logic",
+          "range": "[ADDR_WIDTH-1:0]"
+        },
+        {
+          "name": "hselx",
+          "type": "logic",
+          "range": "[NO_OF_SLAVES-1:0]"
+        },
+        {
+          "name": "hburst",
+          "type": "logic",
+          "range": "[2:0]"
+        },
+        {
+          "name": "hmastlock",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "hprot",
+          "type": "logic",
+          "range": "[HPROT_WIDTH-1:0]"
+        },
+        {
+          "name": "hsize",
+          "type": "logic",
+          "range": "[2:0]"
+        },
+        {
+          "name": "hnonsec",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "hexcl",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "hmaster",
+          "type": "logic",
+          "range": "[HMASTER_WIDTH-1:0]"
+        },
+        {
+          "name": "htrans",
+          "type": "logic",
+          "range": "[1:0]"
+        },
+        {
+          "name": "hwdata",
+          "type": "logic",
+          "range": "[DATA_WIDTH-1:0]"
+        },
+        {
+          "name": "hwstrb",
+          "type": "logic",
+          "range": "[(DATA_WIDTH/8)-1:0]"
+        },
+        {
+          "name": "hwrite",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "hrdata",
+          "type": "logic",
+          "range": "[DATA_WIDTH-1:0]"
+        },
+        {
+          "name": "hreadyout",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "hresp",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "hexokay",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "hready",
+          "type": "logic",
+          "range": ""
+        }
+      ],
+      "clocking_blocks": [],
+      "tasks": [],
+      "modports": [],
+      "role": "interface",
+      "layer": "hdl"
+    },
+    {
+      "name": "AhbSlaveDriverBFM",
+      "kind": "interface",
+      "signals": [],
+      "clocking_blocks": [],
+      "tasks": [
+        "waitForResetn",
+        "slaveDriveToBFM",
+        "slaveDriveSingleTransfer",
+        "slavedriveBurstTransfer",
+        "waitCycles"
+      ],
+      "modports": [],
+      "role": "driver_bfm",
+      "layer": "hdl"
+    },
+    {
+      "name": "AhbSlaveMonitorBFM",
+      "kind": "interface",
+      "signals": [],
+      "clocking_blocks": [],
+      "tasks": [
+        "waitForResetn",
+        "slaveSampleData"
+      ],
+      "modports": [],
+      "role": "monitor_bfm",
+      "layer": "hdl"
+    },
+    {
+      "name": "AhbMasterDriverBFM",
+      "kind": "interface",
+      "signals": [],
+      "clocking_blocks": [],
+      "tasks": [
+        "waitForResetn",
+        "driveToBFM",
+        "driveSingleTransfer",
+        "driveBurstTransfer",
+        "driveBusyTransfer",
+        "driveIdle",
+        "WaitStates"
+      ],
+      "modports": [],
+      "role": "driver_bfm",
+      "layer": "hdl"
+    },
+    {
+      "name": "AhbMasterMonitorBFM",
+      "kind": "interface",
+      "signals": [],
+      "clocking_blocks": [],
+      "tasks": [
+        "waitForResetn",
+        "sampleData"
+      ],
+      "modports": [],
+      "role": "monitor_bfm",
+      "layer": "hdl"
+    }
+  ],
+  "architecture": {
+    "layers": {
+      "hdl": {
+        "description": "Hardware-level layer with BFMs and interfaces that directly interact with RTL signals",
+        "interfaces": [
+          "AhbInterface"
+        ],
+        "driver_bfms": [
+          "AhbSlaveDriverBFM",
+          "AhbMasterDriverBFM"
+        ],
+        "monitor_bfms": [
+          "AhbSlaveMonitorBFM",
+          "AhbMasterMonitorBFM"
+        ]
+      },
+      "hvl": {
+        "description": "High-level verification layer with UVM components using TLM and virtual interfaces",
+        "agents": [
+          "AhbMasterAgent",
+          "AhbSlaveAgent"
+        ],
+        "drivers": [
+          "AhbMasterDriverProxy",
+          "AhbSlaveDriverProxy"
+        ],
+        "monitors": [
+          "AhbMasterMonitorProxy",
+          "AhbSlaveMonitorProxy"
+        ],
+        "sequencers": [
+          "AhbMasterSequencer",
+          "AhbSlaveSequencer",
+          "AhbVirtualSequencer"
+        ],
+        "sequences": [
+          "AhbMasterBaseSequence",
+          "AhbSlaveBaseSequence",
+          "AhbVirtualBaseSequence"
+        ],
+        "sequence_items": [
+          "AhbMasterTransaction",
+          "AhbSlaveTransaction"
+        ],
+        "envs": [
+          "AhbEnvironment"
+        ],
+        "tests": [
+          "AhbBaseTest"
+        ],
+        "subscribers": [
+          "AhbMasterCoverage",
+          "AhbSlaveCoverage"
+        ],
+        "other_components": [
+          "AhbMasterAgentConfig",
+          "AhbMasterSequenceItemConverter",
+          "AhbMasterConfigConverter",
+          "AhbSlaveAgentConfig",
+          "AhbSlaveSequenceItemConverter",
+          "AhbSlaveConfigConverter",
+          "AhbMasterSequence",
+          "AhbSlaveSequence",
+          "AhbEnvironmentConfig",
+          "AhbVirtualWriteSequence",
+          "AhbVirtualReadSequence",
+          "AhbVirtualSingleWriteSequence",
+          "AhbVirtualSingleReadSequence",
+          "AhbVirtualWriteWithBusySequence",
+          "AhbVirtualReadWithBusySequence",
+          "AhbVirtualSingleWriteWithWaitStateSequence",
+          "AhbVirtualSingleReadWithWaitStateSequence",
+          "AhbVirtualWriteWithWaitStateSequence",
+          "AhbVirtualReadWithWaitStateSequence",
+          "AhbVirtualWriteFollowedByReadSequence",
+          "AhbWriteTest",
+          "AhbReadTest",
+          "AhbSingleWriteTest",
+          "AhbSingleReadTest",
+          "AhbWriteWithBusyTest",
+          "AhbReadWithBusyTest",
+          "AhbSingleWriteWithWaitStateTest",
+          "AhbSingleReadWithWaitStateTest",
+          "AhbWriteWithWaitStateTest",
+          "AhbReadWithWaitStateTest",
+          "AhbWriteFollowedByReadTest"
+        ]
+      },
+      "globals": {
+        "description": "Global package definitions with parameters, types, enums, and structs",
+        "packages": [
+          "AhbGlobalPackage",
+          "AhbMasterPackage",
+          "AhbSlavePackage",
+          "AhbMasterSequencePackage",
+          "AhbSlaveSequencePackage",
+          "AhbEnvironmentPackage",
+          "AhbVirtualSequencePackage",
+          "AhbTestPackage"
+        ]
+      }
+    },
+    "component_roles": [
+      "agent",
+      "agent_bfm",
+      "agent_config",
+      "assertions",
+      "cfg_converter",
+      "coverage",
+      "driver_bfm",
+      "driver_proxy",
+      "env",
+      "env_config",
+      "hdl_top",
+      "hvl_top",
+      "interface",
+      "monitor_bfm",
+      "monitor_proxy",
+      "package",
+      "scoreboard",
+      "seq_item_converter",
+      "sequence",
+      "sequencer",
+      "test",
+      "transaction"
+    ],
+    "tlm_connections": [
+      {
+        "owner_class": "AhbMasterMonitorProxy",
+        "port_type": "uvm_analysis_port",
+        "port_name": "ahbMasterAnalysisPort"
+      },
+      {
+        "owner_class": "AhbSlaveMonitorProxy",
+        "port_type": "uvm_analysis_port",
+        "port_name": "ahbSlaveAnalysisPort"
+      },
+      {
+        "owner_class": "AhbScoreboard",
+        "port_type": "uvm_tlm_analysis_fifo$[]",
+        "port_name": "ahbMasterAnalysisFifo"
+      },
+      {
+        "owner_class": "AhbScoreboard",
+        "port_type": "uvm_tlm_analysis_fifo$[]",
+        "port_name": "ahbSlaveAnalysisFifo"
+      }
+    ],
+    "virtual_interface_usage": [],
+    "total_interfaces": 7,
+    "total_classes": 50,
+    "total_packages": 8
+  },
+  "file_manifest": [
+    {
+      "file": "HdlTop.sv",
+      "path": "src/hdlTop/HdlTop.sv",
+      "role": "hdl_top",
+      "layer": "hdl",
+      "imports": [
+        "uvm_pkg::*",
+        "AhbGlobalPackage::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "HDLTOP_INCLUDED",
+          "value": "module HdlTop;"
+        }
+      ]
+    },
+    {
+      "file": "AhbInterface.sv",
+      "path": "src/hdlTop/ahbInterface/AhbInterface.sv",
+      "role": "interface",
+      "layer": "hdl",
+      "imports": [
+        "AhbGlobalPackage::*"
+      ],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBINTERFACE_INCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveAgentBFM.sv",
+      "path": "src/hdlTop/slaveAgentBFM/AhbSlaveAgentBFM.sv",
+      "role": "agent_bfm",
+      "layer": "hdl",
+      "imports": [
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBSLAVEAGENTBFM_INCLUDED_",
+          "value": "module AhbSlaveAgentBFM #(parameter int SLAVE_ID=0) (AhbInterface ahbInterface);"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveAssertion.sv",
+      "path": "src/hdlTop/slaveAgentBFM/AhbSlaveAssertion.sv",
+      "role": "assertions",
+      "layer": "hdl",
+      "imports": [
+        "AhbGlobalPackage::*"
+      ],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVEASSERTION_INCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveCoverProperty.sv",
+      "path": "src/hdlTop/slaveAgentBFM/AhbSlaveCoverProperty.sv",
+      "role": "coverage",
+      "layer": "hdl",
+      "imports": [
+        "AhbGlobalPackage::*",
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBSLAVECOVERPROPERTYINCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveDriverBFM.sv",
+      "path": "src/hdlTop/slaveAgentBFM/AhbSlaveDriverBFM.sv",
+      "role": "driver_bfm",
+      "layer": "hdl",
+      "imports": [
+        "AhbGlobalPackage::*",
+        "AhbSlavePackage::*",
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBSLAVEDRIVERBFM_INCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveMonitorBFM.sv",
+      "path": "src/hdlTop/slaveAgentBFM/AhbSlaveMonitorBFM.sv",
+      "role": "monitor_bfm",
+      "layer": "hdl",
+      "imports": [
+        "AhbGlobalPackage::*",
+        "uvm_pkg::*",
+        "AhbSlavePackage::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBSLAVEMONITORBFM_INCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterAgentBFM.sv",
+      "path": "src/hdlTop/masterAgentBFM/AhbMasterAgentBFM.sv",
+      "role": "agent_bfm",
+      "layer": "hdl",
+      "imports": [
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBMASTERAGENTBFM_INCLUDED_",
+          "value": "module AhbMasterAgentBFM(AhbInterface ahbInterface); // Change interface to AhbInterface"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterAssertion.sv",
+      "path": "src/hdlTop/masterAgentBFM/AhbMasterAssertion.sv",
+      "role": "assertions",
+      "layer": "hdl",
+      "imports": [
+        "AhbGlobalPackage::*",
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBMASTERASSERTION_INCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterCoverProperty.sv",
+      "path": "src/hdlTop/masterAgentBFM/AhbMasterCoverProperty.sv",
+      "role": "coverage",
+      "layer": "hdl",
+      "imports": [
+        "AhbGlobalPackage::*",
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBMASTERCOVERPROPERTYINCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterDriverBFM.sv",
+      "path": "src/hdlTop/masterAgentBFM/AhbMasterDriverBFM.sv",
+      "role": "driver_bfm",
+      "layer": "hdl",
+      "imports": [
+        "AhbGlobalPackage::*",
+        "AhbMasterPackage::*",
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBMASTERDRIVERBFM_INCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterMonitorBFM.sv",
+      "path": "src/hdlTop/masterAgentBFM/AhbMasterMonitorBFM.sv",
+      "role": "monitor_bfm",
+      "layer": "hdl",
+      "imports": [
+        "AhbGlobalPackage::*",
+        "uvm_pkg::*",
+        "AhbMasterPackage::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBMASTERMONITORBFM_INCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "HvlTop.sv",
+      "path": "src/hvlTop/HvlTop.sv",
+      "role": "hvl_top",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "AhbTestPackage::*"
+      ],
+      "includes": [],
+      "defines": [
+        {
+          "name": "HVLTOP_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "AhbEnvironment.sv",
+      "path": "src/hvlTop/environment/AhbEnvironment.sv",
+      "role": "env",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBENVIRONMENT_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "AhbEnvironmentConfig.sv",
+      "path": "src/hvlTop/environment/AhbEnvironmentConfig.sv",
+      "role": "env_config",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBENVIRONMENTCONFIG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "AhbEnvironmentPackage.sv",
+      "path": "src/hvlTop/environment/AhbEnvironmentPackage.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "AhbGlobalPackage::*",
+        "AhbMasterPackage::*",
+        "AhbSlavePackage::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "AhbEnvironmentConfig.sv",
+        "AhbVirtualSequencer.sv",
+        "AhbScoreboard.sv",
+        "AhbEnvironment.sv"
+      ],
+      "defines": [
+        {
+          "name": "AHBENVIRONMENTPACKAGE_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "AhbScoreboard.sv",
+      "path": "src/hvlTop/environment/AhbScoreboard.sv",
+      "role": "scoreboard",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSCOREBOARD_INCLUDED_",
+          "value": "class AhbScoreboard extends uvm_scoreboard;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterVirtualSequencer.sv",
+      "path": "src/hvlTop/environment/virtualSequencer/AhbMasterVirtualSequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERVIRTUALSEQUENCER_INCLUDED_",
+          "value": "class AhbMasterVirtualSequencer extends uvm_sequencer;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveVirtualSequencer.sv",
+      "path": "src/hvlTop/environment/virtualSequencer/AhbSlaveVirtualSequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVEVIRTUALSEQUENCERINCLUDED_",
+          "value": "class AhbSlaveVirtualSequencer extends uvm_sequencer;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualSequencer.sv",
+      "path": "src/hvlTop/environment/virtualSequencer/AhbVirtualSequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALSEQUENCER_INCLUDED_",
+          "value": "class AhbVirtualSequencer extends uvm_sequencer#(uvm_sequence_item);"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterAgent.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterAgent.sv",
+      "role": "agent",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERAGENT_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterAgentConfig.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterAgentConfig.sv",
+      "role": "agent_config",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERAGENTCONFIG_INCLUDED_",
+          "value": "class AhbMasterAgentConfig extends uvm_object;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterConfigConverter.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterConfigConverter.sv",
+      "role": "cfg_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERCONFIGCONVERTER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterCoverage.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterCoverage.sv",
+      "role": "coverage",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERCOVERAGE_INCLUDED_",
+          "value": "class AhbMasterCoverage extends uvm_subscriber #(AhbMasterTransaction);"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterDriverProxy.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterDriverProxy.sv",
+      "role": "driver_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERDRIVERPROXY_INCLUDED_",
+          "value": "class AhbMasterDriverProxy extends uvm_driver #(AhbMasterTransaction);"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterMonitorProxy.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterMonitorProxy.sv",
+      "role": "monitor_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APBMASTERMONITORPROXY_INCLUDED_",
+          "value": "class AhbMasterMonitorProxy extends uvm_monitor;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterPackage.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterPackage.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "AhbGlobalPackage::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "AhbMasterAgentConfig.sv",
+        "AhbMasterTransaction.sv",
+        "AhbMasterSequenceItemConverter.sv",
+        "AhbMasterConfigConverter.sv",
+        "AhbMasterSequencer.sv",
+        "AhbMasterDriverProxy.sv",
+        "AhbMasterMonitorProxy.sv",
+        "AhbMasterCoverage.sv",
+        "AhbMasterAgent.sv"
+      ],
+      "defines": [
+        {
+          "name": "AHBMASTERPACKAGE_INCLUDED_",
+          "value": "package AhbMasterPackage;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterSequenceItemConverter.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterSequenceItemConverter.sv",
+      "role": "seq_item_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERSEQUENCEITEMCONVERTER_INCLUDED_",
+          "value": "class AhbMasterSequenceItemConverter extends uvm_object;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterSequencer.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterSequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERSEQUENCER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterTransaction.sv",
+      "path": "src/hvlTop/masterAgent/AhbMasterTransaction.sv",
+      "role": "transaction",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERTRANSACTION_INCLUDED_",
+          "value": "class AhbMasterTransaction extends uvm_sequence_item;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterBaseSequence.sv",
+      "path": "src/hvlTop/masterAgent/masterSequences/AhbMasterBaseSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERBASESEQUENCE_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterSequence.sv",
+      "path": "src/hvlTop/masterAgent/masterSequences/AhbMasterSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBMASTERSEQUENCE_INCLUDED_",
+          "value": "class AhbMasterSequence extends AhbMasterBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterSequencePackage.sv",
+      "path": "src/hvlTop/masterAgent/masterSequences/AhbMasterSequencePackage.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "AhbGlobalPackage::*",
+        "AhbMasterPackage::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "AhbMasterBaseSequence.sv",
+        "AhbMasterSequence.sv"
+      ],
+      "defines": [
+        {
+          "name": "AHBMASTERSEQUENCEPACKAGE_INCLUDED_",
+          "value": "package AhbMasterSequencePackage;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveAgent.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlaveAgent.sv",
+      "role": "agent",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVEAGENT_INCLUDED_",
+          "value": "class AhbSlaveAgent extends uvm_agent;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveAgentConfig.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlaveAgentConfig.sv",
+      "role": "agent_config",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVEAGENTCONFIG_INCLUDED_",
+          "value": "class AhbSlaveAgentConfig extends uvm_object;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveConfigConverter.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlaveConfigConverter.sv",
+      "role": "cfg_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVECONFIGCONVERTER_INCLUDED_",
+          "value": "class AhbSlaveConfigConverter extends uvm_object;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveCoverage.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlaveCoverage.sv",
+      "role": "coverage",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVECOVERAGE_INCLUDED_",
+          "value": "class AhbSlaveCoverage extends uvm_subscriber #(AhbSlaveTransaction);"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveDriverProxy.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlaveDriverProxy.sv",
+      "role": "driver_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVEDRIVERPROXY_INCLUDED_",
+          "value": "class AhbSlaveDriverProxy extends uvm_driver#(AhbSlaveTransaction);"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveMonitorProxy.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlaveMonitorProxy.sv",
+      "role": "monitor_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVEMONITORPROXY_INCLUDED_",
+          "value": "class AhbSlaveMonitorProxy extends uvm_monitor;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlavePackage.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlavePackage.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "AhbGlobalPackage::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "AhbSlaveAgentConfig.sv",
+        "AhbSlaveTransaction.sv",
+        "AhbSlaveSequenceItemConverter.sv",
+        "AhbSlaveConfigConverter.sv",
+        "AhbSlaveSequencer.sv",
+        "AhbSlaveDriverProxy.sv",
+        "AhbSlaveMonitorProxy.sv",
+        "AhbSlaveCoverage.sv",
+        "AhbSlaveAgent.sv"
+      ],
+      "defines": [
+        {
+          "name": "AHBSLAVEPACKAGE_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveSequenceItemConverter.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlaveSequenceItemConverter.sv",
+      "role": "seq_item_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVESEQUENCEITEMCONVERTER_INCLUDED_",
+          "value": "class AhbSlaveSequenceItemConverter extends uvm_object;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveSequencer.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlaveSequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVESEQUENCER_INCLUDED_",
+          "value": "class AhbSlaveSequencer extends uvm_sequencer#(AhbSlaveTransaction);"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveTransaction.sv",
+      "path": "src/hvlTop/slaveAgent/AhbSlaveTransaction.sv",
+      "role": "transaction",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVETRANSACTION_INCLUDED_",
+          "value": "class AhbSlaveTransaction extends uvm_sequence_item;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveBaseSequence.sv",
+      "path": "src/hvlTop/slaveAgent/slaveSequences/AhbSlaveBaseSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVEBASESEQUENCE_INCLUDED_",
+          "value": "class AhbSlaveBaseSequence extends uvm_sequence#(AhbSlaveTransaction);"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveSequence.sv",
+      "path": "src/hvlTop/slaveAgent/slaveSequences/AhbSlaveSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSLAVESEQUENCE_INCLUDED_",
+          "value": "class AhbSlaveSequence extends AhbSlaveBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveSequencePackage.sv",
+      "path": "src/hvlTop/slaveAgent/slaveSequences/AhbSlaveSequencePackage.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "AhbGlobalPackage::*",
+        "AhbSlavePackage::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "AhbSlaveBaseSequence.sv",
+        "AhbSlaveSequence.sv"
+      ],
+      "defines": [
+        {
+          "name": "AHBSLAVESEQUENCEPACKAGE_INCLUDED_",
+          "value": "package AhbSlaveSequencePackage;"
+        }
+      ]
+    },
+    {
+      "file": "AhbCoverPropertyTb.sv",
+      "path": "src/hvlTop/tb/AhbCoverPropertyTb.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [
+        "AhbGlobalPackage::*",
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBCOVERPROPERTYTB_INCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbMasterAssertionTb.sv",
+      "path": "src/hvlTop/tb/AhbMasterAssertionTb.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [
+        "AhbGlobalPackage::*",
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBMASTERASSERTIONTB_INCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSlaveAssertionTb.sv",
+      "path": "src/hvlTop/tb/AhbSlaveAssertionTb.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [
+        "AhbGlobalPackage::*",
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "AHBSLAVEASSERTIONTB_INCLUDED_",
+          "value": "import AhbGlobalPackage::*;"
+        }
+      ]
+    },
+    {
+      "file": "AhbBaseTest.sv",
+      "path": "src/hvlTop/tb/test/AhbBaseTest.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBBASETEST_INCLUDED_",
+          "value": "class AhbBaseTest extends uvm_test;"
+        }
+      ]
+    },
+    {
+      "file": "AhbReadTest.sv",
+      "path": "src/hvlTop/tb/test/AhbReadTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBREADTEST_INCLUDED_",
+          "value": "class AhbReadTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbReadWithBusyTest.sv",
+      "path": "src/hvlTop/tb/test/AhbReadWithBusyTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBREADWITHBUSYTEST_INCLUDED_",
+          "value": "class AhbReadWithBusyTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbReadWithWaitStateTest.sv",
+      "path": "src/hvlTop/tb/test/AhbReadWithWaitStateTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBREADWITHWAITSTATETEST_INCLUDED_",
+          "value": "class AhbReadWithWaitStateTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSingleReadTest.sv",
+      "path": "src/hvlTop/tb/test/AhbSingleReadTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSINGLEREADTEST_INCLUDED_",
+          "value": "class AhbSingleReadTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSingleReadWithWaitStateTest.sv",
+      "path": "src/hvlTop/tb/test/AhbSingleReadWithWaitStateTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSINGLEREADWITHWAITSTATETEST_INCLUDED_",
+          "value": "class AhbSingleReadWithWaitStateTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSingleWriteTest.sv",
+      "path": "src/hvlTop/tb/test/AhbSingleWriteTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSINGLEWRITETEST_INCLUDED_",
+          "value": "class AhbSingleWriteTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbSingleWriteWithWaitStateTest.sv",
+      "path": "src/hvlTop/tb/test/AhbSingleWriteWithWaitStateTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBSINGLEWRITEWITHWAITSTATETEST_INCLUDED_",
+          "value": "class AhbSingleWriteWithWaitStateTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbTestPackage.sv",
+      "path": "src/hvlTop/tb/test/AhbTestPackage.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "AhbGlobalPackage::*",
+        "AhbMasterPackage::*",
+        "AhbSlavePackage::*",
+        "AhbEnvironmentPackage::*",
+        "AhbMasterSequencePackage::*",
+        "AhbSlaveSequencePackage::*",
+        "AhbVirtualSequencePackage::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "AhbBaseTest.sv",
+        "AhbWriteTest.sv",
+        "AhbReadTest.sv",
+        "AhbSingleWriteTest.sv",
+        "AhbSingleReadTest.sv",
+        "AhbWriteWithBusyTest.sv",
+        "AhbReadWithBusyTest.sv",
+        "AhbSingleWriteWithWaitStateTest.sv",
+        "AhbSingleReadWithWaitStateTest.sv",
+        "AhbWriteWithWaitStateTest.sv",
+        "AhbReadWithWaitStateTest.sv",
+        "AhbWriteFollowedByReadTest.sv"
+      ],
+      "defines": [
+        {
+          "name": "AHBBASETESTPACKAGE_INCLUDED_",
+          "value": "package AhbTestPackage;"
+        }
+      ]
+    },
+    {
+      "file": "AhbWriteFollowedByReadTest.sv",
+      "path": "src/hvlTop/tb/test/AhbWriteFollowedByReadTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBWRITEFOLLOWEDBYREADTEST_INCLUDED_",
+          "value": "class AhbWriteFollowedByReadTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbWriteTest.sv",
+      "path": "src/hvlTop/tb/test/AhbWriteTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBWRITETEST_INCLUDED_",
+          "value": "class AhbWriteTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbWriteWithBusyTest.sv",
+      "path": "src/hvlTop/tb/test/AhbWriteWithBusyTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBWRITEWITHBUSYTEST_INCLUDED_",
+          "value": "class AhbWriteWithBusyTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbWriteWithWaitStateTest.sv",
+      "path": "src/hvlTop/tb/test/AhbWriteWithWaitStateTest.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBWRITEWITHWAITSTATETEST_INCLUDED_",
+          "value": "class AhbWriteWithWaitStateTest extends AhbBaseTest;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualBaseSequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualBaseSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALBASESEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualBaseSequence extends uvm_sequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualReadSequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualReadSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALREADSEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualReadSequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualReadWithBusySequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualReadWithBusySequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALREADWITHBUSYSEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualReadWithBusySequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualReadWithWaitStateSequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualReadWithWaitStateSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALREADWITHWAITSTATESEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualReadWithWaitStateSequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualSequencePackage.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualSequencePackage.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "AhbGlobalPackage::*",
+        "AhbMasterPackage::*",
+        "AhbSlavePackage::*",
+        "AhbMasterSequencePackage::*",
+        "AhbSlaveSequencePackage::*",
+        "AhbEnvironmentPackage::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "AhbVirtualBaseSequence.sv",
+        "AhbVirtualWriteSequence.sv",
+        "AhbVirtualReadSequence.sv",
+        "AhbVirtualSingleWriteSequence.sv",
+        "AhbVirtualSingleReadSequence.sv",
+        "AhbVirtualWriteWithBusySequence.sv",
+        "AhbVirtualReadWithBusySequence.sv",
+        "AhbVirtualSingleWriteWithWaitStateSequence.sv",
+        "AhbVirtualSingleReadWithWaitStateSequence.sv",
+        "AhbVirtualWriteWithWaitStateSequence.sv",
+        "AhbVirtualReadWithWaitStateSequence.sv",
+        "AhbVirtualWriteFollowedByReadSequence.sv"
+      ],
+      "defines": [
+        {
+          "name": "AHBVIRTUALSEQUENCEPACKAGE_INCLUDED_",
+          "value": "package AhbVirtualSequencePackage;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualSingleReadSequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualSingleReadSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALSINGLEREADSEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualSingleReadSequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualSingleReadWithWaitStateSequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualSingleReadWithWaitStateSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALSINGLEREADWITHWAITSTATESEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualSingleReadWithWaitStateSequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualSingleWriteSequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualSingleWriteSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALSINGLEWRITESEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualSingleWriteSequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualSingleWriteWithWaitStateSequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualSingleWriteWithWaitStateSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALSINGLEWRITEWITHWAITSTATESEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualSingleWriteWithWaitStateSequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualWriteFollowedByReadSequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualWriteFollowedByReadSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALWRITEFOLLOWEDBYREADSEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualWriteFollowedByReadSequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualWriteSequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualWriteSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALWRITESEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualWriteSequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualWriteWithBusySequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualWriteWithBusySequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALWRITEWITHBUSYSEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualWriteWithBusySequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbVirtualWriteWithWaitStateSequence.sv",
+      "path": "src/hvlTop/tb/virtualSequences/AhbVirtualWriteWithWaitStateSequence.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBVIRTUALWRITEWITHWAITSTATESEQUENCE_INCLUDED_",
+          "value": "class AhbVirtualWriteWithWaitStateSequence extends AhbVirtualBaseSequence;"
+        }
+      ]
+    },
+    {
+      "file": "AhbGlobalPackage.sv",
+      "path": "src/globals/AhbGlobalPackage.sv",
+      "role": "package",
+      "layer": "globals",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "AHBGLOBALPACKAGE_INCLUDED_",
+          "value": "package AhbGlobalPackage;"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3484 @@
+{
+  "blockify_version": "0.1.0",
+  "metadata_type": "vip",
+  "generated_at": "2026-03-09T10:48:57.397021+00:00",
+  "source": {
+    "repo_url": "https://github.com/mbits-mirafra/apb_avip",
+    "repo_name": "apb_avip",
+    "commit_sha": "b9e0f885b85d7425d665fe544afa2f75b07a728d",
+    "branch": "main"
+  },
+  "compilation": {
+    "status": "PASS",
+    "slang_version": "slang version 10.0.0+ace09c5",
+    "lint_output": "\nBuild succeeded: 0 errors, 1 warning\nin file included from import/uvm-core/src/uvm_pkg.sv:57:\nin file included from import/uvm-core/src/base/uvm_base.svh:77:\nimport/uvm-core/src/base/uvm_config_db_implementation.svh:375:26: warning: unknown character escape sequence '\\.' [-Wunknown-escape-code]\n            separator = \"\\.(\" ;\n                         ^\n",
+    "defines_used": [],
+    "include_dirs_used": [
+      "/home/runner/work/blockify/blockify/import/apb_avip/src/hvl_top/test/sequences/master_sequences",
+      "/home/runner/work/blockify/blockify/import/apb_avip/src/hvl_top/master",
+      "/home/runner/work/blockify/blockify/import/apb_avip/src/hvl_top/env/virtual_sequencer",
+      "/home/runner/work/blockify/blockify/import/apb_avip/src/hvl_top/test/virtual_sequences",
+      "/home/runner/work/blockify/blockify/import/apb_avip/src/hvl_top/env",
+      "/home/runner/work/blockify/blockify/import/apb_avip/src/hvl_top/slave",
+      "/home/runner/work/blockify/blockify/import/apb_avip/src/hvl_top/test/sequences/slave_sequences",
+      "/home/runner/work/blockify/blockify/import/apb_avip/src/hvl_top/test"
+    ]
+  },
+  "vip_info": {
+    "protocol": "apb",
+    "total_files": 77,
+    "hdl_files": 8,
+    "hvl_files": 68,
+    "globals_files": 1
+  },
+  "packages": [
+    {
+      "name": "apb_global_pkg",
+      "file": "apb_global_pkg.sv",
+      "path": "src/globals/apb_global_pkg.sv",
+      "classes": [],
+      "typedefs": [
+        {
+          "name": "transfer_size_e",
+          "target": "2599620109920 apb_global_pkg::transfer_size_e"
+        },
+        {
+          "name": "slave_error_e",
+          "target": "2599620111256 apb_global_pkg::slave_error_e"
+        },
+        {
+          "name": "endian_e",
+          "target": "2599620112000 apb_global_pkg::endian_e"
+        },
+        {
+          "name": "tx_type_e",
+          "target": "2599620112768 apb_global_pkg::tx_type_e"
+        },
+        {
+          "name": "apb_fsm_state_e",
+          "target": "2599620113752 apb_global_pkg::apb_fsm_state_e"
+        },
+        {
+          "name": "protection_type_e",
+          "target": "2599620115264 apb_global_pkg::protection_type_e"
+        },
+        {
+          "name": "slave_no_e",
+          "target": "2599620118600 apb_global_pkg::slave_no_e"
+        },
+        {
+          "name": "apb_transfer_char_s",
+          "target": "struct{bit pwrite;bit pslverr;bit[2:0] pprot;bit[0:0] pselx;bit[3:0] pstrb;bit[31:0] prdata;bit[31:0] paddr;bit[31:0] pwdata;int no_of_wait_states;}apb_global_pkg::s$42"
+        },
+        {
+          "name": "apb_transfer_cfg_s",
+          "target": "struct{bit[31:0] min_address;bit[31:0] max_address;bit[31:0] paddr;int slave_id;}apb_global_pkg::s$43"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "NO_OF_SLAVES",
+          "type": "int",
+          "value": "1",
+          "is_local": true
+        },
+        {
+          "name": "MASTER_AGENT_ACTIVE",
+          "type": "bit",
+          "value": "1'b1",
+          "is_local": true
+        },
+        {
+          "name": "SLAVE_AGENT_ACTIVE",
+          "type": "bit",
+          "value": "1'b1",
+          "is_local": true
+        },
+        {
+          "name": "ADDRESS_WIDTH",
+          "type": "int",
+          "value": "32",
+          "is_local": true
+        },
+        {
+          "name": "DATA_WIDTH",
+          "type": "int",
+          "value": "32",
+          "is_local": true
+        },
+        {
+          "name": "SLAVE_MEMORY_SIZE",
+          "type": "int",
+          "value": "12",
+          "is_local": true
+        },
+        {
+          "name": "SLAVE_MEMORY_GAP",
+          "type": "int",
+          "value": "5",
+          "is_local": true
+        },
+        {
+          "name": "MEMORY_WIDTH",
+          "type": "int",
+          "value": "8",
+          "is_local": true
+        }
+      ],
+      "structs": [
+        {
+          "name": "apb_transfer_char_s",
+          "fields": [
+            {
+              "name": "pwrite",
+              "type": "bit"
+            },
+            {
+              "name": "pslverr",
+              "type": "bit"
+            },
+            {
+              "name": "no_of_wait_states",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "name": "apb_transfer_cfg_s",
+          "fields": [
+            {
+              "name": "slave_id",
+              "type": "int"
+            }
+          ]
+        }
+      ],
+      "enums": [
+        {
+          "name": "transfer_size_e",
+          "base_type": "bit[31:0]",
+          "values": [
+            {
+              "name": "BIT_8",
+              "value": "32'd8"
+            },
+            {
+              "name": "BIT_16",
+              "value": "32'd16"
+            },
+            {
+              "name": "BIT_24",
+              "value": "32'd24"
+            },
+            {
+              "name": "BIT_32",
+              "value": "32'd32"
+            }
+          ]
+        },
+        {
+          "name": "slave_error_e",
+          "base_type": "bit",
+          "values": [
+            {
+              "name": "NO_ERROR",
+              "value": "1'b0"
+            },
+            {
+              "name": "ERROR",
+              "value": "1'b1"
+            }
+          ]
+        },
+        {
+          "name": "endian_e",
+          "base_type": "bit",
+          "values": [
+            {
+              "name": "LITTL_ENDIAN",
+              "value": "1'b0"
+            },
+            {
+              "name": "BIG_ENDIAN",
+              "value": "1'b1"
+            }
+          ]
+        },
+        {
+          "name": "tx_type_e",
+          "base_type": "bit",
+          "values": [
+            {
+              "name": "WRITE",
+              "value": "1'b1"
+            },
+            {
+              "name": "READ",
+              "value": "1'b0"
+            }
+          ]
+        },
+        {
+          "name": "apb_fsm_state_e",
+          "base_type": "bit[2:0]",
+          "values": [
+            {
+              "name": "NO_STATE",
+              "value": ""
+            },
+            {
+              "name": "IDLE",
+              "value": ""
+            },
+            {
+              "name": "SETUP",
+              "value": ""
+            },
+            {
+              "name": "ACCESS",
+              "value": ""
+            },
+            {
+              "name": "WAIT_STATE",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "protection_type_e",
+          "base_type": "logic[2:0]",
+          "values": [
+            {
+              "name": "NORMAL_SECURE_DATA",
+              "value": "3'b000"
+            },
+            {
+              "name": "NORMAL_SECURE_INSTRUCTION",
+              "value": "3'b001"
+            },
+            {
+              "name": "NORMAL_NONSECURE_DATA",
+              "value": "3'b010"
+            },
+            {
+              "name": "NORMAL_NONSECURE_INSTRUCTION",
+              "value": "3'b011"
+            },
+            {
+              "name": "PRIVILEGED_SECURE_DATA",
+              "value": "3'b100"
+            },
+            {
+              "name": "PRIVILEGED_SECURE_INSTRUCTION",
+              "value": "3'b101"
+            },
+            {
+              "name": "PRIVILEGED_NONSECURE_DATA",
+              "value": "3'b110"
+            },
+            {
+              "name": "PRIVILEGED_NONSECURE_INSTUCTION",
+              "value": "3'b111"
+            }
+          ]
+        },
+        {
+          "name": "slave_no_e",
+          "base_type": "bit [15:0]",
+          "values": [
+            {
+              "name": "SLAVE_0",
+              "value": "16'b0000_0000_0000_0001"
+            },
+            {
+              "name": "SLAVE_1",
+              "value": "16'b0000_0000_0000_0010"
+            },
+            {
+              "name": "SLAVE_2",
+              "value": "16'b0000_0000_0000_0100"
+            },
+            {
+              "name": "SLAVE_3",
+              "value": "16'b0000_0000_0000_1000"
+            },
+            {
+              "name": "SLAVE_4",
+              "value": "16'b0000_0000_0001_0000"
+            },
+            {
+              "name": "SLAVE_5",
+              "value": "16'b0000_0000_0010_0000"
+            },
+            {
+              "name": "SLAVE_6",
+              "value": "16'b0000_0000_0100_0000"
+            },
+            {
+              "name": "SLAVE_7",
+              "value": "16'b0000_0000_1000_0000"
+            },
+            {
+              "name": "SLAVE_8",
+              "value": "16'b0000_0001_0000_0000"
+            },
+            {
+              "name": "SLAVE_9",
+              "value": "16'b0000_0010_0000_0000"
+            },
+            {
+              "name": "SLAVE_10",
+              "value": "16'b0000_0100_0000_0000"
+            },
+            {
+              "name": "SLAVE_11",
+              "value": "16'b0000_1000_0000_0000"
+            },
+            {
+              "name": "SLAVE_12",
+              "value": "16'b0001_0000_0000_0000"
+            },
+            {
+              "name": "SLAVE_13",
+              "value": "16'b0010_0000_0000_0000"
+            },
+            {
+              "name": "SLAVE_14",
+              "value": "16'b0100_0000_0000_0000"
+            },
+            {
+              "name": "SLAVE_15",
+              "value": "16'b1000_0000_0000_0000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "apb_master_pkg",
+      "file": "apb_master_pkg.sv",
+      "path": "src/hvl_top/master/apb_master_pkg.sv",
+      "classes": [
+        {
+          "name": "apb_master_agent_config",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [
+            {
+              "name": "is_active",
+              "type": "uvm_active_passive_enum"
+            },
+            {
+              "name": "no_of_slaves",
+              "type": "int"
+            },
+            {
+              "name": "has_coverage",
+              "type": "bit"
+            },
+            {
+              "name": "paddr",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "master_memory",
+              "type": "bit[7:0]$[17:0]"
+            },
+            {
+              "name": "master_min_addr_range_array",
+              "type": "bit[31:0]$[int]"
+            },
+            {
+              "name": "master_max_addr_range_array",
+              "type": "bit[31:0]$[int]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_pkg"
+        },
+        {
+          "name": "apb_master_tx",
+          "base_class": "uvm_sequence_item",
+          "uvm_component_type": "sequence_item",
+          "properties": [
+            {
+              "name": "paddr",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "pprot",
+              "type": "apb_global_pkg::protection_type_e"
+            },
+            {
+              "name": "pselx",
+              "type": "apb_global_pkg::slave_no_e"
+            },
+            {
+              "name": "pwrite",
+              "type": "apb_global_pkg::tx_type_e"
+            },
+            {
+              "name": "transfer_size",
+              "type": "apb_global_pkg::transfer_size_e"
+            },
+            {
+              "name": "pwdata",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "pstrb",
+              "type": "bit[3:0]"
+            },
+            {
+              "name": "prdata",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "pslverr",
+              "type": "apb_global_pkg::slave_error_e"
+            },
+            {
+              "name": "apb_master_agent_cfg_h",
+              "type": "apb_master_agent_config"
+            },
+            {
+              "name": "no_of_wait_states_detected",
+              "type": "int"
+            },
+            {
+              "name": "cont_write_read",
+              "type": "bit"
+            },
+            {
+              "name": "address",
+              "type": "bit[31:0]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_pkg"
+        },
+        {
+          "name": "apb_master_seq_item_converter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_pkg"
+        },
+        {
+          "name": "apb_master_cfg_converter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_pkg"
+        },
+        {
+          "name": "apb_master_adapter",
+          "base_class": "uvm_reg_adapter",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_pkg"
+        },
+        {
+          "name": "apb_master_sequencer",
+          "base_class": "uvm_sequencer",
+          "uvm_component_type": "sequencer",
+          "properties": [
+            {
+              "name": "apb_master_agent_cfg_h",
+              "type": "apb_master_agent_config"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_pkg"
+        },
+        {
+          "name": "apb_master_driver_proxy",
+          "base_class": "uvm_driver",
+          "uvm_component_type": "driver",
+          "properties": [
+            {
+              "name": "apb_master_tx_h",
+              "type": "apb_master_tx"
+            },
+            {
+              "name": "apb_master_drv_bfm_h",
+              "type": "apb_master_driver_bfm"
+            },
+            {
+              "name": "apb_master_agent_cfg_h",
+              "type": "apb_master_agent_config"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [
+            {
+              "name": "apb_master_drv_bfm_h",
+              "interface_type": "apb_master_driver_bfm"
+            }
+          ],
+          "package": "apb_master_pkg"
+        },
+        {
+          "name": "apb_master_monitor_proxy",
+          "base_class": "uvm_monitor",
+          "uvm_component_type": "monitor",
+          "properties": [
+            {
+              "name": "apb_master_mon_bfm_h",
+              "type": "apb_master_monitor_bfm"
+            },
+            {
+              "name": "apb_master_agent_cfg_h",
+              "type": "apb_master_agent_config"
+            },
+            {
+              "name": "apb_master_analysis_port",
+              "type": "uvm_analysis_port"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "apb_master_analysis_port",
+              "port_type": "uvm_analysis_port"
+            }
+          ],
+          "virtual_interfaces": [
+            {
+              "name": "apb_master_mon_bfm_h",
+              "interface_type": "apb_master_monitor_bfm"
+            }
+          ],
+          "package": "apb_master_pkg"
+        },
+        {
+          "name": "apb_master_coverage",
+          "base_class": "uvm_subscriber",
+          "uvm_component_type": "subscriber",
+          "properties": [
+            {
+              "name": "apb_master_agent_cfg_h",
+              "type": "apb_master_agent_config"
+            },
+            {
+              "name": "apb_master_covergroup",
+              "type": "<unnamed covergroup>"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_pkg"
+        },
+        {
+          "name": "apb_master_agent",
+          "base_class": "uvm_agent",
+          "uvm_component_type": "agent",
+          "properties": [
+            {
+              "name": "apb_master_agent_cfg_h",
+              "type": "apb_master_agent_config"
+            },
+            {
+              "name": "apb_master_seqr_h",
+              "type": "apb_master_sequencer"
+            },
+            {
+              "name": "apb_master_drv_proxy_h",
+              "type": "apb_master_driver_proxy"
+            },
+            {
+              "name": "apb_master_mon_proxy_h",
+              "type": "apb_master_monitor_proxy"
+            },
+            {
+              "name": "apb_master_cov_h",
+              "type": "apb_master_coverage"
+            },
+            {
+              "name": "apb_reg_adapter_h",
+              "type": "apb_master_adapter"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_pkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "apb_slave_pkg",
+      "file": "apb_slave_pkg.sv",
+      "path": "src/hvl_top/slave/apb_slave_pkg.sv",
+      "classes": [
+        {
+          "name": "apb_slave_tx",
+          "base_class": "uvm_sequence_item",
+          "uvm_component_type": "sequence_item",
+          "properties": [
+            {
+              "name": "psel",
+              "type": "bit"
+            },
+            {
+              "name": "paddr",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "pwrite",
+              "type": "apb_global_pkg::tx_type_e"
+            },
+            {
+              "name": "pwdata",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "pslverr",
+              "type": "apb_global_pkg::slave_error_e"
+            },
+            {
+              "name": "pready",
+              "type": "bit"
+            },
+            {
+              "name": "prdata",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "pprot",
+              "type": "apb_global_pkg::protection_type_e"
+            },
+            {
+              "name": "no_of_wait_states",
+              "type": "bit[2:0]"
+            },
+            {
+              "name": "choose_packet_data",
+              "type": "bit"
+            },
+            {
+              "name": "transfer_size",
+              "type": "apb_global_pkg::transfer_size_e"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_pkg"
+        },
+        {
+          "name": "apb_slave_agent_config",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [
+            {
+              "name": "is_active",
+              "type": "uvm_active_passive_enum"
+            },
+            {
+              "name": "slave_id",
+              "type": "int"
+            },
+            {
+              "name": "has_coverage",
+              "type": "bit"
+            },
+            {
+              "name": "slave_selected",
+              "type": "bit"
+            },
+            {
+              "name": "max_address",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "min_address",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "slave_memory",
+              "type": "bit[7:0]$[longint]"
+            },
+            {
+              "name": "paddr",
+              "type": "bit[31:0]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_pkg"
+        },
+        {
+          "name": "apb_slave_seq_item_converter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_pkg"
+        },
+        {
+          "name": "apb_slave_cfg_converter",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_pkg"
+        },
+        {
+          "name": "apb_slave_sequencer",
+          "base_class": "uvm_sequencer",
+          "uvm_component_type": "sequencer",
+          "properties": [
+            {
+              "name": "apb_slave_agent_cfg_h",
+              "type": "apb_slave_agent_config"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_pkg"
+        },
+        {
+          "name": "apb_slave_driver_proxy",
+          "base_class": "uvm_driver",
+          "uvm_component_type": "driver",
+          "properties": [
+            {
+              "name": "apb_slave_tx_h",
+              "type": "apb_slave_tx"
+            },
+            {
+              "name": "apb_slave_drv_bfm_h",
+              "type": "apb_slave_driver_bfm"
+            },
+            {
+              "name": "apb_slave_agent_cfg_h",
+              "type": "apb_slave_agent_config"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [
+            {
+              "name": "apb_slave_drv_bfm_h",
+              "interface_type": "apb_slave_driver_bfm"
+            }
+          ],
+          "package": "apb_slave_pkg"
+        },
+        {
+          "name": "apb_slave_monitor_proxy",
+          "base_class": "uvm_monitor",
+          "uvm_component_type": "monitor",
+          "properties": [
+            {
+              "name": "apb_slave_analysis_port",
+              "type": "uvm_analysis_port"
+            },
+            {
+              "name": "apb_slave_mon_bfm_h",
+              "type": "apb_slave_monitor_bfm"
+            },
+            {
+              "name": "apb_slave_agent_cfg_h",
+              "type": "apb_slave_agent_config"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "apb_slave_analysis_port",
+              "port_type": "uvm_analysis_port"
+            }
+          ],
+          "virtual_interfaces": [
+            {
+              "name": "apb_slave_mon_bfm_h",
+              "interface_type": "apb_slave_monitor_bfm"
+            }
+          ],
+          "package": "apb_slave_pkg"
+        },
+        {
+          "name": "apb_slave_coverage",
+          "base_class": "uvm_subscriber",
+          "uvm_component_type": "subscriber",
+          "properties": [
+            {
+              "name": "apb_slave_agent_cfg_h",
+              "type": "apb_slave_agent_config"
+            },
+            {
+              "name": "apb_slave_covergroup",
+              "type": "<unnamed covergroup>"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_pkg"
+        },
+        {
+          "name": "apb_slave_agent",
+          "base_class": "uvm_agent",
+          "uvm_component_type": "agent",
+          "properties": [
+            {
+              "name": "apb_slave_agent_cfg_h",
+              "type": "apb_slave_agent_config"
+            },
+            {
+              "name": "apb_slave_seqr_h",
+              "type": "apb_slave_sequencer"
+            },
+            {
+              "name": "apb_slave_drv_proxy_h",
+              "type": "apb_slave_driver_proxy"
+            },
+            {
+              "name": "apb_slave_mon_proxy_h",
+              "type": "apb_slave_monitor_proxy"
+            },
+            {
+              "name": "apb_slave_cov_h",
+              "type": "apb_slave_coverage"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_pkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "apb_master_seq_pkg",
+      "file": "apb_master_seq_pkg.sv",
+      "path": "src/hvl_top/test/sequences/master_sequences/apb_master_seq_pkg.sv",
+      "classes": [
+        {
+          "name": "apb_master_base_seq",
+          "base_class": "uvm_sequence",
+          "uvm_component_type": "sequence",
+          "properties": [
+            {
+              "name": "p_sequencer",
+              "type": "apb_master_sequencer"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name",
+            "m_set_p_sequencer"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_seq_pkg"
+        },
+        {
+          "name": "apb_master_vd_vws_seq",
+          "base_class": "apb_master_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_seq_pkg"
+        },
+        {
+          "name": "apb_master_8b_write_seq",
+          "base_class": "apb_master_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "address_seq",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "cont_write_read_seq",
+              "type": "bit"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_seq_pkg"
+        },
+        {
+          "name": "apb_master_8b_write_read_seq",
+          "base_class": "apb_master_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_seq_pkg"
+        },
+        {
+          "name": "apb_master_16b_write_seq",
+          "base_class": "apb_master_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_seq_pkg"
+        },
+        {
+          "name": "apb_master_24b_write_seq",
+          "base_class": "apb_master_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_seq_pkg"
+        },
+        {
+          "name": "apb_master_32b_write_seq",
+          "base_class": "apb_master_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_seq_pkg"
+        },
+        {
+          "name": "apb_master_8b_read_seq",
+          "base_class": "apb_master_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "address_seq",
+              "type": "bit[31:0]"
+            },
+            {
+              "name": "cont_write_read_seq",
+              "type": "bit"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_master_seq_pkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "apb_slave_seq_pkg",
+      "file": "apb_slave_seq_pkg.sv",
+      "path": "src/hvl_top/test/sequences/slave_sequences/apb_slave_seq_pkg.sv",
+      "classes": [
+        {
+          "name": "apb_slave_base_seq",
+          "base_class": "uvm_sequence",
+          "uvm_component_type": "sequence",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_seq_pkg"
+        },
+        {
+          "name": "apb_slave_16b_write_seq",
+          "base_class": "apb_slave_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_seq_pkg"
+        },
+        {
+          "name": "apb_slave_24b_write_seq",
+          "base_class": "apb_slave_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_seq_pkg"
+        },
+        {
+          "name": "apb_slave_32b_write_seq",
+          "base_class": "apb_slave_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_seq_pkg"
+        },
+        {
+          "name": "apb_slave_8b_read_seq",
+          "base_class": "apb_slave_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "choose_packet_data_seq",
+              "type": "bit"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_seq_pkg"
+        },
+        {
+          "name": "apb_slave_8b_write_read_seq",
+          "base_class": "apb_slave_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_seq_pkg"
+        },
+        {
+          "name": "apb_slave_8b_write_seq",
+          "base_class": "apb_slave_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "choose_packet_data_seq",
+              "type": "bit"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_seq_pkg"
+        },
+        {
+          "name": "apb_slave_vd_vws_seq",
+          "base_class": "apb_slave_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_slave_seq_pkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "apb_env_pkg",
+      "file": "apb_env_pkg.sv",
+      "path": "src/hvl_top/env/apb_env_pkg.sv",
+      "classes": [
+        {
+          "name": "apb_env_config",
+          "base_class": "uvm_object",
+          "uvm_component_type": "object",
+          "properties": [
+            {
+              "name": "has_scoreboard",
+              "type": "bit"
+            },
+            {
+              "name": "has_virtual_seqr",
+              "type": "bit"
+            },
+            {
+              "name": "no_of_slaves",
+              "type": "int"
+            },
+            {
+              "name": "apb_master_agent_cfg_h",
+              "type": "apb_master_agent_config"
+            },
+            {
+              "name": "apb_slave_agent_cfg_h",
+              "type": "apb_slave_agent_config$[]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_env_pkg"
+        },
+        {
+          "name": "apb_virtual_sequencer",
+          "base_class": "uvm_sequencer",
+          "uvm_component_type": "sequencer",
+          "properties": [
+            {
+              "name": "apb_master_seqr_h",
+              "type": "apb_master_sequencer"
+            },
+            {
+              "name": "apb_slave_seqr_h",
+              "type": "apb_slave_sequencer$[]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_env_pkg"
+        },
+        {
+          "name": "apb_scoreboard",
+          "base_class": "uvm_scoreboard",
+          "uvm_component_type": "scoreboard",
+          "properties": [
+            {
+              "name": "apb_master_tx_h",
+              "type": "apb_master_tx"
+            },
+            {
+              "name": "apb_slave_tx_h",
+              "type": "apb_slave_tx"
+            },
+            {
+              "name": "apb_master_analysis_fifo",
+              "type": "uvm_tlm_analysis_fifo"
+            },
+            {
+              "name": "apb_slave_analysis_fifo",
+              "type": "uvm_tlm_analysis_fifo$[]"
+            },
+            {
+              "name": "apb_master_tx_count",
+              "type": "int"
+            },
+            {
+              "name": "apb_slave_tx_count",
+              "type": "int"
+            },
+            {
+              "name": "byte_data_cmp_verified_master_pwdata_count",
+              "type": "int"
+            },
+            {
+              "name": "byte_data_cmp_failed_master_pwdata_count",
+              "type": "int"
+            },
+            {
+              "name": "byte_data_cmp_verified_master_paddr_count",
+              "type": "int"
+            },
+            {
+              "name": "byte_data_cmp_failed_master_paddr_count",
+              "type": "int"
+            },
+            {
+              "name": "byte_data_cmp_verified_master_pwrite_count",
+              "type": "int"
+            },
+            {
+              "name": "byte_data_cmp_failed_master_pwrite_count",
+              "type": "int"
+            },
+            {
+              "name": "byte_data_cmp_verified_slave_prdata_count",
+              "type": "int"
+            },
+            {
+              "name": "byte_data_cmp_failed_slave_prdata_count",
+              "type": "int"
+            },
+            {
+              "name": "byte_data_cmp_verified_master_pprot_count",
+              "type": "int"
+            },
+            {
+              "name": "byte_data_cmp_failed_master_pprot_count",
+              "type": "int"
+            },
+            {
+              "name": "index",
+              "type": "bit"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [
+            {
+              "name": "apb_master_analysis_fifo",
+              "port_type": "uvm_tlm_analysis_fifo"
+            },
+            {
+              "name": "apb_slave_analysis_fifo",
+              "port_type": "uvm_tlm_analysis_fifo$[]"
+            }
+          ],
+          "virtual_interfaces": [],
+          "package": "apb_env_pkg"
+        },
+        {
+          "name": "apb_env",
+          "base_class": "uvm_env",
+          "uvm_component_type": "env",
+          "properties": [
+            {
+              "name": "apb_master_agent_h",
+              "type": "apb_master_agent"
+            },
+            {
+              "name": "apb_slave_agent_h",
+              "type": "apb_slave_agent$[]"
+            },
+            {
+              "name": "apb_scoreboard_h",
+              "type": "apb_scoreboard"
+            },
+            {
+              "name": "apb_virtual_seqr_h",
+              "type": "apb_virtual_sequencer"
+            },
+            {
+              "name": "apb_env_cfg_h",
+              "type": "apb_env_config"
+            },
+            {
+              "name": "apb_slave_agent_cfg_h",
+              "type": "apb_slave_agent_config$[]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_env_pkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "apb_virtual_seq_pkg",
+      "file": "apb_virtual_seq_pkg.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_seq_pkg.sv",
+      "classes": [
+        {
+          "name": "apb_virtual_base_seq",
+          "base_class": "uvm_sequence",
+          "uvm_component_type": "sequence",
+          "properties": [
+            {
+              "name": "p_sequencer",
+              "type": "apb_virtual_sequencer"
+            },
+            {
+              "name": "apb_master_seqr_h",
+              "type": "apb_master_sequencer"
+            },
+            {
+              "name": "apb_slave_seqr_h",
+              "type": "apb_slave_sequencer$[]"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name",
+            "m_set_p_sequencer"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_virtual_seq_pkg"
+        },
+        {
+          "name": "apb_virtual_vd_vws_seq",
+          "base_class": "apb_virtual_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_master_vd_vws_seq_h",
+              "type": "apb_master_vd_vws_seq"
+            },
+            {
+              "name": "apb_slave_vd_vws_seq_h",
+              "type": "apb_slave_vd_vws_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_virtual_seq_pkg"
+        },
+        {
+          "name": "apb_virtual_8b_write_seq",
+          "base_class": "apb_virtual_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_master_8b_write_seq_h",
+              "type": "apb_master_8b_write_seq"
+            },
+            {
+              "name": "apb_slave_8b_write_seq_h",
+              "type": "apb_slave_8b_write_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_virtual_seq_pkg"
+        },
+        {
+          "name": "apb_virtual_8b_write_read_seq",
+          "base_class": "apb_virtual_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_master_8b_write_seq_h",
+              "type": "apb_master_8b_write_seq"
+            },
+            {
+              "name": "apb_master_8b_read_seq_h",
+              "type": "apb_master_8b_read_seq"
+            },
+            {
+              "name": "apb_slave_8b_write_seq_h",
+              "type": "apb_slave_8b_write_seq"
+            },
+            {
+              "name": "apb_slave_8b_read_seq_h",
+              "type": "apb_slave_8b_read_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_virtual_seq_pkg"
+        },
+        {
+          "name": "apb_virtual_16b_write_seq",
+          "base_class": "apb_virtual_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_master_16b_write_seq_h",
+              "type": "apb_master_16b_write_seq"
+            },
+            {
+              "name": "apb_slave_16b_write_seq_h",
+              "type": "apb_slave_16b_write_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_virtual_seq_pkg"
+        },
+        {
+          "name": "apb_virtual_24b_write_seq",
+          "base_class": "apb_virtual_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_master_24b_seq_h",
+              "type": "apb_master_24b_write_seq"
+            },
+            {
+              "name": "apb_slave_24b_write_seq_h",
+              "type": "apb_slave_24b_write_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_virtual_seq_pkg"
+        },
+        {
+          "name": "apb_virtual_8b_read_seq",
+          "base_class": "apb_virtual_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_master_8b_read_seq_h",
+              "type": "apb_master_8b_read_seq"
+            },
+            {
+              "name": "apb_slave_8b_read_seq_h",
+              "type": "apb_slave_8b_read_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_virtual_seq_pkg"
+        },
+        {
+          "name": "apb_virtual_32b_write_seq",
+          "base_class": "apb_virtual_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_master_32b_write_seq_h",
+              "type": "apb_master_32b_write_seq"
+            },
+            {
+              "name": "apb_slave_32b_write_seq_h",
+              "type": "apb_slave_32b_write_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_virtual_seq_pkg"
+        },
+        {
+          "name": "apb_virtual_32b_write_multiple_slave_seq",
+          "base_class": "apb_virtual_base_seq",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_master_32b_write_seq_h",
+              "type": "apb_master_32b_write_seq"
+            },
+            {
+              "name": "apb_slave_32b_write_seq_h",
+              "type": "apb_slave_32b_write_seq"
+            },
+            {
+              "name": "apb_slave_32b_write_seq_h1",
+              "type": "apb_slave_32b_write_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "create",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_virtual_seq_pkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    },
+    {
+      "name": "apb_test_pkg",
+      "file": "apb_test_pkg.sv",
+      "path": "src/hvl_top/test/apb_test_pkg.sv",
+      "classes": [
+        {
+          "name": "apb_base_test",
+          "base_class": "uvm_test",
+          "uvm_component_type": "test",
+          "properties": [
+            {
+              "name": "apb_env_h",
+              "type": "apb_env"
+            },
+            {
+              "name": "apb_env_cfg_h",
+              "type": "apb_env_config"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_test_pkg"
+        },
+        {
+          "name": "apb_vd_vws_test",
+          "base_class": "apb_base_test",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_virtual_vd_vws_seq_h",
+              "type": "apb_virtual_vd_vws_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_test_pkg"
+        },
+        {
+          "name": "apb_8b_write_test",
+          "base_class": "apb_base_test",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_virtual_8b_seq_h",
+              "type": "apb_virtual_8b_write_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_test_pkg"
+        },
+        {
+          "name": "apb_8b_write_read_test",
+          "base_class": "apb_base_test",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_virtual_8b_write_read_seq_h",
+              "type": "apb_virtual_8b_write_read_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_test_pkg"
+        },
+        {
+          "name": "apb_16b_write_test",
+          "base_class": "apb_base_test",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_virtual_16b_seq_h",
+              "type": "apb_virtual_16b_write_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_test_pkg"
+        },
+        {
+          "name": "apb_24b_write_test",
+          "base_class": "apb_base_test",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_virtual_24b_seq_h",
+              "type": "apb_virtual_24b_write_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_test_pkg"
+        },
+        {
+          "name": "apb_8b_read_test",
+          "base_class": "apb_base_test",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_virtual_8b_seq_h",
+              "type": "apb_virtual_8b_read_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_test_pkg"
+        },
+        {
+          "name": "apb_32b_write_test",
+          "base_class": "apb_base_test",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_virtual_32b_seq_h",
+              "type": "apb_virtual_32b_write_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_test_pkg"
+        },
+        {
+          "name": "apb_32b_write_multiple_slave_test",
+          "base_class": "apb_base_test",
+          "uvm_component_type": "unknown",
+          "properties": [
+            {
+              "name": "apb_virtual_32b_write_multiple_slave_seq_h",
+              "type": "apb_virtual_32b_write_multiple_slave_seq"
+            }
+          ],
+          "methods": [
+            "get_type",
+            "get_object_type",
+            "type_name",
+            "get_type_name"
+          ],
+          "tlm_ports": [],
+          "virtual_interfaces": [],
+          "package": "apb_test_pkg"
+        }
+      ],
+      "typedefs": [],
+      "parameters": [],
+      "structs": [],
+      "enums": []
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "hdl_top",
+      "kind": "instance",
+      "ports": [],
+      "sub_instances": [
+        {
+          "instance_name": "intf",
+          "module_name": "apb_if",
+          "ports": [
+            {
+              "name": "pclk",
+              "direction": "In",
+              "type": "logic",
+              "width": 1,
+              "range": null
+            },
+            {
+              "name": "preset_n",
+              "direction": "In",
+              "type": "logic",
+              "width": 1,
+              "range": null
+            }
+          ]
+        },
+        {
+          "instance_name": "apb_master_agent_bfm_h",
+          "module_name": "apb_master_agent_bfm",
+          "ports": []
+        }
+      ],
+      "interface_ports": [],
+      "parameters": []
+    },
+    {
+      "name": "hvl_top",
+      "kind": "instance",
+      "ports": [],
+      "sub_instances": [],
+      "interface_ports": [],
+      "parameters": []
+    },
+    {
+      "name": "apb_if",
+      "kind": "interface",
+      "signals": [
+        {
+          "name": "penable",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "pwrite",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "pready",
+          "type": "logic",
+          "range": ""
+        },
+        {
+          "name": "pslverr",
+          "type": "logic",
+          "range": ""
+        }
+      ],
+      "clocking_blocks": [],
+      "tasks": [],
+      "modports": [],
+      "role": "interface",
+      "layer": "hdl"
+    },
+    {
+      "name": "apb_master_driver_bfm",
+      "kind": "interface",
+      "signals": [],
+      "clocking_blocks": [],
+      "tasks": [
+        "wait_for_preset_n",
+        "drive_to_bfm",
+        "drive_idle_state",
+        "drive_setup_state",
+        "waiting_in_access_state",
+        "detect_wait_state"
+      ],
+      "modports": [],
+      "role": "driver_bfm",
+      "layer": "hdl"
+    },
+    {
+      "name": "apb_master_monitor_bfm",
+      "kind": "interface",
+      "signals": [],
+      "clocking_blocks": [],
+      "tasks": [
+        "wait_for_preset_n",
+        "sample_data"
+      ],
+      "modports": [],
+      "role": "monitor_bfm",
+      "layer": "hdl"
+    },
+    {
+      "name": "apb_slave_driver_bfm",
+      "kind": "interface",
+      "signals": [],
+      "clocking_blocks": [],
+      "tasks": [
+        "wait_for_preset_n",
+        "wait_for_setup_state",
+        "wait_for_access_state"
+      ],
+      "modports": [],
+      "role": "driver_bfm",
+      "layer": "hdl"
+    },
+    {
+      "name": "apb_slave_monitor_bfm",
+      "kind": "interface",
+      "signals": [],
+      "clocking_blocks": [],
+      "tasks": [
+        "wait_for_preset_n",
+        "sample_data"
+      ],
+      "modports": [],
+      "role": "monitor_bfm",
+      "layer": "hdl"
+    }
+  ],
+  "architecture": {
+    "layers": {
+      "hdl": {
+        "description": "Hardware-level layer with BFMs and interfaces that directly interact with RTL signals",
+        "interfaces": [
+          "apb_if"
+        ],
+        "driver_bfms": [
+          "apb_master_driver_bfm",
+          "apb_slave_driver_bfm"
+        ],
+        "monitor_bfms": [
+          "apb_master_monitor_bfm",
+          "apb_slave_monitor_bfm"
+        ]
+      },
+      "hvl": {
+        "description": "High-level verification layer with UVM components using TLM and virtual interfaces",
+        "agents": [
+          "apb_master_agent",
+          "apb_slave_agent"
+        ],
+        "drivers": [
+          "apb_master_driver_proxy",
+          "apb_slave_driver_proxy"
+        ],
+        "monitors": [
+          "apb_master_monitor_proxy",
+          "apb_slave_monitor_proxy"
+        ],
+        "sequencers": [
+          "apb_master_sequencer",
+          "apb_slave_sequencer",
+          "apb_virtual_sequencer"
+        ],
+        "sequences": [
+          "apb_master_base_seq",
+          "apb_slave_base_seq",
+          "apb_virtual_base_seq"
+        ],
+        "sequence_items": [
+          "apb_master_tx",
+          "apb_slave_tx"
+        ],
+        "envs": [
+          "apb_env"
+        ],
+        "tests": [
+          "apb_base_test"
+        ],
+        "subscribers": [
+          "apb_master_coverage",
+          "apb_slave_coverage"
+        ],
+        "other_components": [
+          "apb_master_agent_config",
+          "apb_master_seq_item_converter",
+          "apb_master_cfg_converter",
+          "apb_master_adapter",
+          "apb_slave_agent_config",
+          "apb_slave_seq_item_converter",
+          "apb_slave_cfg_converter",
+          "apb_master_vd_vws_seq",
+          "apb_master_8b_write_seq",
+          "apb_master_8b_write_read_seq",
+          "apb_master_16b_write_seq",
+          "apb_master_24b_write_seq",
+          "apb_master_32b_write_seq",
+          "apb_master_8b_read_seq",
+          "apb_slave_16b_write_seq",
+          "apb_slave_24b_write_seq",
+          "apb_slave_32b_write_seq",
+          "apb_slave_8b_read_seq",
+          "apb_slave_8b_write_read_seq",
+          "apb_slave_8b_write_seq",
+          "apb_slave_vd_vws_seq",
+          "apb_env_config",
+          "apb_virtual_vd_vws_seq",
+          "apb_virtual_8b_write_seq",
+          "apb_virtual_8b_write_read_seq",
+          "apb_virtual_16b_write_seq",
+          "apb_virtual_24b_write_seq",
+          "apb_virtual_8b_read_seq",
+          "apb_virtual_32b_write_seq",
+          "apb_virtual_32b_write_multiple_slave_seq",
+          "apb_vd_vws_test",
+          "apb_8b_write_test",
+          "apb_8b_write_read_test",
+          "apb_16b_write_test",
+          "apb_24b_write_test",
+          "apb_8b_read_test",
+          "apb_32b_write_test",
+          "apb_32b_write_multiple_slave_test"
+        ]
+      },
+      "globals": {
+        "description": "Global package definitions with parameters, types, enums, and structs",
+        "packages": [
+          "apb_global_pkg",
+          "apb_master_pkg",
+          "apb_slave_pkg",
+          "apb_master_seq_pkg",
+          "apb_slave_seq_pkg",
+          "apb_env_pkg",
+          "apb_virtual_seq_pkg",
+          "apb_test_pkg"
+        ]
+      }
+    },
+    "component_roles": [
+      "agent",
+      "agent_bfm",
+      "agent_config",
+      "cfg_converter",
+      "coverage",
+      "driver_bfm",
+      "driver_proxy",
+      "env",
+      "env_config",
+      "hdl_top",
+      "hvl_top",
+      "interface",
+      "monitor_bfm",
+      "monitor_proxy",
+      "package",
+      "scoreboard",
+      "seq_item_converter",
+      "sequence",
+      "sequencer",
+      "test",
+      "transaction"
+    ],
+    "tlm_connections": [
+      {
+        "owner_class": "apb_master_monitor_proxy",
+        "port_type": "uvm_analysis_port",
+        "port_name": "apb_master_analysis_port"
+      },
+      {
+        "owner_class": "apb_slave_monitor_proxy",
+        "port_type": "uvm_analysis_port",
+        "port_name": "apb_slave_analysis_port"
+      },
+      {
+        "owner_class": "apb_scoreboard",
+        "port_type": "uvm_tlm_analysis_fifo",
+        "port_name": "apb_master_analysis_fifo"
+      },
+      {
+        "owner_class": "apb_scoreboard",
+        "port_type": "uvm_tlm_analysis_fifo$[]",
+        "port_name": "apb_slave_analysis_fifo"
+      }
+    ],
+    "virtual_interface_usage": [
+      {
+        "owner_class": "apb_master_driver_proxy",
+        "interface_type": "apb_master_driver_bfm",
+        "name": "apb_master_drv_bfm_h"
+      },
+      {
+        "owner_class": "apb_master_monitor_proxy",
+        "interface_type": "apb_master_monitor_bfm",
+        "name": "apb_master_mon_bfm_h"
+      },
+      {
+        "owner_class": "apb_slave_driver_proxy",
+        "interface_type": "apb_slave_driver_bfm",
+        "name": "apb_slave_drv_bfm_h"
+      },
+      {
+        "owner_class": "apb_slave_monitor_proxy",
+        "interface_type": "apb_slave_monitor_bfm",
+        "name": "apb_slave_mon_bfm_h"
+      }
+    ],
+    "total_interfaces": 7,
+    "total_classes": 57,
+    "total_packages": 8
+  },
+  "file_manifest": [
+    {
+      "file": "hvl_top.sv",
+      "path": "src/hvl_top/hvl_top.sv",
+      "role": "hvl_top",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "apb_test_pkg::*"
+      ],
+      "includes": [],
+      "defines": [
+        {
+          "name": "HVL_TOP_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_env.sv",
+      "path": "src/hvl_top/env/apb_env.sv",
+      "role": "env",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_ENV_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_env_config.sv",
+      "path": "src/hvl_top/env/apb_env_config.sv",
+      "role": "env_config",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_ENV_CONFIG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_env_pkg.sv",
+      "path": "src/hvl_top/env/apb_env_pkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "apb_global_pkg::*",
+        "apb_master_pkg::*",
+        "apb_slave_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "apb_env_config.sv",
+        "apb_virtual_sequencer.sv",
+        "apb_scoreboard.sv",
+        "apb_env.sv"
+      ],
+      "defines": [
+        {
+          "name": "APB_ENV_PKG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_scoreboard.sv",
+      "path": "src/hvl_top/env/apb_scoreboard.sv",
+      "role": "scoreboard",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SCOREBOARD_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_vsequencer.sv",
+      "path": "src/hvl_top/env/virtual_sequencer/apb_master_vsequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_VSEQUENCER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_vsequencer.sv",
+      "path": "src/hvl_top/env/virtual_sequencer/apb_slave_vsequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_VSEQUENCER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_sequencer.sv",
+      "path": "src/hvl_top/env/virtual_sequencer/apb_virtual_sequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "VIRTUAL_SEQUENCER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_agent.sv",
+      "path": "src/hvl_top/slave/apb_slave_agent.sv",
+      "role": "agent",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_AGENT_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_agent_config.sv",
+      "path": "src/hvl_top/slave/apb_slave_agent_config.sv",
+      "role": "agent_config",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_AGENT_CONFIG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_cfg_converter.sv",
+      "path": "src/hvl_top/slave/apb_slave_cfg_converter.sv",
+      "role": "cfg_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_CFG_CONVERTER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_coverage.sv",
+      "path": "src/hvl_top/slave/apb_slave_coverage.sv",
+      "role": "coverage",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_COVERAGE_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_driver_proxy.sv",
+      "path": "src/hvl_top/slave/apb_slave_driver_proxy.sv",
+      "role": "driver_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_DRIVER_PROXY_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_monitor_proxy.sv",
+      "path": "src/hvl_top/slave/apb_slave_monitor_proxy.sv",
+      "role": "monitor_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_MONITOR_PROXY_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_pkg.sv",
+      "path": "src/hvl_top/slave/apb_slave_pkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "apb_global_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "apb_slave_tx.sv",
+        "apb_slave_agent_config.sv",
+        "apb_slave_seq_item_converter.sv",
+        "apb_slave_cfg_converter.sv",
+        "apb_slave_sequencer.sv",
+        "apb_slave_driver_proxy.sv",
+        "apb_slave_monitor_proxy.sv",
+        "apb_slave_coverage.sv",
+        "apb_slave_agent.sv"
+      ],
+      "defines": [
+        {
+          "name": "APB_SLAVE_PKG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_seq_item_converter.sv",
+      "path": "src/hvl_top/slave/apb_slave_seq_item_converter.sv",
+      "role": "seq_item_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_SEQ_ITEM_CONVERTER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_sequencer.sv",
+      "path": "src/hvl_top/slave/apb_slave_sequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_SEQUENCER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_tx.sv",
+      "path": "src/hvl_top/slave/apb_slave_tx.sv",
+      "role": "transaction",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_TX_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_adapter.sv",
+      "path": "src/hvl_top/master/apb_master_adapter.sv",
+      "role": "other",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_ADAPTER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_agent.sv",
+      "path": "src/hvl_top/master/apb_master_agent.sv",
+      "role": "agent",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_AGENT_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_agent_config.sv",
+      "path": "src/hvl_top/master/apb_master_agent_config.sv",
+      "role": "agent_config",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_AGENT_CONFIG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_cfg_converter.sv",
+      "path": "src/hvl_top/master/apb_master_cfg_converter.sv",
+      "role": "cfg_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_CFG_CONVERTER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_coverage.sv",
+      "path": "src/hvl_top/master/apb_master_coverage.sv",
+      "role": "coverage",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_COVERAGE_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_driver_proxy.sv",
+      "path": "src/hvl_top/master/apb_master_driver_proxy.sv",
+      "role": "driver_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_DRIVER_PROXY_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_monitor_proxy.sv",
+      "path": "src/hvl_top/master/apb_master_monitor_proxy.sv",
+      "role": "monitor_proxy",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_MONITOR_PROXY_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_pkg.sv",
+      "path": "src/hvl_top/master/apb_master_pkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "apb_global_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "apb_master_agent_config.sv",
+        "apb_master_tx.sv",
+        "apb_master_seq_item_converter.sv",
+        "apb_master_cfg_converter.sv",
+        "apb_master_adapter.sv",
+        "apb_master_sequencer.sv",
+        "apb_master_driver_proxy.sv",
+        "apb_master_monitor_proxy.sv",
+        "apb_master_coverage.sv",
+        "apb_master_agent.sv"
+      ],
+      "defines": [
+        {
+          "name": "APB_MASTER_PKG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_seq_item_converter.sv",
+      "path": "src/hvl_top/master/apb_master_seq_item_converter.sv",
+      "role": "seq_item_converter",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_SEQ_ITEM_CONVERTER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_sequencer.sv",
+      "path": "src/hvl_top/master/apb_master_sequencer.sv",
+      "role": "sequencer",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_SEQUENCER_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_tx.sv",
+      "path": "src/hvl_top/master/apb_master_tx.sv",
+      "role": "transaction",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_TX_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_16b_read_test.sv",
+      "path": "src/hvl_top/test/apb_16b_read_test.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_16B_READ_TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_16b_write_test.sv",
+      "path": "src/hvl_top/test/apb_16b_write_test.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_16B_WRITE_TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_24b_write_test.sv",
+      "path": "src/hvl_top/test/apb_24b_write_test.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_24B_WRITE_TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_32b_write_multiple_slave_test.sv",
+      "path": "src/hvl_top/test/apb_32b_write_multiple_slave_test.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_32B_WRITE_MULTIPLE_SLAVE_TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_32b_write_test.sv",
+      "path": "src/hvl_top/test/apb_32b_write_test.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_32B_WRITE_TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_8b_read_test.sv",
+      "path": "src/hvl_top/test/apb_8b_read_test.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_8B_READ_TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_8b_write_read_test.sv",
+      "path": "src/hvl_top/test/apb_8b_write_read_test.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_8B_WRITE_READ_TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_8b_write_test.sv",
+      "path": "src/hvl_top/test/apb_8b_write_test.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_8B_WRITE_TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_base_test.sv",
+      "path": "src/hvl_top/test/apb_base_test.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_BASE_TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_test_pkg.sv",
+      "path": "src/hvl_top/test/apb_test_pkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "apb_global_pkg::*",
+        "apb_master_pkg::*",
+        "apb_slave_pkg::*",
+        "apb_env_pkg::*",
+        "apb_master_seq_pkg::*",
+        "apb_slave_seq_pkg::*",
+        "apb_virtual_seq_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "apb_base_test.sv",
+        "apb_vd_vws_test.sv",
+        "apb_8b_write_test.sv",
+        "apb_8b_write_read_test.sv",
+        "apb_16b_write_test.sv",
+        "apb_24b_write_test.sv",
+        "apb_8b_read_test.sv",
+        "apb_32b_write_test.sv",
+        "apb_32b_write_multiple_slave_test.sv"
+      ],
+      "defines": [
+        {
+          "name": "APB_TEST_PKG_INCLUDED_",
+          "value": "//-----------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_vd_vws_test.sv",
+      "path": "src/hvl_top/test/apb_vd_vws_test.sv",
+      "role": "test",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_VD_VWS_TEST_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_16b_write_seq.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_16b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_VIRTUAL_16B_WRITE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_24b_write_seq.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_24b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_VIRTUAL_24B_WRITE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_32b_write_multiple_slave_seq.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_32b_write_multiple_slave_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_VIRTUAL_32B_WRITE_MULTIPLE_SLAVE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_32b_write_seq.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_32b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_VIRTUAL_32B_WRITE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_8b_read_seq.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_8b_read_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_VIRTUAL_8B_READ_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_8b_write_read_seq.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_8b_write_read_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_VIRTUAL_8B_WRITE_READ_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_8b_write_seq.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_8b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_VIRTUAL_8B_WRITE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_base_seq.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_base_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_VIRTUAL_BASE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_seq_pkg.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_seq_pkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "apb_global_pkg::*",
+        "apb_env_pkg::*",
+        "apb_master_pkg::*",
+        "apb_slave_pkg::*",
+        "apb_master_seq_pkg::*",
+        "apb_slave_seq_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "apb_virtual_base_seq.sv",
+        "apb_virtual_vd_vws_seq.sv",
+        "apb_virtual_8b_write_seq.sv",
+        "apb_virtual_8b_write_read_seq.sv",
+        "apb_virtual_16b_write_seq.sv",
+        "apb_virtual_24b_write_seq.sv",
+        "apb_virtual_8b_read_seq.sv",
+        "apb_virtual_32b_write_seq.sv",
+        "apb_virtual_32b_write_multiple_slave_seq.sv"
+      ],
+      "defines": [
+        {
+          "name": "APB_VIRTUAL_SEQ_PKG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_virtual_vd_vws_seq.sv",
+      "path": "src/hvl_top/test/virtual_sequences/apb_virtual_vd_vws_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_VIRTUAL_VD_VWS_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_16b_write_seq.sv",
+      "path": "src/hvl_top/test/sequences/master_sequences/apb_master_16b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_16B_WRITE_SEQ_INCLUDE_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_24b_write_seq.sv",
+      "path": "src/hvl_top/test/sequences/master_sequences/apb_master_24b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_24B_WRITE_SEQ_INCLUDE_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_32b_write_seq.sv",
+      "path": "src/hvl_top/test/sequences/master_sequences/apb_master_32b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_32B_WRITE_SEQ_INCLUDE_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_8b_read_seq.sv",
+      "path": "src/hvl_top/test/sequences/master_sequences/apb_master_8b_read_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_8B_READ_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_8b_write_read_seq.sv",
+      "path": "src/hvl_top/test/sequences/master_sequences/apb_master_8b_write_read_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_8B_WRITE_READ_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_8b_write_seq.sv",
+      "path": "src/hvl_top/test/sequences/master_sequences/apb_master_8b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_8B_WRITE_SEQ_INCLUDE_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_base_seq.sv",
+      "path": "src/hvl_top/test/sequences/master_sequences/apb_master_base_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_BASE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_seq_pkg.sv",
+      "path": "src/hvl_top/test/sequences/master_sequences/apb_master_seq_pkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "apb_global_pkg::*",
+        "apb_master_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "apb_master_base_seq.sv",
+        "apb_master_vd_vws_seq.sv",
+        "apb_master_8b_write_seq.sv",
+        "apb_master_8b_write_read_seq.sv",
+        "apb_master_16b_write_seq.sv",
+        "apb_master_24b_write_seq.sv",
+        "apb_master_32b_write_seq.sv",
+        "apb_master_8b_read_seq.sv"
+      ],
+      "defines": [
+        {
+          "name": "APB_MASTER_SEQ_PKG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_vd_vws_seq.sv",
+      "path": "src/hvl_top/test/sequences/master_sequences/apb_master_vd_vws_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_MASTER_VD_VWS_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_16b_write_seq.sv",
+      "path": "src/hvl_top/test/sequences/slave_sequences/apb_slave_16b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_16B_WRITE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_24b_write_seq.sv",
+      "path": "src/hvl_top/test/sequences/slave_sequences/apb_slave_24b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_24B_WRITE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_32b_write_seq.sv",
+      "path": "src/hvl_top/test/sequences/slave_sequences/apb_slave_32b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_32B_WRITE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_8b_read_seq.sv",
+      "path": "src/hvl_top/test/sequences/slave_sequences/apb_slave_8b_read_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_8B_READ_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_8b_write_read_seq.sv",
+      "path": "src/hvl_top/test/sequences/slave_sequences/apb_slave_8b_write_read_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_8B_WRITE_READ_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_8b_write_seq.sv",
+      "path": "src/hvl_top/test/sequences/slave_sequences/apb_slave_8b_write_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_8B_WRITE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_base_seq.sv",
+      "path": "src/hvl_top/test/sequences/slave_sequences/apb_slave_base_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_BASE_SEQ_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_seq_pkg.sv",
+      "path": "src/hvl_top/test/sequences/slave_sequences/apb_slave_seq_pkg.sv",
+      "role": "package",
+      "layer": "hvl",
+      "imports": [
+        "uvm_pkg::*",
+        "apb_slave_pkg::*",
+        "apb_global_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh",
+        "apb_slave_base_seq.sv",
+        "apb_slave_16b_write_seq.sv",
+        "apb_slave_24b_write_seq.sv",
+        "apb_slave_32b_write_seq.sv",
+        "apb_slave_8b_read_seq.sv",
+        "apb_slave_8b_write_read_seq.sv",
+        "apb_slave_8b_write_seq.sv",
+        "apb_slave_vd_vws_seq.sv"
+      ],
+      "defines": [
+        {
+          "name": "APB_SLAVE_SEQ_PKG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_vd_vws_seq.sv",
+      "path": "src/hvl_top/test/sequences/slave_sequences/apb_slave_vd_vws_seq.sv",
+      "role": "sequence",
+      "layer": "hvl",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_SLAVE_VD_VWS_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "hdl_top.sv",
+      "path": "src/hdl_top/hdl_top.sv",
+      "role": "hdl_top",
+      "layer": "hdl",
+      "imports": [
+        "uvm_pkg::*",
+        "apb_global_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "HDL_TOP_INCLUDED",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_if.sv",
+      "path": "src/hdl_top/apb_if/apb_if.sv",
+      "role": "interface",
+      "layer": "hdl",
+      "imports": [
+        "apb_global_pkg::*"
+      ],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_IF_INCLUDED_",
+          "value": "//-------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_agent_bfm.sv",
+      "path": "src/hdl_top/master_agent_bfm/apb_master_agent_bfm.sv",
+      "role": "agent_bfm",
+      "layer": "hdl",
+      "imports": [
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "APB_MASTER_AGENT_BFM_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_driver_bfm.sv",
+      "path": "src/hdl_top/master_agent_bfm/apb_master_driver_bfm.sv",
+      "role": "driver_bfm",
+      "layer": "hdl",
+      "imports": [
+        "apb_global_pkg::*",
+        "uvm_pkg::*",
+        "apb_master_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "APB_MASTER_DRIVER_BFM_INCLUDED_",
+          "value": "//-------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_master_monitor_bfm.sv",
+      "path": "src/hdl_top/master_agent_bfm/apb_master_monitor_bfm.sv",
+      "role": "monitor_bfm",
+      "layer": "hdl",
+      "imports": [
+        "apb_global_pkg::*",
+        "uvm_pkg::*",
+        "apb_master_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "APB_MASTER_MONITOR_BFM_INCLUDED_",
+          "value": "//-------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_agent_bfm.sv",
+      "path": "src/hdl_top/slave_agent_bfm/apb_slave_agent_bfm.sv",
+      "role": "agent_bfm",
+      "layer": "hdl",
+      "imports": [
+        "uvm_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "APB_SLAVE_AGENT_BFM_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_driver_bfm.sv",
+      "path": "src/hdl_top/slave_agent_bfm/apb_slave_driver_bfm.sv",
+      "role": "driver_bfm",
+      "layer": "hdl",
+      "imports": [
+        "apb_global_pkg::*",
+        "uvm_pkg::*",
+        "apb_slave_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "APB_SLAVE_DRIVER_BFM_INCLUDED_",
+          "value": "//-------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_slave_monitor_bfm.sv",
+      "path": "src/hdl_top/slave_agent_bfm/apb_slave_monitor_bfm.sv",
+      "role": "monitor_bfm",
+      "layer": "hdl",
+      "imports": [
+        "apb_global_pkg::*",
+        "uvm_pkg::*",
+        "apb_slave_pkg::*"
+      ],
+      "includes": [
+        "uvm_macros.svh"
+      ],
+      "defines": [
+        {
+          "name": "APB_SLAVE_MONITOR_BFM_INCLUDED_",
+          "value": "//-------------------------------------------------------"
+        }
+      ]
+    },
+    {
+      "file": "apb_global_pkg.sv",
+      "path": "src/globals/apb_global_pkg.sv",
+      "role": "package",
+      "layer": "globals",
+      "imports": [],
+      "includes": [],
+      "defines": [
+        {
+          "name": "APB_GLOBAL_PKG_INCLUDED_",
+          "value": "//--------------------------------------------------------------------------------------------"
+        }
+      ]
+    }
+  ]
+}
